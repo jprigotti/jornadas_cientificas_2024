@@ -1,10 +1,13 @@
+import { RouterProvider } from "react-router-dom"
+import { appRouter } from "./core/router/AppRouter"
+import RootProvider from "./core/providers/RootProvider"
 
 function App() {
 
   return (
-    <>
-      <p className='font-poppins text-Blue text-xl p-5'>Jornadas Cientificas 2024</p>
-    </>
+    <RootProvider>
+      <RouterProvider router={appRouter} />
+    </RootProvider>
   )
 }
 

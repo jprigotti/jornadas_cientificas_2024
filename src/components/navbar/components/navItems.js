@@ -4,7 +4,7 @@ const navItems = [
     { id: 3, name: 'Comisiones', link: '/comisiones' },
     { id: 4, name: 'Galeria', link: '/galeria' },
     { id: 5, name: 'Login', link: '/login' },
-    { id: 5, name: 'Mi perfil', link: '/perfil' },
+    { id: 6, name: 'Mi perfil', link: '/perfil' },
 ]
 
 export default navItems;

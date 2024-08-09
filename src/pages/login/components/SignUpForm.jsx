@@ -4,8 +4,6 @@ import { useLogin } from '../hooks/useLogin';
 const SignUpForm = () => {
     const { signUpEmail } = useLogin();
 
-
-
     return (
         <div className='bg-Blue px-2 py-2'>
             <form onSubmit={signUpEmail}>

@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { HooksContext } from "../context/HooksContext";
+import { GlobalContext } from "../context/GlobalContext";
 
-const HooksProvider = ({ children }) => {
+const GlobalProvider = ({ children }) => {
 
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const [desktopView, setDesktopView] = useState(false);
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     useEffect(() => {
         function handleResize() {
@@ -21,18 +20,16 @@ const HooksProvider = ({ children }) => {
 
 
     return (
-        <HooksContext.Provider
+        <GlobalContext.Provider
             value={
                 {
                     desktopView,
-                    isLoggedIn,
-                    setIsLoggedIn
                 }
             }>
 
             {children}
-        </HooksContext.Provider>
+        </GlobalContext.Provider>
     )
 }
 
-export default HooksProvider;
+export default GlobalProvider;

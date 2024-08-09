@@ -1,13 +1,13 @@
 import React, { useState } from "react";
+import { useNavigate  } from "react-router-dom";
 import {
     signInWithEmail,
     signUpWithEmail,
 } from "../../../services/firebase.services"
 
-import { useHooks } from "../../../hooks/useHooks";
-
 export const useLogin = () => {
     const [isRegistered, setIsRegistered] = useState(true);
+    const navigate = useNavigate();
 
     const signUpEmail = async (event) => {
         event.preventDefault();
@@ -31,28 +31,19 @@ export const useLogin = () => {
             const { email, password } = Object.fromEntries(form.entries());
             console.log("Form input data: ", email, password);
             const response = await signInWithEmail(email, password)
-            console.log("Login response: ", response.user.accessToken)
-            setCookie('access_token', response.user.accessToken)
+            console.log("Login response: ", response.user)
+            navigate('/perfil');
         } catch (error) {
             console.log("Login error: ", error)
         }
     }
 
 
-    // Function to set a cookie
-    const setCookie = (name, value) => {
-        const d = new Date();
-        const days = 1;
-        d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
-        const expires = "expires=" + d.toUTCString();
-        document.cookie = name + "=" + value + ";" + expires + ";path=/";
-    }
-
     return {
         isRegistered,
         setIsRegistered,
         signUpEmail,
-        signInEmail
+        signInEmail,
     };
 }
 

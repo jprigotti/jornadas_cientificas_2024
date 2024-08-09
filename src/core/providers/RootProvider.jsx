@@ -1,11 +1,15 @@
 import React from 'react'
-import HooksProvider from '../../providers/HooksProvider'
+import GlobalProvider from '../../providers/GlobalProvider'
+import AuthProvider from '../auth/provider/AuthProvider'
 
 const RootProvider = ({ children }) => {
   return (
-    <HooksProvider>
-      {children}
-    </HooksProvider>
+    <AuthProvider>
+      <GlobalProvider>
+        {children}
+      </GlobalProvider>
+    </AuthProvider>
+
   )
 }
 

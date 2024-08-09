@@ -1,9 +1,12 @@
 import React from 'react'
+import { useAuth } from '../../../core/auth/hooks/useAuth'
 
 const PerfilView = () => {
+    const { user } = useAuth();
+
     return (
         <div>
-            <p>Mi Perfil</p>
+            <p>Este es el perfil de {user.email}</p>
         </div>
     )
 }

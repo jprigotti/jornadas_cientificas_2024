@@ -1,11 +1,11 @@
 import React from 'react'
-import { useHooks } from '../../../hooks/useHooks'
+import { useGlobal } from '../../../hooks/useGlobal'
 import NavDesktop from '../components/NavDesktop';
 import NavMobile from '../components/NavMobile';
 
 const NavbarView = () => {
 
-  const { desktopView } = useHooks();
+  const { desktopView } = useGlobal();
 
   return (
 

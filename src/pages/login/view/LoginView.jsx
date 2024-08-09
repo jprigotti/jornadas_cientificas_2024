@@ -1,5 +1,4 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom';
 import { useLogin } from "../hooks/useLogin"
 import SignInForm from '../components/SignInForm';
 import SignUpForm from '../components/SignUpForm';
@@ -7,9 +6,6 @@ import SignUpForm from '../components/SignUpForm';
 const LoginView = () => {
 
   const { isRegistered, setIsRegistered } = useLogin();
-
-  const navigate = useNavigate();
-
 
   return (
     <div className='flex flex-col items-center px-3'>

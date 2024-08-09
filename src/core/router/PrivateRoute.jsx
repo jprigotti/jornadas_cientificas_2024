@@ -1,16 +1,23 @@
 import { Navigate } from 'react-router-dom'
-import React, { useState } from 'react';
-import { useHooks } from '../../hooks/useHooks';
+import React, { useState, useEffect } from 'react';
+import { useAuth } from '../auth/hooks/useAuth'
 
 const PrivateRoute = ({ children }) => {
 
-    const { isLoggedIn } = useHooks();
+    const { user, loading } = useAuth();
 
-    if (isLoggedIn) {
-        return children;
+    if (loading) {
+        // Optionally, you can render a loading spinner or null while checking authentication
+        return <div>Loading...</div>;
     }
 
-    return <Navigate to="/login" />;
+    if (!user) {
+        // If the user is not authenticated, redirect to the login page
+        return <Navigate to="/login" />;
+    }
+
+    // If the user is authenticated, render the protected component
+    return children;
 }
 
 export default PrivateRoute

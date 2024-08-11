@@ -3,7 +3,9 @@ import { useNavigate  } from "react-router-dom";
 import {
     signInWithEmail,
     signUpWithEmail,
+    saveUserInDB
 } from "../../../services/firebase.services"
+
 
 export const useLogin = () => {
     const [isRegistered, setIsRegistered] = useState(true);
@@ -16,8 +18,17 @@ export const useLogin = () => {
             const form = new FormData(event.target)
             const { name, lastName, cell, email, password } = Object.fromEntries(form.entries());
             console.log("Form input data: ", name, lastName, cell, email, password);
-            const response = await signUpWithEmail(email, password)
-            console.log("Registration response: ", response)
+            const responseSignUp = await signUpWithEmail(email, password)
+            console.log("Registration response: ", responseSignUp.user)
+            const user = {
+                uid: responseSignUp.user.uid,
+                name: name,
+                lastName: lastName,
+                cell: cell,
+                email: email,
+            }
+            const responseSaveUserDB = await saveUserInDB(user)
+            console.log("Save user in DB response: ", responseSaveUserDB)
         } catch (error) {
             console.log("Registration error: ", error)
         }

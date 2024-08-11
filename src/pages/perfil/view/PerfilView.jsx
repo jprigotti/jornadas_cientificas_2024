@@ -7,6 +7,7 @@ const PerfilView = () => {
     return (
         <div>
             <p>Este es el perfil de {user.email}</p>
+            <p>User ID is {user.uid}</p>
         </div>
     )
 }

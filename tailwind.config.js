@@ -11,6 +11,7 @@ export default {
       'Green': '#00aab2',
       'LightGreen': '#a9d6c5',
       'Violet': '#584ba0',
+      'LightViolet': '#7b4ba0',
       'Black': '#000',
       'DarkGrey': '#EEE',
       'White': '#FFF'

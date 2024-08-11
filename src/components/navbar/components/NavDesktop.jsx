@@ -11,7 +11,9 @@ const NavDesktop = () => {
     const { isAuthenticated } = useAuth();
 
     return (
-        <div className='h-screen flex flex-col items-start py-3 px-3 text-White bg-Violet'>
+        // <div className='h-screen flex flex-col items-start py-3 px-3 text-White bg-Violet'>
+        <div className='h-screen flex flex-col items-start py-3 px-3 text-White bg-gradient-to-b from-Violet to-LightViolet'>
+
             <ul className='flex flex-col'>
                 {navItems.map(item => (
                     <li
@@ -21,16 +23,18 @@ const NavDesktop = () => {
                     </li>
                 ))}
             </ul>
-            {!isAuthenticated
-                ? (
-                    <NavLink link={"/login"} name={"Login"} />
-                ) : (
-                    <>
-                        <NavLink link={"/perfil"} name={"Mi perfil"} />
-                        <button onClick={() => signOut()}>Sign Out</button>
-                    </>
-                )}
-        </div>
+            {
+                !isAuthenticated
+                    ? (
+                        <NavLink link={"/login"} name={"Login"} />
+                    ) : (
+                        <>
+                            <NavLink link={"/perfil"} name={"Mi perfil"} />
+                            <button onClick={() => signOut()}>Sign Out</button>
+                        </>
+                    )
+            }
+        </div >
     )
 }
 

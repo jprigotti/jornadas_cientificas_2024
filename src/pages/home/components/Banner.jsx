@@ -1,6 +1,13 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Banner = () => {
+    const navigate = useNavigate();
+
+    const handleInscripcion = () => {
+        navigate('/login');
+    }
+
     return (
         <div className="relative h-screen w-full">
             {/* Background Video */}
@@ -21,7 +28,7 @@ const Banner = () => {
             {/* Dark Overlay */}
             <div className="absolute inset-0 bg-Black bg-opacity-65"></div>
 
-            {/* Title */}
+            {/* Titles */}
             <div className="relative flex flex-col items-center justify-center h-full">
 
                 <h1 className="text-center text-White text-5xl font-bold">
@@ -39,10 +46,17 @@ const Banner = () => {
                 <h2 className="text-White text-5xl md:text-5xl font-bold">
                     Estrategias para abordar los retos actuales en salud
                 </h2>
-                <h2 className="text-White text-5xl md:text-5xl font-bold">
+                <h2 className="text-White text-5xl md:text-5xl font-bold mb-10">
                     Rol del sistema público
                 </h2>
+                <div>
+                    <button
+                        className='text-xl font-bold px-10 py-5 bg-Violet text-White rounded-md hover:bg-LightViolet hover:shadow-lg transition duration-300 ease-in-out'
+                        onClick={handleInscripcion}>
+                        Incribirme
+                    </button>
 
+                </div>
 
             </div>
         </div>

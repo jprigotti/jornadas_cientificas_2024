@@ -8,8 +8,10 @@ const NavbarView = () => {
   const { desktopView } = useGlobal();
 
   return (
+    <nav>
+      {(desktopView) ? <NavDesktop /> : <NavMobile />}
+    </nav>
 
-    (desktopView) ? <NavDesktop /> : <NavMobile />
 
   )
 }

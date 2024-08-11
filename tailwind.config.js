@@ -6,13 +6,14 @@ export default {
   ],
   theme: {
     colors: {
-      'Blue': '#011C40',
-      'White': '#FAFAFA',
-      'Green': '#038C7F',
-      'DarkGreen': '#025951',
-      'DarkGreenLayer': 'rgba(2, 89, 81, 0.9)',
+      'Blue': '#005996',
+      'LightBlue': '#008abc',
+      'Green': '#00aab2',
+      'LightGreen': '#a9d6c5',
+      'Violet': '#584ba0',
       'Black': '#000',
-      'Cyan': '#7ED9D0'
+      'DarkGrey': '#EEE',
+      'White': '#FFF'
     },
     fontFamily: {
       poppins: ['Poppins', 'sans-serif'],

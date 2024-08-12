@@ -4,7 +4,6 @@ import { useProfile } from '../hooks/useProfile';
 const UserProfile = ({ userId }) => {
     const { loading, userData } = useProfile(userId)
 
-
     if (loading) {
         return <div>Loading...</div>;
     }

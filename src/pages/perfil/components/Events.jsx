@@ -1,11 +1,16 @@
 import React from 'react'
 import { useEvents } from '../hooks/useEvents'
+import { setRegistration } from '../../../services/firebase.services'
 
-const Inscription = ({ userId }) => {
+const Events = ({ userId }) => {
     const { events } = useEvents();
 
-    const handleInscription = (userId, eventId) => {
+    const handleInscription = async (eventId, userId) => {
         console.log("Inscription in progress for user: ", userId, "en evento ", eventId)
+        const res = await setRegistration(eventId, userId)
+        res.status
+            ? console.log("Registration status: ", res.status)
+            : console.log("Registration failed with: ", res.error)
     }
 
     return (
@@ -13,7 +18,7 @@ const Inscription = ({ userId }) => {
             {events?.map(event => (
                 <div key={event.id} className='event-item'>
                     <p>{event.name}</p>
-                    <button onClick={() => handleInscription(userId, event.id)}>
+                    <button onClick={() => handleInscription(event.id, userId)}>
                         Inscribirte
                     </button>
                 </div>
@@ -22,4 +27,4 @@ const Inscription = ({ userId }) => {
     )
 }
 
-export default Inscription
+export default Events

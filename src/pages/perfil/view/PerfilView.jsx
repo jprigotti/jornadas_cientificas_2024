@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import UserProfile from '../components/UserProfile';
 import { useAuth } from '../../../core/auth/hooks/useAuth'
-import Inscription from '../components/Inscription';
+import Events from '../components/Events';
 
 const PerfilView = () => {
     const { user } = useAuth();
@@ -9,7 +9,7 @@ const PerfilView = () => {
     return (
         <>
             <UserProfile userId={user.uid} />
-            <Inscription userId={user.uid} />
+            <Events userId={user.uid} />
         </>
     )
 }

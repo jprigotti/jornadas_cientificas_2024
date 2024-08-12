@@ -10,7 +10,8 @@ import { auth } from "../core/config/firebase.config"
 
 import {
     DOCUMENTS,
-    createDocument,
+    setDocument,
+    getDocumentById
 } from "../core/db/firestore.db";
 
 
@@ -31,17 +32,22 @@ export const signOut = async () => {
 
 
 
-// Persistance Functions
+// Firestore Functions
 export const saveUserInDB = async (user) => {
     const userDB = {
-      uid: user.uid,
-      name: user.name,
-      lastName: user.lastName,
-      cell: user.cell,
-      email: user.email,
+        name: user.name,
+        lastName: user.lastName,
+        cell: user.cell,
+        email: user.email,
     };
-  
-    const res = await createDocument(DOCUMENTS.USERS, userDB);
-  
+
+    const res = await setDocument(DOCUMENTS.USERS, userDB, user.uid);
+
     return res;
-  };
+};
+
+
+export const getUserById = async (id) => {
+    const res = await getDocumentById(id, DOCUMENTS.USERS);
+    return res;
+}

@@ -5,7 +5,7 @@ const Banner = () => {
     const navigate = useNavigate();
 
     const handleInscripcion = () => {
-        navigate('/login');
+        navigate('/perfil');
     }
 
     return (

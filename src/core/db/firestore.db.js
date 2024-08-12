@@ -9,10 +9,28 @@ import {
 } from "firebase/firestore";
 
 
-export const DOCUMENTS = {
+export const COLECTIONS = {
     USERS: "users",
+    EVENTS: "events"
 };
 
+export const DOCUMENTS = {
+    JORNADAS2024: "jornadas_cientificas_2024"
+}
+
+
+/**GET_DOCUMENTS 
+ * recibe como argumento el nombre de la colection y retorna todos los documentos
+*/
+export const getDocuments = async (name) => {
+    const querySnapshot = await getDocs(collection(db, name));
+    const data = querySnapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+    }));
+
+    return data
+};
 
 /*CREATE_DOCUMENT 
 * recibe como argumento el nombre de la colection y retorna todos los documentos

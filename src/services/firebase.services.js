@@ -9,7 +9,8 @@ import {
 import { auth } from "../core/config/firebase.config"
 
 import {
-    DOCUMENTS,
+    COLECTIONS,
+    getDocuments,
     setDocument,
     getDocumentById
 } from "../core/db/firestore.db";
@@ -41,13 +42,19 @@ export const saveUserInDB = async (user) => {
         email: user.email,
     };
 
-    const res = await setDocument(DOCUMENTS.USERS, userDB, user.uid);
+    const res = await setDocument(COLECTIONS.USERS, userDB, user.uid);
 
     return res;
 };
 
 
 export const getUserById = async (id) => {
-    const res = await getDocumentById(id, DOCUMENTS.USERS);
+    const res = await getDocumentById(id, COLECTIONS.USERS);
+    return res;
+}
+
+
+export const getAllEvents = async () => {
+    const res = await getDocuments(COLECTIONS.EVENTS)
     return res;
 }

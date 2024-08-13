@@ -11,7 +11,8 @@ export const useEvents = () => {
             try {
                 const res = await getAllEvents()
                 console.log("Events list: ", res)
-                setEvents(res)
+                const availableEvents = res.filter(event => event.inscriptionState === true)             
+                setEvents(availableEvents)
             } catch (error) {
                 console.log8
             } finally {
@@ -21,6 +22,10 @@ export const useEvents = () => {
 
         fetchAllEvents();
     }, [])
+
+
+
+
 
     return { loading, events }
 }

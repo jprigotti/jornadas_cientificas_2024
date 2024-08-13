@@ -1,23 +1,30 @@
-import React from 'react'
-import { useEvents } from '../hooks/useEvents'
+import React, { useState, useEffect } from 'react'
+import { useInscription } from '../hooks/useInscription'
 
 const Inscription = ({ userId }) => {
-    const { events } = useEvents();
+    const { loading, userInscription, handleInscription } = useInscription(userId);
 
-    const handleInscription = (userId, eventId) => {
-        console.log("Inscription in progress for user: ", userId, "en evento ", eventId)
+    if (loading) {
+        return <div>Loading...</div>;
     }
 
     return (
-        <div className='flex flex-col items-center'>
-            {events?.map(event => (
-                <div key={event.id} className='event-item'>
-                    <p>{event.name}</p>
-                    <button onClick={() => handleInscription(userId, event.id)}>
-                        Inscribirte
-                    </button>
-                </div>
-            ))}
+        <div>
+            {(userInscription) ?
+                (
+                    <div>
+                        <p>Inscripcion: {userInscription.status}</p>
+                        <p>Pago del arancel: {userInscription.payment}</p>
+                    </div>
+                ) :
+                (
+                    <div>
+                        <button onClick={() => handleInscription(userId)}>
+                            Inscribirme
+                        </button>
+                    </div>
+                )}
+
         </div>
     )
 }

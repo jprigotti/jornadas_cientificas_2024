@@ -9,10 +9,13 @@ import {
 import { auth } from "../core/config/firebase.config"
 
 import {
-    COLECTIONS,
+    COLLECTIONS,
     getDocuments,
     setDocument,
-    getDocumentById
+    getDocumentById,
+    getDocumentByIdFromSubcollection,
+    addSubcollectionDocument,
+    setSubcollectionDocument
 } from "../core/db/firestore.db";
 
 
@@ -42,19 +45,59 @@ export const saveUserInDB = async (user) => {
         email: user.email,
     };
 
-    const res = await setDocument(COLECTIONS.USERS, userDB, user.uid);
+    const res = await setDocument(COLLECTIONS.USERS, userDB, user.uid);
 
     return res;
 };
 
 
 export const getUserById = async (id) => {
-    const res = await getDocumentById(id, COLECTIONS.USERS);
+    const res = await getDocumentById(id, COLLECTIONS.USERS);
     return res;
 }
 
 
 export const getAllEvents = async () => {
-    const res = await getDocuments(COLECTIONS.EVENTS)
+    const res = await getDocuments(COLLECTIONS.EVENTS)
     return res;
 }
+
+export const addRegistration = async (userId, eventId) => {
+    const docData = {
+        userId: userId,
+        registrationTime: new Date(),
+        status: "registered",
+        payment: "pending"
+    }
+
+    const res = await addSubcollectionDocument(COLLECTIONS.EVENTS, eventId, COLLECTIONS.REGISTRATION, docData)
+    return res
+}
+
+export const setRegistration = async (eventId, userId) => {
+    const registrationData = {
+        parentDocId: eventId,
+        childDocId: userId,
+        parentCollection: COLLECTIONS.EVENTS,
+        childCollection: COLLECTIONS.REGISTRATION,
+        persistData: {
+            registrationTime: new Date(),
+            status: "registered",
+            payment: "pending"
+        }
+    }
+    const res = await setSubcollectionDocument(registrationData)
+    return res
+}
+
+export const getUserInscription = async (eventId, userId) => {
+    const getData = {
+        parentDocId: eventId,
+        childDocId: userId,
+        parentCollection: COLLECTIONS.EVENTS,
+        childCollection: COLLECTIONS.REGISTRATION,
+    }
+    const res = await getDocumentByIdFromSubcollection(getData)
+    return res;
+}
+

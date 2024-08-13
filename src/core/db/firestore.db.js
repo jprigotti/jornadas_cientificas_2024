@@ -62,7 +62,7 @@ export const setDocument = async (name, data, id) => {
     return response;
 }
 
-/*GET_DOCUMENTS_BY_ID
+/*GET_DOCUMENT_BY_ID
 * recibe como argumento el nombre de la collection y el id del documento
 */
 export const getDocumentById = async (id, name) => {
@@ -75,6 +75,41 @@ export const getDocumentById = async (id, name) => {
         return null;
     }
 };
+
+/*GET_DOCUMENTS_BY_ID_FROM_SUBCOLLECTION
+* recibe como argumentos:
+parentCollection and parentDocId
+childCollection and childDoc Id
+*/
+export const getDocumentByIdFromSubcollection = async (getData) => {
+    const response = {
+        status: null,
+        error: null
+    }
+
+    try {
+        // Construct the path to the specific user's registration document within the event
+        const path = `${getData.parentCollection}/${getData.parentDocId}/${getData.childCollection}/${getData.childDocId}`;
+        const childDocRef = doc(db, path);
+
+        // Retrieve the document
+        const childDoc = await getDoc(childDocRef)
+
+        if (childDoc.exists()) {
+            response.status = true;
+            response.data = { id: childDoc.id, ...childDoc.data() }
+        } else {
+            response.status = true;
+            response.data = null
+        }
+    } catch (error) {
+        response.status = false;
+        response.error = error
+    }
+
+    return response;
+}
+
 
 
 export const addSubcollectionDocument = async (parentCollection, docId, childSubcollection, docData) => {
@@ -110,11 +145,11 @@ export const setSubcollectionDocument = async (registrationData) => {
 
     try {
         // Get a reference to parents collection
-        const path = `${registrationData.parentCollection}/${registrationData.eventId}/${registrationData.childCollection}`;
+        const path = `${registrationData.parentCollection}/${registrationData.parentDocId}/${registrationData.childCollection}`;
         const parentDocRef = collection(db, path);
 
         // Create a document reference with a custom ID
-        const childDocRef = doc(parentDocRef, registrationData.userId)
+        const childDocRef = doc(parentDocRef, registrationData.childDocId)
 
         // Set the data for the document
         await setDoc(childDocRef, registrationData.persistData);

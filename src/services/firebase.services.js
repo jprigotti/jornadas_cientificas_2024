@@ -13,6 +13,7 @@ import {
     getDocuments,
     setDocument,
     getDocumentById,
+    getDocumentByIdFromSubcollection,
     addSubcollectionDocument,
     setSubcollectionDocument
 } from "../core/db/firestore.db";
@@ -75,8 +76,8 @@ export const addRegistration = async (userId, eventId) => {
 
 export const setRegistration = async (eventId, userId) => {
     const registrationData = {
-        userId: userId,
-        eventId: eventId,
+        parentDocId: eventId,
+        childDocId: userId,
         parentCollection: COLLECTIONS.EVENTS,
         childCollection: COLLECTIONS.REGISTRATION,
         persistData: {
@@ -88,3 +89,15 @@ export const setRegistration = async (eventId, userId) => {
     const res = await setSubcollectionDocument(registrationData)
     return res
 }
+
+export const getUserInscription = async (eventId, userId) => {
+    const getData = {
+        parentDocId: eventId,
+        childDocId: userId,
+        parentCollection: COLLECTIONS.EVENTS,
+        childCollection: COLLECTIONS.REGISTRATION,
+    }
+    const res = await getDocumentByIdFromSubcollection(getData)
+    return res;
+}
+

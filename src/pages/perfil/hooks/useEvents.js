@@ -11,7 +11,7 @@ export const useEvents = () => {
             try {
                 const res = await getAllEvents()
                 console.log("Events list: ", res)
-                const availableEvents = res.filter(event => event.inscriptionState === true)
+                const availableEvents = res.filter(event => event.inscriptionState === true)             
                 setEvents(availableEvents)
             } catch (error) {
                 console.log8

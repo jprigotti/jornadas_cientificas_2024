@@ -45,6 +45,8 @@ export const saveUserInDB = async (user) => {
         lastName: user.lastName,
         cell: user.cell,
         email: user.email,
+        category: user.category,
+        role: "user"
     };
 
     const res = await setDocument(COLLECTIONS.USERS, userDB, user.uid);

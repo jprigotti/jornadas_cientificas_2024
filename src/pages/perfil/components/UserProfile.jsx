@@ -13,8 +13,10 @@ const UserProfile = ({ userId }) => {
             <h1>Datos del usuario:</h1>
             <p>Nombre: {userData?.name}</p>
             <p>Apellido: {userData?.lastName}</p>
-            <p>Email: {userData?.email}</p>
             <p>Cell: {userData?.cell}</p>
+            <p>Categoría: {userData?.category}</p>
+            <p>Email: {userData?.email}</p>
+
             {/* Show more user information */}
         </div>
     )

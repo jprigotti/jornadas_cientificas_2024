@@ -14,12 +14,13 @@ export default {
       'LightViolet': '#7b4ba0',
       'Black': '#000',
       'DarkGrey': '#EEE',
-      'White': '#FFF'
+      'White': '#FFF',
+      'Red': '#de0a26'
     },
     fontFamily: {
       poppins: ['Poppins', 'sans-serif'],
     },
-    fontWeight:{
+    fontWeight: {
       thin: '300',
       regular: '400',
       medium: '500',

@@ -5,7 +5,7 @@ const NavLink = ({ link, name }) => {
     return (
         <>
             <Link
-            className='pb-3' 
+            className='pb-3 text-center' 
             to={link}>{name} </Link>
         </>
     )

@@ -2,7 +2,7 @@ import React from 'react'
 
 const FooterView = () => {
   return (
-    <div className='p-5'>
+    <div className='p-5 bg-PauBaseComponents ms-40'>
       {/* Thin line on top */}
       <div className="w-full border-t border-gray-300 mb-5" />
 

@@ -51,7 +51,7 @@ const Banner = () => {
                 </h2>
                 <div>
                     <button
-                        className='text-xl font-bold px-10 py-5 bg-Violet text-White rounded-md hover:bg-LightViolet hover:shadow-lg transition duration-300 ease-in-out'
+                        className='text-xl font-bold px-10 py-5 bg-PauGreenLight text-White rounded-md hover:bg-PauGreenDark hover:shadow-lg transition duration-300 ease-in-out'
                         onClick={handleInscripcion}>
                         Incribirme
                     </button>

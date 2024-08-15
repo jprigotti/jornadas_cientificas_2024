@@ -12,9 +12,9 @@ const NavDesktop = () => {
 
     return (
         // <div className='h-screen flex flex-col items-start py-3 px-3 text-White bg-Violet'>
-        <div className='h-screen flex flex-col items-start py-3 px-3 text-White bg-gradient-to-b from-Violet to-LightViolet'>
+        <div className='h-screen flex flex-col items-start py-3 px-3 text-White bg-gradient-to-b from-PauGreenDark to-PauGreenLight rounded-tl-lg rounded-tr-lg'>
 
-            <ul className='flex flex-col'>
+            <ul className='flex flex-col items-center w-full'>
                 {navItems.map(item => (
                     <li
                         key={item.id}
@@ -26,12 +26,16 @@ const NavDesktop = () => {
             {
                 !isAuthenticated
                     ? (
-                        <NavLink link={"/login"} name={"Login"} />
+                        <div className='w-full flex justify-center'>
+                            <NavLink link={"/login"} name={"Login"} />
+                        </div>
+
                     ) : (
-                        <>
+                        <div className='w-full flex justify-center'>
                             <NavLink link={"/perfil"} name={"Mi perfil"} />
                             <button onClick={() => signOut()}>Sign Out</button>
-                        </>
+                        </div>
+
                     )
             }
         </div >

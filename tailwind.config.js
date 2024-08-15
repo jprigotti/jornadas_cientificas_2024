@@ -15,7 +15,12 @@ export default {
       'Black': '#000',
       'DarkGrey': '#EEE',
       'White': '#FFF',
-      'Red': '#de0a26'
+      'Red': '#de0a26',
+      'PauGreenDark': '#00797E',
+      'PauGreenLight': '#33BBC1',
+      'PauBaseComponents': '#EAEAEA',
+      'PauBackground' : '#858585'
+
     },
     fontFamily: {
       poppins: ['Poppins', 'sans-serif'],

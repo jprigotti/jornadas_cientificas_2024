@@ -5,6 +5,8 @@ import Autoridades from '../components/Autoridades'
 import Invitados from '../components/Invitados'
 import Conferencias from '../components/Conferencias'
 import Streaming from '../components/Streaming'
+import Colaboran from '../components/Colaboran'
+
 
 const HomeView = () => {
   return (
@@ -15,6 +17,7 @@ const HomeView = () => {
       <Invitados />
       <Conferencias />
       <Streaming />
+      <Colaboran />
     </div>
   )
 }

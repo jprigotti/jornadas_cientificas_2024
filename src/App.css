@@ -4,3 +4,13 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.outer-container {
+  padding: 5rem 0;
+}
+
+.inner-container {
+  padding: 3rem;
+}
+
+

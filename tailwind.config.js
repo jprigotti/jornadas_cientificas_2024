@@ -24,8 +24,8 @@ export default {
       // 'PauGreenLight': '#33BBC1',
       'PauBaseComponents_bkp': '#EAEAEA',
       'PauBaseComponents': '#FFF',
-      'PauBackground' : '#d2d2d2',
-      'PauBackground_bkp' : '#858585'
+      'PauBackground': '#d2d2d2',
+      'PauBackground_bkp': '#858585'
 
     },
     fontFamily: {
@@ -48,14 +48,15 @@ export default {
         'desktop': '1440px',
       },
       boxShadow: {
-        'lightShadow': '0 4px 6px -1px rgba(176, 229, 231, 0.5), 0 2px 4px -1px rgba(176, 229, 231, 0.25)',
-        'darkShadow': '0 4px 6px -1px rgba(0, 155, 162, 0.5), 0 2px 4px -1px rgba(0, 155, 162, 0.25)',
+        'lightShadowGrey': '0 4px 6px -1px rgba(128, 128, 128, 0.5), 0 2px 4px -1px rgba(128, 128, 128, 0.25)',
+        'lightShadowGreen': '0 4px 6px -1px rgba(176, 229, 231, 0.5), 0 2px 4px -1px rgba(176, 229, 231, 0.25)',
+        'darkShadowGreen': '0 4px 6px -1px rgba(0, 155, 162, 0.5), 0 2px 4px -1px rgba(0, 155, 162, 0.25)',
       },
       backgroundImage: {
         // 'hero-pattern': "url('/img/hero-pattern.svg')"
-      }
+      },
     },
   },
   plugins: [],
-}
+};
 

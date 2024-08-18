@@ -33,8 +33,8 @@ const NavDesktop = () => {
                         </div>
 
                     ) : (
-                        <div className='w-full flex justify-center'>
-                            <NavLink link={"/perfil"} name={"Mi perfil"} />
+                        <div className='w-full flex flex-col items-center'>
+                            <NavLink link={"/perfil"} name={"Mi perfil"} icon={LoginIcon}/>
                             <button onClick={() => signOut()}>Sign Out</button>
                         </div>
 

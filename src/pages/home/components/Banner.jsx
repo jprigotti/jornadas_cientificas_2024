@@ -31,22 +31,22 @@ const Banner = () => {
             {/* Titles */}
             <div className="relative flex flex-col items-center justify-center h-full">
 
-                <h1 className="text-center text-White text-5xl font-bold">
+                <h1 className="text-center text-White text-6xl font-bold">
                     XXXIX JORNADAS
                 </h1>
-                <h1 className="text-center text-White text-5xl font-bold">
+                <h1 className="text-center text-White text-6xl font-bold">
                     CIENTIFICAS
                 </h1>
-                <h1 className="text-center text-White text-3xl font-bold pb-10">
+                <h1 className="text-center text-White text-5xl font-semibold pb-10">
                     HOSPITAL D SANTOJANNI
                 </h1>
                 <h2 className="text-White text-3xl md:text-3xl font-bold pb-10">
                     11 al 15 de noviembre
                 </h2>
-                <h2 className="text-White text-5xl md:text-5xl font-bold">
+                <h2 className="text-White text-2xl md:text-5xl font-bold">
                     Estrategias para abordar los retos actuales en salud
                 </h2>
-                <h2 className="text-White text-5xl md:text-5xl font-bold mb-10">
+                <h2 className="text-White text-2xl md:text-5xl font-bold mb-10">
                     Rol del sistema público
                 </h2>
                 <div>

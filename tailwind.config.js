@@ -15,6 +15,7 @@ export default {
       'Black': '#000',
       'DarkGrey': '#EEE',
       'White': '#FFF',
+      'White-20': 'rgba(255, 255, 255, 0.2)',
       'Red': '#de0a26',
       'PauGreenDark': '#00797E',
       'PauGreenLight': '#33BBC1',

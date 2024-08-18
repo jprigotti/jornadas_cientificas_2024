@@ -5,10 +5,14 @@ const NavLink = ({ link: link, name: name, icon: NavIcon }) => {
     return (
         <div className='flex flex-col items-center'>
             <Link
-                className='pb-3 text-center text-sm flex flex-col '
+                className='pb-3 text-center text-sm flex flex-col items-center '
                 to={link}>
-                <NavIcon with="40px" height="40px" strokeColor='#c2c2c2' strokeWidth={5} />{name} </Link>
-        </div>
+                <div className="w-[60px] h-[60px] rounded-full border-[1px]  hover:bg-White-20 transition-colors duration-200 flex justify-center items-center">
+                    <NavIcon with="40px" height="40px" />
+                </div>
+                {name}
+            </Link>
+        </div >
     )
 }
 

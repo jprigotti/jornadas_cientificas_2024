@@ -15,7 +15,7 @@ const NavDesktop = () => {
         // <div className='h-screen flex flex-col items-start py-3 px-3 text-White bg-Violet'>
         <div className='h-screen flex flex-col items-start py-3 px-3 text-White bg-gradient-to-b from-PauGreenDark to-PauGreenLight rounded-tl-xl rounded-tr-xl'>
 
-            <ul className='flex flex-col items-center w-full'>
+            <ul className='flex flex-col items-center w-full pt-5'>
                 {NavItems.map(item => (
                     <li
                         key={item.id}

@@ -1,10 +1,11 @@
 import React from 'react'
-import navItems from './navItems'
+import NavItems from './NavItems'
 import NavLink from './NavLink'
 import {
     signOut
 } from "../../../services/firebase.services"
 import { useAuth } from '../../../core/auth/hooks/useAuth'
+import LoginIcon from './svgIcons/LoginIcon'
 
 const NavDesktop = () => {
 
@@ -12,14 +13,15 @@ const NavDesktop = () => {
 
     return (
         // <div className='h-screen flex flex-col items-start py-3 px-3 text-White bg-Violet'>
-        <div className='h-screen flex flex-col items-start py-3 px-3 text-White bg-gradient-to-b from-PauGreenDark to-PauGreenLight rounded-tl-lg rounded-tr-lg'>
+        <div className='h-screen flex flex-col items-start py-3 px-3 text-White bg-gradient-to-b from-PauGreenDark to-PauGreenLight rounded-tl-xl rounded-tr-xl'>
 
             <ul className='flex flex-col items-center w-full'>
-                {navItems.map(item => (
+                {NavItems.map(item => (
                     <li
                         key={item.id}
                         className='pb-3'>
-                        <NavLink link={item.link} name={item.name} ></NavLink>
+                        <NavLink
+                            {...item}></NavLink>
                     </li>
                 ))}
             </ul>
@@ -27,7 +29,7 @@ const NavDesktop = () => {
                 !isAuthenticated
                     ? (
                         <div className='w-full flex justify-center'>
-                            <NavLink link={"/login"} name={"Login"} />
+                            <NavLink link={"/login"} name={"Login"} icon={LoginIcon} />
                         </div>
 
                     ) : (

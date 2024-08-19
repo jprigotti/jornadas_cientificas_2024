@@ -11,7 +11,7 @@ const Registration = ({ userId }) => {
     }
 
     return (
-        <div className='flex flex-col'>
+        <div className='ms-40  bg-White flex flex-col items-center px-3'>
             <div className='mb-5'>
                 {userRegistration ?
                     (

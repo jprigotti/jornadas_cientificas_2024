@@ -12,7 +12,7 @@ const Streaming = () => {
   return (
     <div className="bg-PauBaseComponents ms-40">
       <div
-        className="w-full h-[600px] bg-cover bg-top"
+        className="w-full h-[600px] bg-cover bg-center"
         style={{ backgroundImage: "url('/images/sreaming_background.png')" }}
       >
         {/* You can add any additional content inside this div if needed */}

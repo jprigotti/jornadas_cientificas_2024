@@ -6,10 +6,10 @@ const Intro = () => {
     <section className="ms-40 bg-White flex flex-col items-center mt-3 rounded-tl-xl">
       <div className='container outer-container'>
         <div className='bg-PauGreenLight flex flex-col items-center rounded-tl-xl rounded-br-xl'>
-          <h2 className="text-3xl text-White font-bold text-center p-5">Mensaje de la presidente</h2>
+          <h2 className="text-3xl text-White font-bold text-center p-5">Mensaje de la presidenta</h2>
         </div>
         <div className='inner-container'>
-          <div class="space-y-4">
+          <div class="space-y-4 pb-10">
             <p className="text-indent indent-6 text-justify">
               Les damos la bienvenida a esta nueva edición de las Jornadas Científicas del Hospital Santojanni y CESACs del Area Programática.
             </p>
@@ -31,6 +31,14 @@ const Intro = () => {
             <p className="text-indent indent-6 text-justify">
               Finalmente creemos muy importante la participación de todos y todas los profesionales de la salud, sin ello difícilmente podamos generar cambios y nuevas propuestas, les invitamos a ser parte de este encuentro.
             </p>
+          </div>
+          <div className='flex items-center flex justify-center'>
+            <img className='rounded-full w-[150px]' src="/images/presidenta.png" alt="Presidenta Jornadas" />
+            <div className='ps-10 flex flex-col items-center'>
+              <img className="w-[150px]" src="/images/signature.png" alt="" />
+              <p>Presidenta XXXIX Jornadas Científicas</p>
+              <p>Dra. María Vivona</p>
+            </div>
           </div>
         </div>
       </div>

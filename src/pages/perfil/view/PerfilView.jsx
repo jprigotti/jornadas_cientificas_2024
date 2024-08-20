@@ -14,6 +14,7 @@ const PerfilView = () => {
 
   return (
     <>
+<<<<<<< HEAD
       <PagesBannerView />
       {
         userData?.role === 'admin' ?
@@ -27,6 +28,11 @@ const PerfilView = () => {
           )
       }
 
+=======
+      <PagesBannerView title={"Mi perfil"}/>
+      <UserProfile userId={user.uid} />
+      <Registration userId={user.uid} />
+>>>>>>> feature/registration
       {/* <Events userId={user.uid} /> */}
     </>
   );

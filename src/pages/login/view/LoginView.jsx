@@ -9,29 +9,31 @@ const LoginView = () => {
 
   return (
     <div>
-      <PagesBannerView title="Login" />
-      <section className="ms-40 mt-3 rounded-tl-xl bg-White flex flex-col items-center px-3">
-        <h2>Bienvenido!</h2>
+      <PagesBannerView title="Ingresar" />
+      <section className="ms-40 mt-3 py-10 rounded-tl-xl bg-White flex flex-col items-center">
+        {isRegistered ? <SignInForm /> : <SignUpForm />}
 
         {isRegistered ? (
-          <button
-            className="pb-3"
-            onClick={() => setIsRegistered(!isRegistered)}
-          >
-            Click para registrarse
-          </button>
+          <span>
+            No tenes cuenta?
+            <button
+              className="ps-1 pt-3"
+              onClick={() => setIsRegistered(!isRegistered)}
+            >
+              Click aquí para registrarse
+            </button>
+          </span>
         ) : (
-          <button
-            className="pb-3"
-            onClick={() => setIsRegistered(!isRegistered)}
-          >
-            Click para iniciar sesión
-          </button>
+          <span>
+            Tenes una cuenta?{" "}
+            <button
+              className="ps-1 pt-3"
+              onClick={() => setIsRegistered(!isRegistered)}
+            >
+              Click aquí para ingresar.
+            </button>
+          </span>
         )}
-
-        <div className="pb-3">
-          {isRegistered ? <SignInForm /> : <SignUpForm />}
-        </div>
       </section>
     </div>
   );

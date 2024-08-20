@@ -11,8 +11,8 @@ const ButtonLogout = ({
         className="pb-3 text-center text-sm flex flex-col items-center "
         onClick={() => handleClick()}
       >
-        <div className="w-[60px] h-[60px] rounded-full border-[1px]  hover:bg-White-20 transition-colors duration-200 flex justify-center items-center">
-          <NavIcon with="40px" height="40px" />
+        <div className="w-[45px] h-[45px] rounded-full border-[1px]  hover:bg-White-20 transition-colors duration-200 flex justify-center items-center">
+          <NavIcon with="30px" height="30px" />
         </div>
         {name}
       </button>

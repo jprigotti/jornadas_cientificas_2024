@@ -22,7 +22,7 @@ const NavDesktop = () => {
         ))}
         {!isAuthenticated ? (
           <li className="w-full flex justify-center pb-3">
-            <NavLink link={"/login"} name={"Login"} icon={LoginIcon} />
+            <NavLink link={"/login"} name={"Ingresar"} icon={LoginIcon} />
           </li>
         ) : (
           <>

@@ -10,7 +10,7 @@ const PerfilView = () => {
 
   return (
     <>
-      <PagesBannerView />
+      <PagesBannerView title={"Mi perfil"}/>
       <UserProfile userId={user.uid} />
       <Registration userId={user.uid} />
       {/* <Events userId={user.uid} /> */}

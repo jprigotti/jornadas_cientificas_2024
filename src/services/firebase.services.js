@@ -15,7 +15,9 @@ import {
     getDocumentById,
     getDocumentByIdFromSubcollection,
     addSubcollectionDocument,
-    setSubcollectionDocument
+    setSubcollectionDocument,
+    updateDocument,
+    updateSubcollectionDocument
 } from "../core/db/firestore.db";
 
 
@@ -43,6 +45,8 @@ export const saveUserInDB = async (user) => {
         lastName: user.lastName,
         cell: user.cell,
         email: user.email,
+        category: user.category,
+        role: "user"
     };
 
     const res = await setDocument(COLLECTIONS.USERS, userDB, user.uid);
@@ -86,18 +90,32 @@ export const setRegistration = async (eventId, userId) => {
             payment: "pending"
         }
     }
-    const res = await setSubcollectionDocument(registrationData)
-    return res
+    const res = await setSubcollectionDocument(registrationData);
+    return res;
 }
 
-export const getUserInscription = async (eventId, userId) => {
-    const getData = {
+
+export const getRegistration = async (eventId, userId) => {
+    const data = {
         parentDocId: eventId,
         childDocId: userId,
         parentCollection: COLLECTIONS.EVENTS,
         childCollection: COLLECTIONS.REGISTRATION,
     }
-    const res = await getDocumentByIdFromSubcollection(getData)
+    const res = await getDocumentByIdFromSubcollection(data);
     return res;
 }
 
+
+export const updatePayment = async (eventId, userId) => {
+    const data = {
+        parentDocId: eventId,
+        childDocId: userId,
+        parentCollection: COLLECTIONS.EVENTS,
+        childCollection: COLLECTIONS.REGISTRATION,
+        field: "payment",
+        value: "paid"
+    }
+    const res = await updateSubcollectionDocument(data);
+    return res;
+}

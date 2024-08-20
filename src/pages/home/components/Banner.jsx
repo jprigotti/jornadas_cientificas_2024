@@ -9,7 +9,7 @@ const Banner = () => {
     }
 
     return (
-        <div className="relative h-screen w-full">
+        <div className="relative h-screen w-full ps-40">
             {/* Background Video */}
             {/* <img
                 className="absolute inset-0 h-full w-full object-cover"
@@ -31,27 +31,27 @@ const Banner = () => {
             {/* Titles */}
             <div className="relative flex flex-col items-center justify-center h-full">
 
-                <h1 className="text-center text-White text-5xl font-bold">
+                <h1 className="text-center text-White text-6xl font-bold">
                     XXXIX JORNADAS
                 </h1>
-                <h1 className="text-center text-White text-5xl font-bold">
+                <h1 className="text-center text-White text-6xl font-bold">
                     CIENTIFICAS
                 </h1>
-                <h1 className="text-center text-White text-3xl font-bold pb-10">
+                <h1 className="text-center text-White text-5xl font-semibold pb-10">
                     HOSPITAL D SANTOJANNI
                 </h1>
                 <h2 className="text-White text-3xl md:text-3xl font-bold pb-10">
                     11 al 15 de noviembre
                 </h2>
-                <h2 className="text-White text-5xl md:text-5xl font-bold">
+                <h2 className="text-White text-2xl md:text-5xl font-bold">
                     Estrategias para abordar los retos actuales en salud
                 </h2>
-                <h2 className="text-White text-5xl md:text-5xl font-bold mb-10">
+                <h2 className="text-White text-2xl md:text-5xl font-bold mb-10">
                     Rol del sistema público
                 </h2>
                 <div>
                     <button
-                        className='text-xl font-bold px-10 py-5 bg-Violet text-White rounded-md hover:bg-LightViolet hover:shadow-lg transition duration-300 ease-in-out'
+                        className='text-xl font-bold px-10 py-5 bg-LightViolet text-White rounded-md hover:bg-Violet hover:shadow-lg transition duration-300 ease-in-out'
                         onClick={handleInscripcion}>
                         Incribirme
                     </button>

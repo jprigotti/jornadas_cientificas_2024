@@ -6,6 +6,7 @@ import {
     setDoc,
     doc,
     getDoc,
+    updateDoc
 } from "firebase/firestore";
 
 
@@ -81,7 +82,7 @@ export const getDocumentById = async (id, name) => {
 parentCollection and parentDocId
 childCollection and childDoc Id
 */
-export const getDocumentByIdFromSubcollection = async (getData) => {
+export const getDocumentByIdFromSubcollection = async (data) => {
     const response = {
         status: null,
         error: null
@@ -89,7 +90,7 @@ export const getDocumentByIdFromSubcollection = async (getData) => {
 
     try {
         // Construct the path to the specific user's registration document within the event
-        const path = `${getData.parentCollection}/${getData.parentDocId}/${getData.childCollection}/${getData.childDocId}`;
+        const path = `${data.parentCollection}/${data.parentDocId}/${data.childCollection}/${data.childDocId}`;
         const childDocRef = doc(db, path);
 
         // Retrieve the document
@@ -137,7 +138,7 @@ export const addSubcollectionDocument = async (parentCollection, docId, childSub
     return response;
 }
 
-export const setSubcollectionDocument = async (registrationData) => {
+export const setSubcollectionDocument = async (data) => {
     const response = {
         status: null,
         error: null
@@ -145,19 +146,65 @@ export const setSubcollectionDocument = async (registrationData) => {
 
     try {
         // Get a reference to parents collection
-        const path = `${registrationData.parentCollection}/${registrationData.parentDocId}/${registrationData.childCollection}`;
+        const path = `${data.parentCollection}/${data.parentDocId}/${data.childCollection}`;
         const parentDocRef = collection(db, path);
 
         // Create a document reference with a custom ID
-        const childDocRef = doc(parentDocRef, registrationData.childDocId)
+        const childDocRef = doc(parentDocRef, data.childDocId)
 
         // Set the data for the document
-        await setDoc(childDocRef, registrationData.persistData);
+        await setDoc(childDocRef, data.persistData);
         response.status = true;
     } catch (error) {
         response.status = false;
         response.error = error;
     }
 
+    return response;
+}
+
+
+export const updateDocument = async (data) => {
+    const response = {
+        status: null,
+        error: null
+    }
+
+    try {
+        // Create a reference to the document in the subcollection
+        const docRef = doc(db, data.collection, data.docId);
+
+        // Update the specific field in the document
+        const field = data.field;
+        const value = data.value;
+        await updateDoc(docRef, { field: value });
+        response.status = true;
+    } catch (error) {
+        response.status = false;
+        response.error = error;
+    }
+    return response;
+}
+
+
+export const updateSubcollectionDocument = async (data) => {
+    const response = {
+        status: null,
+        error: null
+    }
+
+    try {
+        // Create a reference to the document in the subcollection
+        const docRef = doc(db, data.parentCollection, data.parentDocId, data.childCollection, data.childDocId);
+        // Update the specific field in the document
+        const updateData = {
+            [data.field]: data.value
+        }
+        await updateDoc(docRef, updateData);
+        response.status = true;
+    } catch (error) {
+        response.status = false;
+        response.error = error;
+    }
     return response;
 }

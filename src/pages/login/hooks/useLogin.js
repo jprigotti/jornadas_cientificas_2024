@@ -11,21 +11,22 @@ export const useLogin = () => {
     const [isRegistered, setIsRegistered] = useState(true);
     const navigate = useNavigate();
 
-    const signUpEmail = async (event) => {
-        event.preventDefault();
+    const signUpEmail = async (formData) => {
+        // event.preventDefault();
 
         try {
-            const form = new FormData(event.target)
-            const { name, lastName, cell, email, password } = Object.fromEntries(form.entries());
-            console.log("Form input data: ", name, lastName, cell, email, password);
-            const responseSignUp = await signUpWithEmail(email, password)
+            // const form = new FormData(event.target)
+            // const { name, lastName, cell, email, password } = Object.fromEntries(form.entries());
+            // console.log("Form input data: ", name, lastName, cell, email, password);
+            const responseSignUp = await signUpWithEmail(formData.email, formData.password)
             console.log("Registration response: ", responseSignUp.user)
             const user = {
                 uid: responseSignUp.user.uid,
-                name: name,
-                lastName: lastName,
-                cell: cell,
-                email: email,
+                name: formData.name,
+                lastName: formData.lastName,
+                cell: formData.cell,
+                category: formData.category,
+                email: formData.email,
             }
             const responseSaveUserDB = await saveUserInDB(user)
             console.log("Save user in DB response: ", responseSaveUserDB)

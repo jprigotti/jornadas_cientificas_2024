@@ -208,3 +208,38 @@ export const updateSubcollectionDocument = async (data) => {
     }
     return response;
 }
+
+//Función para obtener documentos de una subcolección
+
+export const getDocumentsFromSubcollection = async (parentCollection, parentDocId, childCollection) => {
+
+    const response = {
+        status: null,
+        error: null,
+        data: []
+    }
+
+    try {
+        //Referencia al documento principal
+        const parentDocRef = doc(db, parentCollection, parentDocId);
+
+        //Referencia a la subcolleción
+        const childCollectionRef = collection(parentDocRef, childCollection);
+
+        //Obtener documentos de la subcollección
+        const querySnapshot = await getDocs(childCollectionRef);
+        const documents = querySnapshot.docs.map(doc => ({
+            id: doc.id,
+            ...doc.data()
+        }));
+
+        response.status = true;
+        response.error = error;
+
+    } catch (error) {
+        response.status = false;
+        response.error = error;
+    }
+
+    return response;
+}

@@ -4,15 +4,29 @@ import { useAuth } from "../../../core/auth/hooks/useAuth";
 import Events from "../components/Events";
 import Registration from "../components/Registration";
 import PagesBannerView from "../../../components/pagesBanner/view/PagesBannerView";
+import { useProfile } from "../hooks/useProfile";
+import AdminProfile from "../components/AdminProfile";
 
 const PerfilView = () => {
   const { user } = useAuth();
+  const { loading, userData } = useProfile(user.uid)
+  console.log("El rol del usuario es: ", userData?.role)
 
   return (
     <>
       <PagesBannerView />
-      <UserProfile userId={user.uid} />
-      <Registration userId={user.uid} />
+      {
+        userData?.role === 'admin' ?
+          (
+            <AdminProfile userId={user.uid} />
+          ) : (
+            <>
+              <UserProfile userId={user.uid} />
+              <Registration userId={user.uid} />
+            </>
+          )
+      }
+
       {/* <Events userId={user.uid} /> */}
     </>
   );

@@ -6,18 +6,32 @@ export default {
   ],
   theme: {
     colors: {
-      'Blue': '#011C40',
-      'White': '#FAFAFA',
-      'Green': '#038C7F',
-      'DarkGreen': '#025951',
-      'DarkGreenLayer': 'rgba(2, 89, 81, 0.9)',
+      'Blue': '#005996',
+      'LightBlue': '#008abc',
+      'Green': '#00aab2',
+      'LightGreen': '#a9d6c5',
+      'Violet': '#584ba0',
+      'LightViolet': '#7b4ba0',
       'Black': '#000',
-      'Cyan': '#7ED9D0'
+      'DarkGrey': '#EEE',
+      'White': '#FFF',
+      'White-20': 'rgba(255, 255, 255, 0.2)',
+      'Red': '#de0a26',
+      'PauGreenDark': '#00797E',
+      'PauGreenLight': '#33BBC1',
+      'PauGreenUltraLight': '#E6F7F7',
+      // 'PauGreenDark': '#00797E',
+      // 'PauGreenLight': '#33BBC1',
+      'PauBaseComponents_bkp': '#EAEAEA',
+      'PauBaseComponents': '#FFF',
+      'PauBackground': '#d2d2d2',
+      'PauBackground_bkp': '#858585'
+
     },
     fontFamily: {
       poppins: ['Poppins', 'sans-serif'],
     },
-    fontWeight:{
+    fontWeight: {
       thin: '300',
       regular: '400',
       medium: '500',
@@ -34,14 +48,15 @@ export default {
         'desktop': '1440px',
       },
       boxShadow: {
-        'lightShadow': '0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
-        'darkShadow': '8px 8px 12px rgba(0, 0, 0, 0.4)',
+        'lightShadowGrey': '0 4px 6px -1px rgba(128, 128, 128, 0.5), 0 2px 4px -1px rgba(128, 128, 128, 0.25)',
+        'lightShadowGreen': '0 4px 6px -1px rgba(176, 229, 231, 0.5), 0 2px 4px -1px rgba(176, 229, 231, 0.25)',
+        'darkShadowGreen': '0 4px 6px -1px rgba(0, 155, 162, 0.5), 0 2px 4px -1px rgba(0, 155, 162, 0.25)',
       },
       backgroundImage: {
         // 'hero-pattern': "url('/img/hero-pattern.svg')"
-      }
+      },
     },
   },
   plugins: [],
-}
+};
 

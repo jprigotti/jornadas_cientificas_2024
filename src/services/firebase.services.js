@@ -17,7 +17,8 @@ import {
     addSubcollectionDocument,
     setSubcollectionDocument,
     updateDocument,
-    updateSubcollectionDocument
+    updateSubcollectionDocument,
+    getDocumentsFromSubcollection
 } from "../core/db/firestore.db";
 
 
@@ -118,4 +119,25 @@ export const updatePayment = async (eventId, userId) => {
     }
     const res = await updateSubcollectionDocument(data);
     return res;
+}
+
+
+// Servicio para obtener de fireStore documentos de una subcolección
+
+export const getRegistrationForEvent = async (eventId) => {
+
+    try {
+
+        const res = await getDocumentsFromSubcollection(COLLECTIONS.EVENTS, eventId, COLLECTIONS.REGISTRATION);
+        if (res.status) {
+            return res.data;
+        } else {
+            throw new Error(res.error);
+        }
+
+    } catch (error) {
+
+        console.error("Error fetching registrations", error);
+        
+    }
 }

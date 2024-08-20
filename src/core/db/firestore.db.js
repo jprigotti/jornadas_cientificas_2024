@@ -234,7 +234,7 @@ export const getDocumentsFromSubcollection = async (parentCollection, parentDocI
         }));
 
         response.status = true;
-        response.error = error;
+        response.data = documents;
 
     } catch (error) {
         response.status = false;

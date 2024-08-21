@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useLogin } from "./useLogin";
+import Swal from "sweetalert2"
 
 export const useSignUpForm = () => {
     const { signUpEmail } = useLogin();
@@ -28,7 +29,7 @@ export const useSignUpForm = () => {
         e.preventDefault();
         const formErrors = validate();
         if (Object.keys(formErrors).length === 0) {
-            console.log('Form data:', formData);
+            // console.log('Form data:', formData);
             const signUpEmailResponse = await signUpEmail(formData)
             console.log("signUpEmailResponse is: ", signUpEmailResponse)
         } else {

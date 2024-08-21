@@ -1,25 +1,32 @@
-import React from 'react'
-import { useProfile } from '../hooks/useProfile';
+import React from "react";
+import { useProfile } from "../hooks/useProfile";
 
 const UserProfile = ({ userId }) => {
-    const { loading, userData } = useProfile(userId)
+  const { loading, userData } = useProfile(userId);
 
-    if (loading) {
-        return <div>Loading...</div>;
-    }
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
-    return (
-        <div className='ms-40 mt-3 rounded-tl-xl bg-White flex flex-col items-center px-3'>
-            <h1>Datos del usuario:</h1>
-            <p>Nombre: {userData?.name}</p>
-            <p>Apellido: {userData?.lastName}</p>
-            <p>Cell: {userData?.cell}</p>
-            <p>Categoría: {userData?.category}</p>
-            <p>Email: {userData?.email}</p>
+  return (
+    <div className="ms-40 mt-3 rounded-tl-xl bg-White flex flex-col items-center p-10">
 
-            {/* Show more user information */}
+      <div className="w-1/4 bg-white rounded-lg shadow-lightShadowGrey">
+        <div className="w-full bg-Blue text-White p-2 font-semiBold">
+          <h1>Datos del usuario:</h1>
         </div>
-    )
-}
+        <div className="p-5">
+          <p>Nombre: {userData?.name}</p>
+          <p>Apellido: {userData?.lastName}</p>
+          <p>Cell: {userData?.cell}</p>
+          <p>Categoría: {userData?.category}</p>
+          <p>Email: {userData?.email}</p>
+        </div>
+      </div>
 
-export default UserProfile
+      {/* Show more user information */}
+    </div>
+  );
+};
+
+export default UserProfile;

@@ -5,6 +5,9 @@ import { getEventRegistrationsWithUserData, updatePayment } from "../../../servi
 
 export const useEventRegistrations = (eventId) => {
 
+    //Aqui se almacenan los datos de la query del user
+    const [registration, setRegistration] = useState([]);
+    //Aqui se almacenan los datos de todos los users registrados al evento
     const [registrations, setRegistrations] = useState([]);
     const [loading, setLoading] = useState(false);
 

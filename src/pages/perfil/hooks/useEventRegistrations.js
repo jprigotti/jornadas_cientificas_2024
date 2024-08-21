@@ -1,31 +1,40 @@
-import React, { useEffect, useState } from 'react'
-import { getRegistrationForEvent, getUserById } from '../../../services/firebase.services';
-import { useProfile } from './useProfile';
+import { useEffect } from "react";
+import { useState } from "react"
+import { getEventRegistrationsWithUserData, updatePayment } from "../../../services/firebase.services";
+
 
 export const useEventRegistrations = (eventId) => {
 
     const [registrations, setRegistrations] = useState([]);
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
 
-    useEffect(()=>{
-        const fetchRegistrations = async () => {
-            if(!eventId) return; 
-
-            try {
-                const res = await getRegistrationForEvent(eventId);
-                const userData = await 
-                console.log("Esto es res:", res)
-                setRegistrations(res);
-            } catch (error) {
-                console.log("Error fetching registrations: ", error);
-                
-            } finally {
-                setLoading(false)
-            }
-        };
-
-        fetchRegistrations();
+    useEffect(() => {
+        if (eventId) {
+            setLoading(true);
+            getEventRegistrationsWithUserData(eventId)
+                .then((data) => {
+                    setRegistrations(data);
+                    setLoading(false);
+                })
+                .catch(() => setLoading(false));
+        }
     }, [eventId]);
 
-    return { registrations, loading }
+
+    const handlePaymentStatusChange = async (userId) => {
+        setLoading(true);
+        try {
+            await updatePayment(eventId, userId);
+            const updatedRegistrations = await getEventRegistrationsWithUserData(eventId);
+            setRegistrations(updatedRegistrations);
+        } catch (error) {
+            console.error("Error updating payment status:", error);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+
+    return { registrations, loading, handlePaymentStatusChange }
+
 }

@@ -7,16 +7,16 @@ const AdminProfile = ({ userId }) => {
   const { loading, userData } = useProfile(userId)
   const { events, loading: eventsLoading } = useEvents()
   const [selectedEventId, setSelectedEventId] = useState('')
-  const { registrations, loading: registrationsLoading } = useEventRegistrations(selectedEventId)
-  
+  const { registrations, loading: registrationsLoading, handlePaymentStatusChange } = useEventRegistrations(selectedEventId)
+
   const handleEventChange = (event) => {
     setSelectedEventId(event.target.value);
-    console.log(event.target.value)
   };
 
-  if (loading) {
+  if (eventsLoading || registrationsLoading) {
     return <div>Loading...</div>;
   }
+
 
   return (
     <div className='ms-40 mt-3 rounded-tl-xl bg-White flex flex-col items-center px-3'>
@@ -39,16 +39,20 @@ const AdminProfile = ({ userId }) => {
             </thead>
             <tbody>
               {
-                registrations.map(registrations=> (
-                  <tr key={registrations.id}>
-                    <td>{registrations.userName}</td>
-                    <td>{registrations.userLastName}</td>
-                    <td>{registrations.payment === 'pending' ? "Pendiente" : "Pagado"}</td>
+                registrations.map(registration => (
+                  <tr key={registration.id}>
+                    <td>{registration.name}</td>
+                    <td>{registration.lastname}</td>
+                    <td>{registration.payment}</td>
+                    <td>
+                      {registration.payment === 'pending' && (
+                        <button className=' bg-LightBlue text-White' onClick={()=> handlePaymentStatusChange(registration.id)}>Confirmar Pago</button>
+                      )}
+                    </td>
                   </tr>
                 ))
               }
             </tbody>
-
           </table>
         )
       }

@@ -138,6 +138,27 @@ export const getRegistrationForEvent = async (eventId) => {
     } catch (error) {
 
         console.error("Error fetching registrations", error);
-        
+
     }
 }
+
+// Servicio para obtener datos del evento con usuarios y su estado de pago
+
+export const getEventRegistrationsWithUserData = async (eventId) => {
+
+    const registrations = await getRegistrationForEvent(eventId);
+    const usersData = await Promise.all(
+        registrations.map(async (registration) => {
+          const userData = await getUserById(registration.id);
+          return {
+            ...userData,
+            payment: registration.payment,
+          };
+        })
+        
+      );
+
+    return usersData;
+
+
+};

@@ -34,7 +34,7 @@ const AdminProfile = ({ userId }) => {
       </select>
 
       <div>
-        {registrations && (
+        {registrations.length > 0 ? (
           <table>
             <thead>
               <tr>
@@ -65,6 +65,8 @@ const AdminProfile = ({ userId }) => {
               ))}
             </tbody>
           </table>
+        ) : (
+          <p>No hay usuarios registrados para este evento</p>
         )}
       </div>
 

@@ -133,33 +133,38 @@ export const getEventRegistrationsWithUserData = async (eventId) => {
     if (res.status) {
       //si se encontraron documentos, extraigo del array de objetos solo los ids de los documentos
       const usersIds = res.data.map((user) => user.id);
-      //llamo a la funcion getDocumentsByIdsFromCollection de firestore.db que retorna el match de ids para una dada collection
-      const userDocs = await getDocumentsByIdsFromCollection(
-        COLLECTIONS.USERS,
-        usersIds
-      );
-      if (userDocs.status) {
-        //retorna los documentos encontrados
 
-        // Combine the registration data with the corresponding user data
-        const combinedData = res.data.map((registration) => {
-          const userData = userDocs.data.find(
-            (user) => user.id === registration.id
-          );
-          return {
-            ...registration,
-            user: userData, // Attach the user data to the registration data
-          };
-        });
+      if (usersIds.length > 0) {
+        const usersDocs = await getDocumentsByIdsFromCollection(
+          COLLECTIONS.USERS,
+          usersIds
+        );
+        if (usersDocs.status) {
+          //retorna los documentos encontrados
 
-        // Return the combined data
-        return combinedData;
+          // Combine the registration data with the corresponding user data
+          const combinedData = res.data.map((registration) => {
+            const userData = usersDocs.data.find(
+              (user) => user.id === registration.id
+            );
+            return {
+              ...registration,
+              user: userData, // Attach the user data to the registration data
+            };
+          });
 
-        // return userDocs.data;
-      } else {
-        console.log("usersDocs returned error ", userDocs.error);
-        throw new Error(userDocs.error);
+          // Return the combined data
+          return combinedData;
+
+          // return usersDocs.data;
+        } else {
+          console.log("usersDocs returned error ", usersDocs.error);
+          throw new Error(usersDocs.error);
+        }
+      }else{
+        return [];
       }
+      //llamo a la funcion getDocumentsByIdsFromCollection de firestore.db que retorna el match de ids para una dada collection
     } else {
       throw new Error(res.error);
     }

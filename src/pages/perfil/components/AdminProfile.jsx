@@ -11,15 +11,15 @@ import TableRow from '@mui/material/TableRow';
 import TextField from '@mui/material/TextField';
 import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
-import { TablePagination } from "@mui/material";
+import TablePagination from '@mui/material/TablePagination';
 
 const AdminProfile = ({ userId }) => {
   const { loading, userData } = useProfile(userId);
   const { events, loading: eventsLoading } = useEvents();
   const [selectedEventId, setSelectedEventId] = useState("");
-  const [searchTerm, setSearchTerm] = useState("")
+  const [searchTerm, setSearchTerm] = useState("");
   const [page, setPage] = useState(0);
-  const [rowsPerPage, setRowsPerPage] = useState(10)
+  const [rowsPerPage, setRowsPerPage] = useState(10);
   const {
     registrations,
     loading: registrationsLoading,
@@ -33,37 +33,37 @@ const AdminProfile = ({ userId }) => {
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
     setPage(0);
-  }
+  };
 
-  const handleChangePage = (newPage) => {
+  const handleChangePage = (event, newPage) => {
     setPage(newPage);
-  }
+  };
 
-  const handleRowsPerPage = (event) => {
+  const handleChangeRowsPerPage = (event) => {
     setRowsPerPage(parseInt(event.target.value, 10));
     setPage(0);
-  }
+  };
 
-  if (eventsLoading || registrationsLoading) {
+  if (loading || eventsLoading || registrationsLoading) {
     return <div>Loading...</div>;
   }
 
-    // Filtrar las filas según el término de búsqueda
-    const filteredRegistrations = registrations.filter((registration) =>
-      `${registration.user.name} ${registration.user.lastName}`
-        .toLowerCase()
-        .includes(searchTerm.toLowerCase())
-    );
-  
-    // Calcular el número de filas a mostrar para la paginación
-    const paginatedRegistrations = filteredRegistrations.slice(
-      page * rowsPerPage,
-      page * rowsPerPage + rowsPerPage
-    );
+  // Filtrar las filas según el término de búsqueda
+  const filteredRegistrations = registrations.filter((registration) =>
+    `${registration.user.name} ${registration.user.lastName}`
+      .toLowerCase()
+      .includes(searchTerm.toLowerCase())
+  );
+
+  // Calcular el número de filas a mostrar para la paginación
+  const paginatedRegistrations = filteredRegistrations.slice(
+    page * rowsPerPage,
+    page * rowsPerPage + rowsPerPage
+  );
 
   return (
     <div className="ms-40 mt-3 rounded-tl-xl bg-White flex flex-col items-center px-3">
-      <h2>Bienvenido {userData?.email}!</h2>
+      <h2>Bienvenido {userData?.email || "Usuario"}!</h2>
       <select onChange={handleEventChange} value={selectedEventId}>
         <option value="">Seleccionar Evento</option>
         {events?.map((event) => (
@@ -96,40 +96,32 @@ const AdminProfile = ({ userId }) => {
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {registrations.map((registration) => (
+                  {paginatedRegistrations.map((registration) => (
                     <TableRow
                       key={registration.id}
                       sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                     >
                       <TableCell component="th" scope="row" align="center">
-                        {registration.user.name}</TableCell>
-                      <TableCell component="th" scope="row" align="center">
-                        {registration.user.lastName}</TableCell>
-                      <TableCell component="th" scope="row" align="center">
-                        {
-                          registration.payment === "pending" ?
-                            (
-                              "Pendiente"
-                            ) : (
-                              "Pagado"
-                            )
-                        }
+                        {registration.user.name}
                       </TableCell>
-                      <TableCell component="th" scope="row" align="center">
-                        {
-                          registration.payment === "pending" && (
-                            <Button
-                              variant="contained"
-                              size="small"
-                              onClick={() => handlePaymentStatusChange(registration.id)}
-                            >
-                              Confirmar Pago
-                            </Button>
-                          )
-                        }
+                      <TableCell align="center">
+                        {registration.user.lastName}
+                      </TableCell>
+                      <TableCell align="center">
+                        {registration.payment === "pending" ? "Pendiente" : "Pagado"}
+                      </TableCell>
+                      <TableCell align="center">
+                        {registration.payment === "pending" && (
+                          <Button
+                            variant="contained"
+                            size="small"
+                            onClick={() => handlePaymentStatusChange(registration.id)}
+                          >
+                            Confirmar Pago
+                          </Button>
+                        )}
                       </TableCell>
                     </TableRow>
-
                   ))}
                 </TableBody>
               </Table>
@@ -142,19 +134,16 @@ const AdminProfile = ({ userId }) => {
               onPageChange={handleChangePage}
               rowsPerPage={rowsPerPage}
               labelRowsPerPage="Seleccione Filas por página"
-              onRowsPerPageChange={handleRowsPerPage}
-            >
-            </TablePagination>
-
+              onRowsPerPageChange={handleChangeRowsPerPage}
+            />
           </>
         ) : (
           <p>No hay usuarios registrados para este evento</p>
         )}
       </div>
-
-      {/* Colocar un formulario */}
     </div>
   );
 };
 
 export default AdminProfile;
+

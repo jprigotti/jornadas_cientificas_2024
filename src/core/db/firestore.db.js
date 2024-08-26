@@ -6,7 +6,9 @@ import {
     setDoc,
     doc,
     getDoc,
-    updateDoc
+    updateDoc,
+    query,
+    where
 } from "firebase/firestore";
 
 
@@ -228,6 +230,37 @@ export const getDocumentsFromSubcollection = async (parentCollection, parentDocI
 
         //Obtener documentos de la subcollección
         const querySnapshot = await getDocs(childCollectionRef);
+        const documents = querySnapshot.docs.map(doc => ({
+            id: doc.id,
+            ...doc.data()
+        }));
+
+        response.status = true;
+        response.data = documents;
+
+    } catch (error) {
+        response.status = false;
+        response.error = error;
+    }
+
+    return response;
+}
+
+//Función para obtener documentos de una subcolección
+
+export const getDocumentsByIdsFromCollection = async (docsCollection, docIds) => {
+
+    const response = {
+        status: null,
+        error: null,
+        data: []
+    }
+
+    try {
+        //Referencia al documento principal
+        const docsRef = collection(db, docsCollection);
+        const docsQuery = query(docsRef, where('__name__', 'in', docIds))
+        const querySnapshot = await getDocs(docsQuery);
         const documents = querySnapshot.docs.map(doc => ({
             id: doc.id,
             ...doc.data()

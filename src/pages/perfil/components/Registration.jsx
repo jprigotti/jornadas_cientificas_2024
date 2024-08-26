@@ -1,42 +1,47 @@
-import { useRegistration } from '../hooks/useRegistration'
+import { useRegistration } from "../hooks/useRegistration";
 
 const Registration = ({ userId }) => {
-    const { loading,
-        userRegistration,
-        handleRegistration,
-        handlePayment } = useRegistration(userId);
+  const { loading, userRegistration, handleRegistration, handlePayment } =
+    useRegistration(userId);
 
-    if (loading) {
-        return <div>Loading...</div>;
-    }
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
-    return (
-        <div className='ms-40  bg-White flex flex-col items-center px-3'>
-            <div className='mb-5'>
-                {userRegistration ?
-                    (
-                        <div>
-                            <p>Inscripcion: {userRegistration?.status}</p>
-                            <p>Pago del arancel: {userRegistration?.payment}</p>
-                        </div>
-                    ) : (
-                        <div>
-                            <button onClick={() => handleRegistration(userId)}>
-                                Inscribirme
-                            </button>
-                        </div>
-                    )}
-            </div>
-
-            <div className='flex flex-col items-start'>
-                <p>Para poner en el panel del Admin</p>
-                {userRegistration?.payment == "paid"
-                    ? <p>Pago del arancel: pagado</p>
-                    : <button onClick={() => handlePayment(userId)}>Confirmar pago</button>
-                }
-            </div>
+  return (
+    <div className="ms-40 bg-White flex flex-col items-center px-3">
+      <div className="w-1/4 bg-white rounded-lg shadow-lightShadowGrey">
+        <div className="w-full bg-Blue text-White p-2 font-semiBold">
+          <h1>Jornadas Científicas 2024</h1>
         </div>
-    )
-}
+        <div className="p-5">
+          {userRegistration ? (
+            <div>
+              <p>Inscripcion: Registrado</p>
+              <p>Pago del arancel: {userRegistration?.payment == "pending" ? "Pendiente - abonar en AMM": "Pagado"}</p>
+            </div>
+          ) : (
+            <div className="flex justify-center items-center">
+              <button
+                className="text-lg font-semiBold px-5 py-2 bg-LightViolet text-White rounded-md hover:bg-Violet hover:shadow-lg transition duration-300 ease-in-out"
+                onClick={() => handleRegistration(userId)}
+              >
+                Inscribirme
+              </button>
+            </div>
+          )}
+        </div>
+      </div>
+      <div className="flex flex-col items-start">
+        <p>Para poner en el panel del Admin</p>
+        {userRegistration?.payment == "paid" ? (
+          <p>Pago del arancel: pagado</p>
+        ) : (
+          <button onClick={() => handlePayment(userId)}>Confirmar pago</button>
+        )}
+      </div>
+    </div>
+  );
+};
 
-export default Registration
+export default Registration;

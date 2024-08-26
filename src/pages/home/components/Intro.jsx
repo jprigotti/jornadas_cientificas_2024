@@ -4,65 +4,41 @@ import CamaraIcon from "../../../components/navbar/components/svgIcons/CamaraIco
 
 const Intro = () => {
   return (
-    <section className="ms-40 bg-White flex flex-col items-center mt-3 rounded-tl-xl">
+    <section className="laptop1:ms-40 bg-White flex flex-col items-center mt-3 rounded-tl-xl">
       <div className="container outer-container">
         <div className="bg-PauGreenLight flex flex-col items-center rounded-tl-xl rounded-br-xl">
           <h2 className="text-3xl text-White font-bold text-center p-5">
             Mensaje de la presidenta
           </h2>
         </div>
-        <div className="inner-container">
-          <div class="space-y-4 pb-10">
+        <div className="w-full laptop1:w-3/4 m-auto inner-container">
+          <div class="font-poppins space-y-4 pb-10">
             <p className="text-indent indent-6 text-justify">
-              Les damos la bienvenida a esta nueva edición de las Jornadas
-              Científicas del Hospital Santojanni y CESACs del Area
-              Programática.
+              Les damos la bienvenida a esta nueva edición de las jornadas
+              científicas del Hospital Santojanni y CESACs del área
+              programática.
             </p>
             <p className="text-indent indent-6 text-justify">
-              Este año nuestro lema nos interpela para pensar como desafío la
-              calidad de atención de los pacientes. Esto no es posible sin
-              incorporar los avances tecnológicos, el trabajo interdisciplinario
-              y la accesibilidad a la salud.
+              Nos reunimos con el propósito de compartir conocimientos, discutir
+              avances y explorar nuevas perspectivas en el campo de la Medicina
+              y la Salud Pública. Estas jornadas son una oportunidad para
+              fortalecer la colaboración entre profesionales de la salud,
+              investigadores y académicos, con el objetivo de mejorar los
+              estándares de atención y promover la innovación en nuestros
+              procesos.
             </p>
             <p className="text-indent indent-6 text-justify">
-              Este espacio no solo nos debería permitir el intercambio de
-              saberes, sino es el lugar donde debemos plantearnos si todos
-              hablamos de lo mismo en términos de Salud y Calidad de Atención.
-              Sin lugar a dudas habrá perspectivas diferentes, pero el eje de
-              discusión debería estar centrado en el paciente, en términos del
-              derecho a una Salud de Calidad.
-            </p>
-
-            <p className="text-indent indent-6 text-justify">
-              También estas jornadas nos propusieron un cambio, donde los
-              profesionales más jovenes, muchos aún en formación, son
-              protagonistas fundamentales, es por ello que participan de manera
-              conjunta y forman parte del comité organizador de las mismas.
-              Debemos decir que esto ha sido una experiencia inspiradora y muy
-              motivadora, nos contagiaron su entusiasmo y han sido un gran motor
-              para impulsar ideas, nuevas perspectivas y desafíos. Siguiendo
-              esta línea el Comité Científico este año ha creado un premio para
-              la producción científica destinado exclusivamiente a los
-              profesionales en formación, el premio Dr. Mario Ripoli, en honor a
-              quien en vida dedicara gran parte de su carrera profesional a los
-              residentes y concurrentes.
+              Estoy segura de que estos días estarán llenos de intercambios
+              enriquecedores y descubrimientos valiosos que contribuirán
+              significativamente a nuestro saber.
             </p>
 
             <p className="text-indent indent-6 text-justify">
-              Asimismo, queremos este año darle un lugar preponderante a los
-              trabajos libres, por ello hemos decidido otorgar una distinción al
-              mejor trabajo presentado.
-            </p>
-
-            <p className="text-indent indent-6 text-justify">
-              Finalmente creemos muy importante la participación de todos y
-              todas los profesionales de la salud, sin ello difícilmente podamos
-              generar cambios y nuevas propuestas, les invitamos a ser parte de
-              este encuentro.
+              Muchas gracias y bienvenidos.
             </p>
           </div>
 
-          <div className="flex items-center flex justify-center pb-20">
+          <div className="flex items-center flex justify-center tablet:justify-start flex-wrap pb-20">
             <img
               className="rounded-full w-[150px]"
               src="/images/presidenta.png"

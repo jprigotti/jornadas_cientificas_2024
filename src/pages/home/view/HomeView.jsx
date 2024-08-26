@@ -13,11 +13,11 @@ const HomeView = () => {
     <div>
       <Banner />
       <Intro />
-      <Autoridades />
+      {/* <Autoridades />
       <Invitados />
       <Conferencias />
       <Streaming />
-      <Colaboran />
+      <Colaboran /> */}
     </div>
   )
 }

@@ -4,7 +4,7 @@ import { useLogin } from "../hooks/useLogin";
 const SignInForm = () => {
   const { signInEmail } = useLogin();
   return (
-    <div className="w-1/4 bg-Blue rounded-xl p-3">
+    <div className="w-full bg-Blue rounded-xl p-3 tablet:w-1/2 laptop1:w-1/4">
       <form onSubmit={signInEmail}>
         <div>
           <input

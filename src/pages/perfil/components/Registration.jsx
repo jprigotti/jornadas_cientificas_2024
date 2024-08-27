@@ -9,8 +9,8 @@ const Registration = ({ userId }) => {
   }
 
   return (
-    <div className="ms-40 bg-White flex flex-col items-center px-3">
-      <div className="w-1/4 bg-white rounded-lg shadow-lightShadowGrey">
+    <div className="laptop1:ms-40 bg-White flex flex-col items-center p-10">
+      <div className="w-full bg-white rounded-lg shadow-lightShadowGrey">
         <div className="w-full bg-Blue text-White p-2 font-semiBold">
           <h1>Jornadas Científicas 2024</h1>
         </div>

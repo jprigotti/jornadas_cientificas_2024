@@ -9,9 +9,9 @@ const UserProfile = ({ userId }) => {
   }
 
   return (
-    <div className="ms-40 mt-3 rounded-tl-xl bg-White flex flex-col items-center p-10">
+    <div className="laptop1:ms-40 mt-3 rounded-tl-xl bg-White flex flex-col items-center p-10">
 
-      <div className="w-1/4 bg-white rounded-lg shadow-lightShadowGrey">
+      <div className="w-full bg-white rounded-lg shadow-lightShadowGrey">
         <div className="w-full bg-Blue text-White p-2 font-semiBold">
           <h1>Datos del usuario:</h1>
         </div>

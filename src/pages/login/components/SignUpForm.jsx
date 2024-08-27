@@ -7,7 +7,7 @@ const SignUpForm = () => {
   const { formData, handleChange, handleSubmit, errors } = useSignUpForm();
 
   return (
-    <div className="w-1/4 bg-Blue rounded-xl p-3">
+    <div className="w-full bg-Blue rounded-xl p-3 tablet:w-1/2 laptop1:w-1/4">
       <form onSubmit={handleSubmit}>
         <div className="flex flex-col mb-5">
           <label className="text-White pb-2">Nombre:</label>

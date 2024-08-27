@@ -4,21 +4,18 @@ import CamaraIcon from "../../../components/navbar/components/svgIcons/CamaraIco
 
 const Intro = () => {
   return (
-    <section className="laptop1:ms-40 bg-White flex flex-col items-center mt-3 rounded-tl-xl">
-      <div className="container outer-container">
-        <div className="bg-PauGreenLight flex flex-col items-center rounded-tl-xl rounded-br-xl">
-          <h2 className="text-3xl text-White font-bold text-center p-5">
-            Mensaje de la presidenta
-          </h2>
-        </div>
-        <div className="w-full laptop1:w-3/4 m-auto inner-container">
+    <section className=" bg-White rounded-tl-xl mt-3 laptop1:ms-40">
+      <div className="px-2 pt-10">
+        <h2 className="main-title text-center py-5">Mensaje de la presidenta</h2>
+
+        <div className="w-full laptop1:w-3/4 m-auto">
           <div class="font-poppins space-y-4 pb-10">
-            <p className="text-indent indent-6 text-justify">
+            <p className="text-indent indent-6 text-justify font-poppins text-[14px] laptop1:text-[18px]">
               Les damos la bienvenida a esta nueva edición de las jornadas
               científicas del Hospital Santojanni y CESACs del área
               programática.
             </p>
-            <p className="text-indent indent-6 text-justify">
+            <p className="text-indent indent-6 text-justify font-poppins text-[14px] laptop1:text-[18px]">
               Nos reunimos con el propósito de compartir conocimientos, discutir
               avances y explorar nuevas perspectivas en el campo de la Medicina
               y la Salud Pública. Estas jornadas son una oportunidad para
@@ -27,13 +24,13 @@ const Intro = () => {
               estándares de atención y promover la innovación en nuestros
               procesos.
             </p>
-            <p className="text-indent indent-6 text-justify">
+            <p className="text-indent indent-6 text-justify font-poppins text-[14px] laptop1:text-[18px]">
               Estoy segura de que estos días estarán llenos de intercambios
               enriquecedores y descubrimientos valiosos que contribuirán
               significativamente a nuestro saber.
             </p>
 
-            <p className="text-indent indent-6 text-justify">
+            <p className="text-indent indent-6 text-justify font-poppins text-[14px] laptop1:text-[18px]">
               Muchas gracias y bienvenidos.
             </p>
           </div>
@@ -52,7 +49,7 @@ const Intro = () => {
           </div>
 
           <div className="flex items-center flex justify-center">
-            <button className="flex items-center text-xl font-bold px-10 py-5 bg-LightViolet text-White rounded-md hover:bg-Violet hover:shadow-lg transition duration-300 ease-in-out">
+            <button className="flex items-center text-xl font-bold px-10 py-5 bg-LightViolet text-White rounded-full hover:bg-Violet hover:shadow-lg transition duration-300 ease-in-out">
               <span className="pe-5">
                 <CamaraIcon width="25px" height="25px" />
               </span>

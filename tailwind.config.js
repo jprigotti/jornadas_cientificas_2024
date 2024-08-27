@@ -25,7 +25,11 @@ export default {
       'PauBaseComponents_bkp': '#EAEAEA',
       'PauBaseComponents': '#FFF',
       'PauBackground': '#d2d2d2',
-      'PauBackground_bkp': '#858585'
+      'PauBackground_bkp': '#858585',
+      'TealGreen_1': "#6DA3A8",
+      'TealGreen_2': "#82B3B7",
+      'TealGreen_3': "#97C3C6",
+      'TealGreen_4': "#A3CDD2",
 
     },
     fontFamily: {

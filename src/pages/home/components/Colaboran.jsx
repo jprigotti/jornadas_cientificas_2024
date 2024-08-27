@@ -9,20 +9,20 @@ const colaboradores = [
   { title: '', image: '/images/colaboradores/laboratorio_4.jpg' },
   { title: '', image: '/images/colaboradores/laboratorio_5.jpg' },
   { title: '', image: '/images/colaboradores/laboratorio_6.jpg' },
-  { title: '', image: '/images/colaboradores/laboratorio_7.jpg' },
+  // { title: '', image: '/images/colaboradores/laboratorio_7.jpg' },
   { title: '', image: '/images/colaboradores/laboratorio_8.jpg' },
-  { title: '', image: '/images/colaboradores/laboratorio_9.jpg' },
+  // { title: '', image: '/images/colaboradores/laboratorio_9.jpg' },
 ];
 
 const Colaboran = () => {
   return (
-    <section className="ms-40 bg-White flex flex-col items-center">
-      <div className='container outer-container'>
-        <div className='bg-PauGreenLight flex flex-col items-center rounded-tl-xl rounded-br-xl mb-5'>
-          <h2 className="text-3xl text-White font-bold text-center p-5">Colaboran con las Jornadas</h2>
-        </div>
+    <section className="bg-White py-10 laptop1:ms-40 ">
+      <div className='flex flex-col items-center px-3'>
+      <h2 className="main-title text-center pb-10 relative z-10">
+          Colaboran con las jornadas
+        </h2>
 
-        <div className="inner-container grid grid-cols-1 sm:grid-cols-6 gap-6  mx-auto">
+        <div className="inner-container grid grid-cols-2 tablet:grid-cols-3 laptop1:grid-cols-6 gap-6  mx-auto">
           {colaboradores.map((colaborador, index) => (
             <div key={index} className="bg-white rounded-lg p-5 shadow-lightShadowGrey hover:shadow-darkShadowGreen transition-shadow duration-200 flex flex-col justify-center items-center">
               <h3 className="text-xl font-semibold">{colaborador.title}</h3>

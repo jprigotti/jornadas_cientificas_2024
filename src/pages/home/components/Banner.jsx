@@ -32,22 +32,22 @@ const Banner = () => {
 
       {/* Titles */}
       <div className="relative flex flex-col items-center justify-center h-full">
-        <h1 className="text-center text-White text-6xl font-bold">
+        <h1 className="text-center text-White  text-4xl font-bold laptop1:text-6xl">
           XXXIX JORNADAS
         </h1>
-        <h1 className="text-center text-White text-6xl font-bold">
+        <h1 className="text-center text-White  text-4xl font-bold laptop1:text-6xl">
           CIENTIFICAS
         </h1>
-        <h1 className="text-center text-White text-5xl font-semibold pb-10">
+        <h1 className="text-center text-White text-3xl font-semibold pb-10 laptop1:text-5xl">
           HOSPITAL SANTOJANNI
         </h1>
         <h2 className="text-White text-3xl md:text-3xl font-bold pb-10">
           8 al 15 de noviembre
         </h2>
-        <h2 className="text-White text-2xl md:text-5xl font-bold">
+        <h2 className="text-White text-center text-2xl  font-bold laptop1:text-5xl">
           Estrategias para abordar los retos actuales en salud:
         </h2>
-        <h2 className="text-White text-2xl md:text-5xl font-bold mb-10">
+        <h2 className="text-White text-2xl  font-bold mb-10 laptop1:text-5xl">
           Rol del sistema público
         </h2>
         {/* Countdown box */}
@@ -72,7 +72,7 @@ const Banner = () => {
 
         <div>
           <button
-            className="text-xl font-bold px-10 py-5 bg-LightViolet text-White rounded-md hover:bg-Violet hover:shadow-lg transition duration-300 ease-in-out"
+            className="text-xl font-bold px-10 py-5 bg-LightViolet text-White rounded-full hover:bg-Violet hover:shadow-lg transition duration-300 ease-in-out"
             onClick={handleInscripcion}
           >
             Incribirme

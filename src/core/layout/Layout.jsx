@@ -18,7 +18,7 @@ const Layout = ({ children }) => {
 
       {/* Main content area (children and FooterView) */}
       <div className="flex-1 flex flex-col">
-        <div className="flex-grow">{children}</div>
+        <div className="">{children}</div>
         <FooterView />
       </div>
     </div>

@@ -8,16 +8,17 @@ import {
 import Swal from "sweetalert2";
 
 export const useLogin = () => {
-  const [isRegistered, setIsRegistered] = useState(true);
   const navigate = useNavigate();
+  const [isRegistered, setIsRegistered] = useState(true);
+  const [showPassword, setShowPassword] = useState(false);
 
+  const togglePasswordVisibility = () => {
+    setShowPassword((prevShowPassword) => !prevShowPassword);
+  };
+
+  
   const signUpEmail = async (formData) => {
-    // event.preventDefault();
-
     try {
-      // const form = new FormData(event.target)
-      // const { name, lastName, cell, email, password } = Object.fromEntries(form.entries());
-      // console.log("Form input data: ", name, lastName, cell, email, password);
       const responseSignUp = await signUpWithEmail(
         formData.email,
         formData.password
@@ -27,6 +28,7 @@ export const useLogin = () => {
         uid: responseSignUp.user.uid,
         name: formData.name,
         lastName: formData.lastName,
+        dni: formData.dni,
         cell: formData.cell,
         category: formData.category,
         email: formData.email,
@@ -58,7 +60,7 @@ export const useLogin = () => {
       });
       navigate("/perfil");
     } catch (error) {
-        console.log(error.code)
+      console.log(error.code);
       let customMessage;
       switch (error.code) {
         case "auth/invalid-credential":
@@ -95,5 +97,7 @@ export const useLogin = () => {
     setIsRegistered,
     signUpEmail,
     signInEmail,
+    showPassword,
+    togglePasswordVisibility,
   };
 };

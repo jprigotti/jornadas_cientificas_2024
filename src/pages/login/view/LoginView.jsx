@@ -27,7 +27,7 @@ const LoginView = () => {
           <span>
             Tenes una cuenta?{" "}
             <button
-              className="pb-3"
+              className="pt-3"
               onClick={() => setIsRegistered(!isRegistered)}
             >
               Click aquí para ingresar.

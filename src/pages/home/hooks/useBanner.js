@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
-export const useCountdown = () => {
+import Swal from "sweetalert2";
+
+export const useBanner = () => {
   const COUNTDOWN_TARGET = new Date("2024-11-08T08:00:00");
 
   const getTimeLeft = () => {
@@ -27,7 +29,26 @@ export const useCountdown = () => {
     };
   }, []);
 
+  const handleClickAranceles = () => {
+    Swal.fire({
+      title: `Aranceles`,
+      html: `
+      <div class="flex flex-col items-start ps-10">
+        <p class="pe-5 pb-3">Médicos: <span></span>15.000 pesos</p>
+        <p class="pe-5 pb-3">Residentes: <span></span>10.000 pesos</p>
+        <p class="pe-5">Estudiantes: <span></span>sin costo</p>
+      </div>
+    `,
+      background: "#FAFAFA",
+      color: "#025951",
+      width: "36rem",
+      confirmButtonText: "Aceptar",
+      confirmButtonColor: "#038C7F",
+    });
+  };
+
   return {
     timeLeft,
+    handleClickAranceles,
   };
 };

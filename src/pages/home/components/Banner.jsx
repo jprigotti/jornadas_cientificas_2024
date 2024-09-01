@@ -1,14 +1,17 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { useCountdown } from "../hooks/useCountdown";
+import { useBanner } from "../hooks/useBanner";
+
 
 const Banner = () => {
   const navigate = useNavigate();
-  const { timeLeft } = useCountdown();
+  const { timeLeft, handleClickAranceles } = useBanner();
 
   const handleInscripcion = () => {
     navigate("/perfil");
   };
+
+
 
   return (
     <div className="relative h-screen w-full laptop1:ps-40">
@@ -70,9 +73,15 @@ const Banner = () => {
           </div>
         </div>
 
-        <div>
+        <div className="gap-y-5 flex flex-col items-center laptop1:flex-row laptop1:justify-center laptop1:space-x-10">
           <button
-            className="text-xl font-bold px-10 py-5 bg-LightViolet text-White rounded-full hover:bg-Violet hover:shadow-lg transition duration-300 ease-in-out"
+            className="w-[250px] text-xl font-bold px-5 py-3 bg-LightBlue text-White rounded-full hover:bg-Blue hover:shadow-lg transition duration-300 ease-in-out"
+            onClick={handleClickAranceles}
+          >
+            Aranceles
+          </button>
+          <button
+            className="w-[250px] text-xl font-bold px-5 py-3 bg-LightViolet text-White rounded-full hover:bg-Violet hover:shadow-lg transition duration-300 ease-in-out"
             onClick={handleInscripcion}
           >
             Incribirme

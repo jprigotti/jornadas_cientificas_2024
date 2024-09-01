@@ -18,18 +18,17 @@ const Autoridades = () => {
   ];
 
   return (
-    <section className="bg-White py-10 laptop1:ms-40 relative">
+    <section className="bg-White pt-36 pb-10 laptop1:ms-40 relative">
       <div
         className="flex flex-col items-center px-2 pt-10 pb-24 relative"
         style={{
           backgroundImage: "url('/images/autoridades_background.png')",
           backgroundSize: "cover",
-          backgroundPosition: "top",
+          backgroundPosition: "right top",
         }}
       >
         {/* Transparent Layer */}
         <div className="absolute inset-0 bg-Black opacity-50"></div>
-
         <h2 className="main-title text-White text-center pb-10 relative z-10">
           Autoridades
         </h2>

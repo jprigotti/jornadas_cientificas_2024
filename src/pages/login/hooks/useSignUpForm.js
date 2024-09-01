@@ -9,6 +9,7 @@ export const useSignUpForm = () => {
     const [formData, setFormData] = useState({
         name: '',
         lastName: '',
+        dni: '',
         cell: '',
         email: '',
         category: '',
@@ -49,7 +50,10 @@ export const useSignUpForm = () => {
             formErrors.lastName = 'Apellido es requerido';
         }
         if (!formData.cell) {
-            formErrors.cell = 'cell es requerido';
+            formErrors.dni = 'DNI es requerido';
+        }
+        if (!formData.cell) {
+            formErrors.cell = 'Celular es requerido';
         }
 
         if (!formData.email) {

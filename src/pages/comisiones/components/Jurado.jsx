@@ -1,12 +1,11 @@
 import React from "react";
 
-const Autoridades = () => {
+const Jurado = () => {
   return (
-    <div className="rounded-lg m-5 shadow-lightShadowGrey mt-16">
+    <div className="rounded-lg m-5 shadow-lightShadowGrey mt-24">
       <p className="rounded-lg text-center pt-3 font-semiBold text-lg bg-gradient-to-b from-PauBackground via-White to-White text-white">
         Autoridades
       </p>
-
       <div className="p-3">
         <p className="font-semiBold">
           Presidenta: <span className="font-regular">Dra. María Vivona</span>
@@ -34,4 +33,4 @@ const Autoridades = () => {
   );
 };
 
-export default Autoridades;
+export default Jurado;

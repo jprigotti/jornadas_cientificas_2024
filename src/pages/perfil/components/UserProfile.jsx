@@ -18,6 +18,7 @@ const UserProfile = ({ userId }) => {
         <div className="p-5">
           <p>Nombre: {userData?.name}</p>
           <p>Apellido: {userData?.lastName}</p>
+          <p>DNI: {userData?.dni}</p>
           <p>Cell: {userData?.cell}</p>
           <p>Categoría: {userData?.category}</p>
           <p>Email: {userData?.email}</p>

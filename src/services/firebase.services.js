@@ -42,6 +42,7 @@ export const saveUserInDB = async (user) => {
   const userDB = {
     name: user.name,
     lastName: user.lastName,
+    dni: user.dni,
     cell: user.cell,
     email: user.email,
     category: user.category,

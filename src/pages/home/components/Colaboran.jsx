@@ -22,7 +22,7 @@ const Colaboran = () => {
           Colaboran con las jornadas
         </h2>
 
-        <div className="inner-container grid grid-cols-2 tablet:grid-cols-3 laptop1:grid-cols-6 gap-6  mx-auto">
+        <div className="inner-container grid grid-cols-2 tablet:grid-cols-3 laptop1:grid-cols-6 laptop2:w-3/4 gap-6 mx-auto">
           {colaboradores.map((colaborador, index) => (
             <div key={index} className="bg-white rounded-lg p-5 shadow-lightShadowGrey hover:shadow-darkShadowGreen transition-shadow duration-200 flex flex-col justify-center items-center">
               <h3 className="text-xl font-semibold">{colaborador.title}</h3>

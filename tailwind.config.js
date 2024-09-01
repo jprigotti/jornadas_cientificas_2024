@@ -8,8 +8,8 @@ export default {
     colors: {
       'Blue': '#005996',
       'LightBlue': '#008abc',
-      'Green': '#00aab2',
-      'LightGreen': '#a9d6c5',
+      'Green': '#00797E',
+      'LightGreen': '#33BBC1',
       'Violet': '#584ba0',
       'LightViolet': '#7b4ba0',
       'Black': '#000',
@@ -20,8 +20,6 @@ export default {
       'PauGreenDark': '#00797E',
       'PauGreenLight': '#33BBC1',
       'PauGreenUltraLight': '#E6F7F7',
-      // 'PauGreenDark': '#00797E',
-      // 'PauGreenLight': '#33BBC1',
       'PauBaseComponents_bkp': '#EAEAEA',
       'PauBaseComponents': '#FFF',
       'PauBackground': '#d2d2d2',
@@ -30,6 +28,8 @@ export default {
       'TealGreen_2': "#82B3B7",
       'TealGreen_3': "#97C3C6",
       'TealGreen_4': "#A3CDD2",
+      'CardGrayLight':'#EAEAEA',
+      'CardGrayDark':'##4F4F4F'
 
     },
     fontFamily: {

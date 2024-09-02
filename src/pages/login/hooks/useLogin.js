@@ -16,28 +16,45 @@ export const useLogin = () => {
     setShowPassword((prevShowPassword) => !prevShowPassword);
   };
 
-  
+  /**
+   * signUpEmail recibo el formData y ejecuta dos acciones:
+   * 1. crea el user en firebase
+   * 2. crea el user en firestore
+   */
   const signUpEmail = async (formData) => {
+    const response = {
+      status: null,
+      error: null,
+      data: null,
+    };
+
     try {
+      //Creamos el user en Firebase
       const responseSignUp = await signUpWithEmail(
         formData.email,
         formData.password
       );
-      console.log("Registration response: ", responseSignUp.user);
-      const user = {
-        uid: responseSignUp.user.uid,
-        name: formData.name,
-        lastName: formData.lastName,
-        dni: formData.dni,
-        cell: formData.cell,
-        category: formData.category,
-        email: formData.email,
-      };
-      const responseSaveUserDB = await saveUserInDB(user);
-      console.log("Save user in DB response: ", responseSaveUserDB);
+      // console.log("Registration response: ", responseSignUp.user);
+
+      const user = { ...formData, role: "user" };
+      const responseSaveUserInDB = await saveUserInDB(
+        responseSignUp.user.uid,
+        user
+      );
+      // console.log("Save user in DB response: ", responseSaveUserInDB);
+      if (responseSaveUserInDB.status) {
+        response.status = true;
+        response.data = responseSignUp.user.email;
+      } else {
+        response.status = false;
+        response.error = responseSaveUserInDB.error;
+      }
     } catch (error) {
-      console.log("Registration error: ", error);
+      // console.log("Registration error: ", error);
+      response.status = false;
+      response.error = error;
     }
+    return response;
   };
 
   const signInEmail = async (event) => {
@@ -47,18 +64,30 @@ export const useLogin = () => {
       const form = new FormData(event.target);
       const { email, password } = Object.fromEntries(form.entries());
       const response = await signInWithEmail(email, password);
-      console.log("signInWithEmail response is: ", response);
-      Swal.fire({
-        title: `Bienvenido ${response.user.email} !`,
-        background: "#FAFAFA",
-        color: "#025951",
-        iconColor: "#025951",
-        icon: "success",
-        width: "36em",
-        confirmButtonText: "Aceptar",
-        confirmButtonColor: "#038C7F",
-      });
-      navigate("/perfil");
+      // console.log("Email verified? : ", response.user.emailVerified);
+      if (response.user.emailVerified) {
+        Swal.fire({
+          title: `Bienvenido ${response.user.email} !`,
+          background: "#FAFAFA",
+          color: "#025951",
+          iconColor: "#025951",
+          icon: "success",
+          confirmButtonText: "Aceptar",
+          confirmButtonColor: "#038C7F",
+        });
+        navigate("/perfil");
+      } else {
+        Swal.fire({
+          title: `Atención!`,
+          text: `Su email aún no ha sido verificado. Revise por favor su correo electronico ${response.user.email}, bandeja de entrada o correo no deseado (spam)`,
+          background: "#FAFAFA",
+          color: "#025951",
+          iconColor: "#FFA500",
+          icon: "warning",
+          confirmButtonText: "Aceptar",
+          confirmButtonColor: "#038C7F",
+        });
+      }
     } catch (error) {
       console.log(error.code);
       let customMessage;

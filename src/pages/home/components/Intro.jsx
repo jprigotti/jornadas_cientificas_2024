@@ -8,9 +8,12 @@ const Intro = () => {
     Swal.fire({
       title: "Palabras de bienvenida",
       html: `
-      <div style="width: 800; display: flex; justify-content: center;">
-      <iframe width="600" height="350" src="https://www.youtube.com/embed/sqkDnY4ygKs" title="XXXIX Jornadas Científicas Hospital Santojanni | Palabras de bienvenida - 2024" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      </div>      
+      <div style="width: 100%; display: flex; justify-content: center;">
+        <iframe style="width: 100%; height: 120%;" src="https://www.youtube.com/embed/sqkDnY4ygKs" 
+        title="XXXIX Jornadas Científicas Hospital Santojanni | Palabras de bienvenida - 2024" 
+        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
 `,
       showCloseButton: true,
       focusConfirm: false,

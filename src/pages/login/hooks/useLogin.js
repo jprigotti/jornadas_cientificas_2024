@@ -64,30 +64,41 @@ export const useLogin = () => {
       const form = new FormData(event.target);
       const { email, password } = Object.fromEntries(form.entries());
       const response = await signInWithEmail(email, password);
-      // console.log("Email verified? : ", response.user.emailVerified);
-      if (response.user.emailVerified) {
-        Swal.fire({
-          title: `Bienvenido ${response.user.email} !`,
-          background: "#FAFAFA",
-          color: "#025951",
-          iconColor: "#025951",
-          icon: "success",
-          confirmButtonText: "Aceptar",
-          confirmButtonColor: "#038C7F",
-        });
-        navigate("/perfil");
-      } else {
-        Swal.fire({
-          title: `Atención!`,
-          text: `Su email aún no ha sido verificado. Revise por favor su correo electronico ${response.user.email}, bandeja de entrada o correo no deseado (spam)`,
-          background: "#FAFAFA",
-          color: "#025951",
-          iconColor: "#FFA500",
-          icon: "warning",
-          confirmButtonText: "Aceptar",
-          confirmButtonColor: "#038C7F",
-        });
-      }
+
+      Swal.fire({
+        title: `Bienvenido ${response.user.email} !`,
+        background: "#FAFAFA",
+        color: "#025951",
+        iconColor: "#025951",
+        icon: "success",
+        confirmButtonText: "Aceptar",
+        confirmButtonColor: "#038C7F",
+      });
+      navigate("/perfil");
+
+      // if (response.user.emailVerified) {
+      //   Swal.fire({
+      //     title: `Bienvenido ${response.user.email} !`,
+      //     background: "#FAFAFA",
+      //     color: "#025951",
+      //     iconColor: "#025951",
+      //     icon: "success",
+      //     confirmButtonText: "Aceptar",
+      //     confirmButtonColor: "#038C7F",
+      //   });
+      //   navigate("/perfil");
+      // } else {
+      //   Swal.fire({
+      //     title: `Atención!`,
+      //     text: `Su email aún no ha sido verificado. Revise por favor su correo electronico ${response.user.email}, bandeja de entrada o correo no deseado (spam)`,
+      //     background: "#FAFAFA",
+      //     color: "#025951",
+      //     iconColor: "#FFA500",
+      //     icon: "warning",
+      //     confirmButtonText: "Aceptar",
+      //     confirmButtonColor: "#038C7F",
+      //   });
+      // }
     } catch (error) {
       console.log(error.code);
       let customMessage;

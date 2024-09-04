@@ -10,29 +10,41 @@ const LoginView = () => {
   return (
     <div>
       <PagesBannerView title="Ingresar" />
-      <section className=" mt-3 py-10 px-2 rounded-tl-xl bg-White flex flex-col items-center laptop1:ms-40">
-        {isRegistered ? <SignInForm /> : <SignUpForm />}
-
+      <section className="mt-3 py-10 px-5 rounded-tl-xl bg-White flex flex-col items-center laptop1:ms-40">
         {isRegistered ? (
-          <span>
-            No tenes cuenta?
-            <button
-              className="ps-1 pt-3"
-              onClick={() => setIsRegistered(!isRegistered)}
-            >
-              Click aquí para registrarse
-            </button>
-          </span>
+          <div className="w-full">
+            <SignInForm />
+            <div className="pt-5">
+              <p className="text-center">
+                No tenes cuenta?
+                <span>
+                  <button
+                    className="ps-2"
+                    onClick={() => setIsRegistered(!isRegistered)}
+                  >
+                    Click <strong>aquí</strong> para registrarse
+                  </button>
+                </span>
+              </p>
+            </div>
+          </div>
         ) : (
-          <span>
-            Tenes una cuenta?{" "}
-            <button
-              className="pt-3"
-              onClick={() => setIsRegistered(!isRegistered)}
-            >
-              Click aquí para ingresar.
-            </button>
-          </span>
+          <div className="w-full">
+            <SignUpForm />
+            <div className="pt-5">
+              <p className="text-center">
+                Tenes cuenta?
+                <span>
+                  <button
+                    className="ps-2"
+                    onClick={() => setIsRegistered(!isRegistered)}
+                  >
+                    Click <strong>aquí</strong> para ingresar
+                  </button>
+                </span>
+              </p>
+            </div>
+          </div>
         )}
       </section>
     </div>

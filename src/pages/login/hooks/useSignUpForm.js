@@ -4,7 +4,13 @@ import { signOut } from "../../../services/firebase.services";
 import Swal from "sweetalert2";
 
 export const useSignUpForm = () => {
-  const { signUpEmail, setIsRegistered } = useLogin();
+  const {
+    signUpEmail,
+    isRegistered,
+    setIsRegistered,
+    showPassword,
+    togglePasswordVisibility,
+  } = useLogin();
 
   // hook state declaration
   const [formData, setFormData] = useState({
@@ -35,19 +41,21 @@ export const useSignUpForm = () => {
       const responseSignUpEmail = await signUpEmail(formData);
 
       if (responseSignUpEmail.status) {
-        setIsRegistered(true);
         signOut();
 
         Swal.fire({
           title: "Atención!",
-          text: `Para completar el registro, hace click en el enlace del email que te enviamos a ${responseSignUpEmail.data}`,
+          text: `Usuario creado exitosamente. Ahora puede iniciar sesión`,
           background: "#FAFAFA",
           color: "#025951",
           iconColor: "#025951",
-          icon: "warning",
+          icon: "success",
           confirmButtonText: "Aceptar",
           confirmButtonColor: "#038C7F",
         });
+
+        window.location.href = window.location.href;
+        console.log("isRegister states is: ", isRegistered);
       } else {
         Swal.fire({
           title: `Ha habido un error al crear el usuario: ${responseSignUpEmail.error} !`,
@@ -104,5 +112,7 @@ export const useSignUpForm = () => {
     handleChange,
     handleSubmit,
     errors,
+    showPassword,
+    togglePasswordVisibility,
   };
 };

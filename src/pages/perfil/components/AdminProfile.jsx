@@ -38,7 +38,7 @@ const AdminProfile = ({ userId }) => {
 
 
   return (
-    <div className=" w-auto h-full ms-40 mt-3 px-3 rounded-tl-xl bg-White flex flex-col items-center">
+    <div className="w-auto h-full mt-3 px-3 rounded-tl-xl bg-White flex flex-col items-center laptop1:ms-40">
       <h2 className="w-full text-Black p-2 font-poppins text-lg font-semiBold">
         Bienvenido {userData?.email || "Usuario"}!
       </h2>

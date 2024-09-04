@@ -1,13 +1,22 @@
 import React from "react";
+import VisibilityOffIcon from "./VisibilityOffIcon";
+import VisibilityOnIcon from "./VisibilityOnIcon";
 import { useSignUpForm } from "../hooks/useSignUpForm";
 
 const SignUpForm = () => {
-  const { formData, handleChange, handleSubmit, errors } = useSignUpForm();
+  const {
+    formData,
+    handleChange,
+    handleSubmit,
+    errors,
+    showPassword,
+    togglePasswordVisibility,
+  } = useSignUpForm();
 
   return (
     <div className="w-full">
       <form onSubmit={handleSubmit}>
-        <div className="w-full m-auto rounded-xl p-10 bg-gradient-to-b from-LightGreen to-Green text-white tablet:w-1/2 laptop1:w-1/2 laptop2:w-1/4">
+        <div className="w-full m-auto rounded-xl p-10 bg-gradient-to-b from-LightGreen to-Green text-white tablet:w-1/2 laptop1:w-1/2 laptop2:w-[500px]">
           <div className="flex flex-col mb-5">
             <label className="text-White pb-2">Nombre:</label>
             <input
@@ -102,10 +111,10 @@ const SignUpForm = () => {
               <span className="text-sm text-Red">{errors.category}</span>
             )}
           </div>
-          <div className="flex flex-col mb-5">
+          <div className="flex flex-col mb-5 relative">
             <label className="text-White pb-2">Contraseña:</label>
             <input
-              type="password"
+              type={showPassword ? "text" : "password"}
               name="password"
               value={formData.password}
               onChange={handleChange}
@@ -113,6 +122,17 @@ const SignUpForm = () => {
                 errors.password && "focus:outline border border-Red"
               }`}
             />
+            <button
+              type="button"
+              onClick={togglePasswordVisibility}
+              className="absolute right-3 top-[3.2rem] transform -translate-y-1/2 text-gray-600"
+            >
+              {!showPassword ? (
+                <VisibilityOffIcon width={"25px"} />
+              ) : (
+                <VisibilityOnIcon width={"25px"} />
+              )}
+            </button>
             {errors.password && (
               <span className="text-sm text-Red">{errors.password}</span>
             )}

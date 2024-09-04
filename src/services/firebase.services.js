@@ -26,7 +26,7 @@ import {
 // Authentication Functions
 export const signUpWithEmail = async (email, password) => {
   const response = await createUserWithEmailAndPassword(auth, email, password);
-  await sendEmailVerification(auth.currentUser);
+  // await sendEmailVerification(auth.currentUser);
   return response;
 };
 

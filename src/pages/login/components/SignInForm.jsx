@@ -9,9 +9,9 @@ const SignInForm = () => {
   return (
     <div className="w-full ">
       <form onSubmit={signInEmail}>
-        <div className="w-full m-auto rounded-xl p-10 bg-gradient-to-b from-LightGreen to-Green text-white tablet:w-1/2 laptop1:w-1/2 laptop2:w-1/4">
+        <div className="w-full m-auto rounded-xl p-10 bg-gradient-to-b from-LightGreen to-Green text-white tablet:w-1/2 laptop1:w-1/2 laptop2:w-[500px]">
           <div className="flex flex-col mb-5">
-            <label className="text-White pb-2">Correo electrónico:</label>
+            <label className="w-full text-White pb-2">Correo electrónico:</label>
             <input
               type="email"
               name="email"
@@ -19,7 +19,7 @@ const SignInForm = () => {
               required
             />
           </div>
-          <div className="flex flex-col mb-5 relative">
+          <div className="flex flex-col relative">
             <label className="text-White pb-2">Contraseña:</label>
             <input
               type={showPassword ? "text" : "password"}

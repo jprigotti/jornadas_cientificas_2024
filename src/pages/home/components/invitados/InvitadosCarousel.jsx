@@ -17,10 +17,8 @@ const InvitadosCarousel = () => {
       <Swiper
         loop={false}
         centeredSlides={false}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[Pagination]}
+        navigation={true} // Enable navigation arrows
+        modules={[Navigation]} // Add the Navigation module
         breakpoints={{
           360: {
             slidesPerView: 1, // Para pantallas pequeñas
@@ -29,7 +27,7 @@ const InvitadosCarousel = () => {
             slidesPerView: 2, // Para pantallas más grandes
           },
           1024: {
-            slidesPerView: 3, // Para pantallas muy grandes
+            slidesPerView: 2, // Para pantallas muy grandes
           },
         }}
       >

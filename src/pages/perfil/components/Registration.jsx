@@ -32,14 +32,14 @@ const Registration = ({ userId }) => {
           )}
         </div>
       </div>
-      <div className="flex flex-col items-start">
+      {/* <div className="flex flex-col items-start">
         <p>Para poner en el panel del Admin</p>
         {userRegistration?.payment == "paid" ? (
           <p>Pago del arancel: pagado</p>
         ) : (
           <button onClick={() => handlePayment(userId)}>Confirmar pago</button>
         )}
-      </div>
+      </div> */}
     </div>
   );
 };

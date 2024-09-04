@@ -1,12 +1,29 @@
 import React from "react";
 import "../../../App.css";
 import CamaraIcon from "../../../components/navbar/components/svgIcons/CamaraIcon";
+import Swal from "sweetalert2";
 
 const Intro = () => {
+  const handlePlayVideo = () => {
+    Swal.fire({
+      title: "Palabras de bienvenida",
+      html: `
+      <div style="width: 800; display: flex; justify-content: center;">
+      <iframe width="600" height="350" src="https://www.youtube.com/embed/sqkDnY4ygKs" title="XXXIX Jornadas Científicas Hospital Santojanni | Palabras de bienvenida - 2024" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>      
+`,
+      showCloseButton: true,
+      focusConfirm: false,
+      confirmButtonText: "Cerrar",
+    });
+  };
+
   return (
     <section className=" bg-White rounded-tl-xl mt-3 laptop1:ms-40">
       <div className="px-2 pt-10">
-        <h2 className="main-title text-center py-5">Mensaje de la presidenta</h2>
+        <h2 className="main-title text-center py-5">
+          Mensaje de la presidenta
+        </h2>
 
         <div className="w-full laptop1:w-3/4 m-auto">
           <div class="font-poppins space-y-4 pb-10">
@@ -48,12 +65,13 @@ const Intro = () => {
             </div>
           </div>
 
-          <div className="flex items-center flex justify-center">
-            <button className="flex items-center text-xl font-bold px-10 py-5 bg-LightViolet text-White rounded-full hover:bg-Violet hover:shadow-lg transition duration-300 ease-in-out">
-              <span className="pe-5">
-                <CamaraIcon width="25px" height="25px" />
-              </span>
-              Ver video
+          <div
+            className="flex items-center flex justify-center bg-LightViolet text-White rounded-full hover:bg-Violet hover:shadow-lg transition duration-300 ease-in-out w-[250px] m-auto p-2"
+            onClick={handlePlayVideo}
+          >
+            <button className="w-full flex justify-center items-center   ">
+              <CamaraIcon width="25px" height="25px" />
+              <p className="text-xl font-bold ps-2">Ver video</p>
             </button>
           </div>
         </div>

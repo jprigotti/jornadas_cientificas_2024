@@ -87,7 +87,7 @@ export const useEventRegistrations = (eventId) => {
 
   // Filtra registros basados en el término de búsqueda
   const filteredRegistrations = registrations.filter((registration) =>
-    `${registration.user.name} ${registration.user.lastName}`
+    `${registration.user?.name} ${registration.user?.lastName}`
       .toLowerCase()
       .includes(searchTerm.toLowerCase())
   );

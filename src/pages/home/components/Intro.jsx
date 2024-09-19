@@ -1,25 +1,14 @@
-import React from "react";
+import React, {useState} from "react";
 import "../../../App.css";
 import CamaraIcon from "../../../components/navbar/components/svgIcons/CamaraIcon";
-import Swal from "sweetalert2";
+import ModalVideo from "./ModalVideo";
+
 
 const Intro = () => {
-  const handlePlayVideo = () => {
-    Swal.fire({
-      title: "Palabras de bienvenida",
-      html: `
-      <div style="width: 100%; display: flex; justify-content: center;">
-        <iframe style="width: 100%; height: 120%;" src="https://www.youtube.com/embed/sqkDnY4ygKs" 
-        title="XXXIX Jornadas Científicas Hospital Santojanni | Palabras de bienvenida - 2024" 
-        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      </div>
-`,
-      showCloseButton: true,
-      focusConfirm: false,
-      confirmButtonText: "Cerrar",
-    });
-  };
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
 
   return (
     <section className=" bg-White rounded-tl-xl mt-3 laptop1:ms-40">
@@ -70,13 +59,17 @@ const Intro = () => {
 
           <div
             className="flex items-center flex justify-center bg-LightViolet text-White rounded-full hover:bg-Violet hover:shadow-lg transition duration-300 ease-in-out w-[250px] m-auto p-2"
-            onClick={handlePlayVideo}
+            onClick={openModal}
           >
             <button className="w-full flex justify-center items-center   ">
               <CamaraIcon width="25px" height="25px" />
               <p className="text-xl font-bold ps-2">Ver video</p>
             </button>
           </div>
+          <ModalVideo
+            show={isModalOpen}
+            onClose={closeModal}
+          />
         </div>
       </div>
     </section>

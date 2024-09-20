@@ -4,6 +4,7 @@ import {
   signInWithEmail,
   signUpWithEmail,
   saveUserInDB,
+  recoverPassword
 } from "../../../services/firebase.services";
 import Swal from "sweetalert2";
 
@@ -75,30 +76,6 @@ export const useLogin = () => {
         confirmButtonColor: "#038C7F",
       });
       navigate("/perfil");
-
-      // if (response.user.emailVerified) {
-      //   Swal.fire({
-      //     title: `Bienvenido ${response.user.email} !`,
-      //     background: "#FAFAFA",
-      //     color: "#025951",
-      //     iconColor: "#025951",
-      //     icon: "success",
-      //     confirmButtonText: "Aceptar",
-      //     confirmButtonColor: "#038C7F",
-      //   });
-      //   navigate("/perfil");
-      // } else {
-      //   Swal.fire({
-      //     title: `Atención!`,
-      //     text: `Su email aún no ha sido verificado. Revise por favor su correo electronico ${response.user.email}, bandeja de entrada o correo no deseado (spam)`,
-      //     background: "#FAFAFA",
-      //     color: "#025951",
-      //     iconColor: "#FFA500",
-      //     icon: "warning",
-      //     confirmButtonText: "Aceptar",
-      //     confirmButtonColor: "#038C7F",
-      //   });
-      // }
     } catch (error) {
       console.log(error.code);
       let customMessage;
@@ -132,6 +109,60 @@ export const useLogin = () => {
     }
   };
 
+  const resetPassword = async (event) => {
+    event.preventDefault();
+
+    try {
+      const form = new FormData(event.target);
+      const { email } = Object.fromEntries(form.entries());
+      const response = await recoverPassword(email);
+      console.log(response)
+
+      if (response.status) {
+        await Swal.fire({
+          title: `Email enviado`,
+          text: "Revisa tu casilla de correo electrónico (no olvides revisar también en Spam o Correo no deseado",
+          background: "#FAFAFA",
+          color: "#025951",
+          iconColor: "#DC143C",
+          icon: "success",
+          width: "36em",
+          confirmButtonText: "Aceptar",
+          confirmButtonColor: "#038C7F",
+        });
+
+        window.location.reload()
+      } else {
+        const error = response.error;
+        Swal.fire({
+          title: `Ups, algo salió mal`,
+          text: { error },
+          background: "#FAFAFA",
+          color: "#025951",
+          iconColor: "#DC143C",
+          icon: "error",
+          width: "36em",
+          confirmButtonText: "Aceptar",
+          confirmButtonColor: "#038C7F",
+        });
+      }
+    } catch (error) {
+      if (response.status) {
+        Swal.fire({
+          title: `Ups, algo salió mail`,
+          text: { error },
+          background: "#FAFAFA",
+          color: "#025951",
+          iconColor: "#DC143C",
+          icon: "error",
+          width: "36em",
+          confirmButtonText: "Aceptar",
+          confirmButtonColor: "#038C7F",
+        });
+      }
+    }
+  }
+
   return {
     isRegistered,
     setIsRegistered,
@@ -139,5 +170,6 @@ export const useLogin = () => {
     signInEmail,
     showPassword,
     togglePasswordVisibility,
+    resetPassword
   };
 };

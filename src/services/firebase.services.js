@@ -4,7 +4,8 @@ import {
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
   signInWithPopup,
-  sendEmailVerification
+  sendEmailVerification,
+  sendPasswordResetEmail
 } from "firebase/auth";
 
 import { auth } from "../core/config/firebase.config";
@@ -165,6 +166,23 @@ export const getEventRegistrationsWithUserData = async (eventId) => {
   }
 };
 
+
+export const recoverPassword = async (email) => {
+  const response = {
+    status: false,
+    error: null
+  }
+
+  try {
+    const resetPassResponse = sendPasswordResetEmail(auth, email)
+    response.status = true;
+  } catch (error) {
+    response.error = error
+  }
+
+  return response;
+
+}
 // Servicio para obtener datos del evento con usuarios y su estado de pago
 
 // export const getEventRegistrationsWithUserData = async (eventId) => {

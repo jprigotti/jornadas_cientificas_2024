@@ -41,31 +41,38 @@ export const useSignUpForm = () => {
       const responseSignUpEmail = await signUpEmail(formData);
 
       if (responseSignUpEmail.status) {
-        signOut();
 
-        Swal.fire({
+        const userInput = await Swal.fire({
           title: "Atención!",
-          text: `Usuario creado exitosamente. Ahora puede iniciar sesión`,
+          text: `Usuario creado exitosamente. Inicie sesión con e-mail y contraseña y registrese desde su perfil`,
           background: "#FAFAFA",
           color: "#025951",
           iconColor: "#025951",
           icon: "success",
+          allowOutsideClick: false, // No permite hacer clic fuera del modal
+          allowEscapeKey: false,    // No permite cerrar con la tecla Escape
+          allowEnterKey: false,     // No permite cerrar con la tecla Enter
           confirmButtonText: "Aceptar",
           confirmButtonColor: "#038C7F",
         });
 
+        signOut();
         window.location.href = window.location.href;
-        console.log("isRegister states is: ", isRegistered);
+        // console.log("isRegister states is: ", isRegistered);
       } else {
-        Swal.fire({
+        const userInput = await Swal.fire({
           title: `Ha habido un error al crear el usuario: ${responseSignUpEmail.error} !`,
           background: "#FAFAFA",
           color: "#025951",
           iconColor: "#DC143C",
           icon: "error",
+          allowOutsideClick: false, // No permite hacer clic fuera del modal
+          allowEscapeKey: false,    // No permite cerrar con la tecla Escape
+          allowEnterKey: false,     // No permite cerrar con la tecla Enter
           confirmButtonText: "Aceptar",
           confirmButtonColor: "#038C7F",
         });
+        window.location.href = window.location.href;
       }
     } else {
       setErrors(formErrors);

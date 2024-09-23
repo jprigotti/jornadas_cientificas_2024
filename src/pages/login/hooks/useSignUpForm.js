@@ -24,6 +24,7 @@ export const useSignUpForm = () => {
   });
 
   const [errors, setErrors] = useState({});
+  const [captchaValue, setCaptchaValue] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -37,42 +38,53 @@ export const useSignUpForm = () => {
     e.preventDefault();
     const formErrors = validate();
     if (Object.keys(formErrors).length === 0) {
-      // console.log('Form data:', formData);
-      const responseSignUpEmail = await signUpEmail(formData);
+      if (captchaValue) {
+        // console.log('Form data:', formData);
+        const responseSignUpEmail = await signUpEmail(formData);
 
-      if (responseSignUpEmail.status) {
+        if (responseSignUpEmail.status) {
+          const userInput = await Swal.fire({
+            title: "Atención!",
+            text: `Usuario creado exitosamente. Inicie sesión con e-mail y contraseña y registrese desde su perfil`,
+            background: "#FAFAFA",
+            color: "#025951",
+            iconColor: "#025951",
+            icon: "success",
+            allowOutsideClick: false, // No permite hacer clic fuera del modal
+            allowEscapeKey: false, // No permite cerrar con la tecla Escape
+            allowEnterKey: false, // No permite cerrar con la tecla Enter
+            confirmButtonText: "Aceptar",
+            confirmButtonColor: "#038C7F",
+          });
 
-        const userInput = await Swal.fire({
-          title: "Atención!",
-          text: `Usuario creado exitosamente. Inicie sesión con e-mail y contraseña y registrese desde su perfil`,
-          background: "#FAFAFA",
-          color: "#025951",
-          iconColor: "#025951",
-          icon: "success",
-          allowOutsideClick: false, // No permite hacer clic fuera del modal
-          allowEscapeKey: false,    // No permite cerrar con la tecla Escape
-          allowEnterKey: false,     // No permite cerrar con la tecla Enter
-          confirmButtonText: "Aceptar",
-          confirmButtonColor: "#038C7F",
-        });
-
-        signOut();
-        window.location.href = window.location.href;
-        // console.log("isRegister states is: ", isRegistered);
+          signOut();
+          window.location.href = window.location.href;
+          // console.log("isRegister states is: ", isRegistered);
+        } else {
+          const userInput = await Swal.fire({
+            title: `Ha habido un error al crear el usuario: ${responseSignUpEmail.error} !`,
+            background: "#FAFAFA",
+            color: "#025951",
+            iconColor: "#DC143C",
+            icon: "error",
+            allowOutsideClick: false, // No permite hacer clic fuera del modal
+            allowEscapeKey: false, // No permite cerrar con la tecla Escape
+            allowEnterKey: false, // No permite cerrar con la tecla Enter
+            confirmButtonText: "Aceptar",
+            confirmButtonColor: "#038C7F",
+          });
+          window.location.href = window.location.href;
+        }
       } else {
-        const userInput = await Swal.fire({
-          title: `Ha habido un error al crear el usuario: ${responseSignUpEmail.error} !`,
+        Swal.fire({
+          title: `Debe completar el captcha!`,
           background: "#FAFAFA",
           color: "#025951",
           iconColor: "#DC143C",
           icon: "error",
-          allowOutsideClick: false, // No permite hacer clic fuera del modal
-          allowEscapeKey: false,    // No permite cerrar con la tecla Escape
-          allowEnterKey: false,     // No permite cerrar con la tecla Enter
           confirmButtonText: "Aceptar",
           confirmButtonColor: "#038C7F",
         });
-        window.location.href = window.location.href;
       }
     } else {
       setErrors(formErrors);
@@ -114,6 +126,10 @@ export const useSignUpForm = () => {
     return formErrors;
   };
 
+  const handleCaptchaChange = (value) => {
+    setCaptchaValue(value);
+  };
+
   return {
     formData,
     handleChange,
@@ -121,5 +137,6 @@ export const useSignUpForm = () => {
     errors,
     showPassword,
     togglePasswordVisibility,
+    handleCaptchaChange,
   };
 };

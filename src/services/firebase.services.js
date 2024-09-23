@@ -4,6 +4,8 @@ import {
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
   signInWithPopup,
+  sendEmailVerification,
+  sendPasswordResetEmail
 } from "firebase/auth";
 
 import { auth } from "../core/config/firebase.config";
@@ -24,8 +26,9 @@ import {
 
 // Authentication Functions
 export const signUpWithEmail = async (email, password) => {
-  const user = await createUserWithEmailAndPassword(auth, email, password);
-  return user;
+  const response = await createUserWithEmailAndPassword(auth, email, password);
+  // await sendEmailVerification(auth.currentUser);
+  return response;
 };
 
 export const signInWithEmail = async (email, password) => {
@@ -38,18 +41,8 @@ export const signOut = async () => {
 };
 
 // Firestore Functions
-export const saveUserInDB = async (user) => {
-  const userDB = {
-    name: user.name,
-    lastName: user.lastName,
-    cell: user.cell,
-    email: user.email,
-    category: user.category,
-    role: "user",
-  };
-
-  const res = await setDocument(COLLECTIONS.USERS, userDB, user.uid);
-
+export const saveUserInDB = async (uid, user) => {
+  const res = await setDocument(COLLECTIONS.USERS, user, uid);
   return res;
 };
 
@@ -161,7 +154,7 @@ export const getEventRegistrationsWithUserData = async (eventId) => {
           console.log("usersDocs returned error ", usersDocs.error);
           throw new Error(usersDocs.error);
         }
-      }else{
+      } else {
         return [];
       }
       //llamo a la funcion getDocumentsByIdsFromCollection de firestore.db que retorna el match de ids para una dada collection
@@ -173,6 +166,23 @@ export const getEventRegistrationsWithUserData = async (eventId) => {
   }
 };
 
+
+export const recoverPassword = async (email) => {
+  const response = {
+    status: false,
+    error: null
+  }
+
+  try {
+    const resetPassResponse = sendPasswordResetEmail(auth, email)
+    response.status = true;
+  } catch (error) {
+    response.error = error
+  }
+
+  return response;
+
+}
 // Servicio para obtener datos del evento con usuarios y su estado de pago
 
 // export const getEventRegistrationsWithUserData = async (eventId) => {

@@ -15,7 +15,7 @@ const GlobalProvider = ({ children }) => {
     }, []);
 
     useEffect(() => {
-        setDesktopView((windowWidth >= 768) ? true : false)
+        setDesktopView((windowWidth >= 1024) ? true : false)
     }, [windowWidth]);
 
 

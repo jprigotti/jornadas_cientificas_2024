@@ -1,28 +1,30 @@
-import React from 'react'
-import { Navigation } from "swiper/modules";
+import React from "react";
+import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { oradoresList } from './oradoresList';
-import OradorCard from './OradorCard';
+import { oradoresList } from "./oradoresList";
+import OradorCard from "./OradorCard";
 
 const OradoresCarousel = () => {
   return (
     <div>
-      <div className="w-[300px] tablet:w-[600px] laptop1:w-[900px] m-auto">
-
+      <div className="w-[300px] tablet:w-[600px] laptop1:w-[900px] laptop2:w-[1200px] m-auto">
         <Swiper
           loop={false}
-          centeredSlides={false}
-          navigation={true} // Enable navigation arrows
-          modules={[Navigation]} // Add the Navigation module
+          centeredSlides={true}
+          Pagination={true} // Enable navigation arrows
+          modules={[Pagination]} // Add the Navigation module
           breakpoints={{
-            360: {
+            300: {
               slidesPerView: 1, // Para pantallas pequeñas
             },
             768: {
               slidesPerView: 2, // Para pantallas más grandes
             },
             1024: {
-              slidesPerView: 4, // Para pantallas muy grandes
+              slidesPerView: 3, // Para pantallas muy grandes
+            },
+            1360: {
+              slidesPerView: 4,
             },
           }}
         >
@@ -34,7 +36,7 @@ const OradoresCarousel = () => {
         </Swiper>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default OradoresCarousel
+export default OradoresCarousel;

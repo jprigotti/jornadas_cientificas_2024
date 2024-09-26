@@ -1,4 +1,5 @@
 import React from "react";
+import OradoresCarousel from "./OradoresCarousel";
 
 const Conferencias = () => {
   return (
@@ -12,8 +13,9 @@ const Conferencias = () => {
         }}
       >
         <h2 className="main-title text-center text-White pt-5 relative z-20">
-          Invitados especiales
+          Conferencias Centrales
         </h2>
+        <OradoresCarousel />
       </div>
     </section>
   );

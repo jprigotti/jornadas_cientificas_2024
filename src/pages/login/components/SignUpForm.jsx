@@ -2,6 +2,7 @@ import React from "react";
 import VisibilityOffIcon from "./VisibilityOffIcon";
 import VisibilityOnIcon from "./VisibilityOnIcon";
 import { useSignUpForm } from "../hooks/useSignUpForm";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const SignUpForm = () => {
   const {
@@ -11,6 +12,7 @@ const SignUpForm = () => {
     errors,
     showPassword,
     togglePasswordVisibility,
+    handleCaptchaChange,
   } = useSignUpForm();
 
   return (
@@ -137,6 +139,12 @@ const SignUpForm = () => {
               <span className="text-sm text-Red">{errors.password}</span>
             )}
           </div>
+        </div>
+        <div className="w-full flex justify-center pt-5">
+          <ReCAPTCHA
+            sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
+            onChange={handleCaptchaChange}
+          />
         </div>
         <div className="w-full flex justify-center pt-5">
           <button

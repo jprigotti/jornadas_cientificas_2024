@@ -51,8 +51,8 @@ const Intro = () => {
               alt="Presidenta Jornadas"
             />
             <div className="ps-10 flex flex-col items-center">
-              <img className="w-[150px]" src="/images/signature.png" alt="" />
-              <p>Presidenta XXXIX Jornadas Científicas</p>
+              {/* <img className="w-[150px]" src="/images/signature.png" alt="" /> */}
+              <p className="pt-5 tablet:pt-24">Presidenta XXXIX Jornadas Científicas</p>
               <p>Dra. María Vivona</p>
             </div>
           </div>

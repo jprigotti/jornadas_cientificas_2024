@@ -1,40 +1,16 @@
 import React, { useState } from "react";
 import { useProfile } from "../hooks/useProfile";
 import { useEvents } from "../hooks/useEvents";
-import { useEventRegistrations } from "../hooks/useEventRegistrations";
 import EventRegistrationsTable from "./EventRegistrationsTable";
 
 const AdminProfile = ({ userId }) => {
-  const { loading, userData } = useProfile(userId);
-  const { events, loading: eventsLoading } = useEvents();
+  const { userData } = useProfile(userId);
+  const { events } = useEvents();
   const [selectedEventId, setSelectedEventId] = useState("");
-
-  // const {
-  //   registrations,
-  //   loading: registrationsLoading,
-  //   handlePaymentStatusChange,
-  //   searchTerm,
-  //   setSearchTerm,
-  //   page,
-  //   setPage,
-  //   rowsPerPage,
-  //   setRowsPerPage,
-  //   totalRegistrations
-  // } = useEventRegistrations(selectedEventId);
 
   const handleEventChange = (event) => {
     setSelectedEventId(event.target.value);
-    useEventRegistrations(selectedEventId)
   };
-
-  // if (loading || eventsLoading || registrationsLoading) {
-  //   return <div>Loading...</div>;
-  // }
-
-  if (loading || eventsLoading) {
-    return <div>Loading...</div>;
-  }
-
 
 
   return (

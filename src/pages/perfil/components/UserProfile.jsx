@@ -2,11 +2,7 @@ import React from "react";
 import { useProfile } from "../hooks/useProfile";
 
 const UserProfile = ({ userId }) => {
-  const { loading, userData } = useProfile(userId);
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
+  const { userData } = useProfile(userId);
 
   return (
     <div className="laptop1:ms-40 mt-3 rounded-tl-xl bg-White flex flex-col items-center p-10">

@@ -2,30 +2,31 @@ import { useEffect, useState } from "react";
 import {
   getEventRegistrationsWithUserData,
   updatePayment,
-  getUserById
+  getUserById,
 } from "../../../services/firebase.services";
 import Swal from "sweetalert2";
-import { useProfile } from "./useProfile";
-import { json } from "react-router-dom";
+import { useGlobal } from "../../../hooks/useGlobal";
+
+
 export const useEventRegistrations = (eventId) => {
 
   /*******************************************************
- * DECLARACION DE VARIABLES
- *******************************************************/
-
+   * DECLARACION DE VARIABLES
+   *******************************************************/
   const [registrations, setRegistrations] = useState([]);
-  const [loading, setLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
+
+  const { showSpinner, setShowSpinner } = useGlobal();
 
   //Creo este object hook state para registrar las acciones de useRegistration y generar el reporte final.
   const paymentActions = {
     setPaymentStatus: false,
     setPaymentError: null,
     sendEmailStatus: false,
-    sendEmailError: null
-  }
+    sendEmailError: null,
+  };
 
   const urlFetchAPI =
     "https://script.google.com/macros/s/AKfycby7UEKG0qsW81lVPB8Cx7rG96bGSqW9lsS5GQdKZTXLwh-0XJCUtnUOJQB0mwJtgI4FPA/exec";
@@ -39,22 +40,27 @@ export const useEventRegistrations = (eventId) => {
 
   //Cargar los registros de datos cuando cambia el eventId
   useEffect(() => {
-    if (eventId) {
-      setLoading(true);
-      getEventRegistrationsWithUserData(eventId)
-        .then((data) => {
-          console.log('Datos recibidos:', data);
+    const fetchData = async () => {
+      if (eventId) {
+        try {
+          setShowSpinner(true);
+          const data = await getEventRegistrationsWithUserData(eventId);
           setRegistrations(data);
-          setLoading(false);
-        })
-        .catch(() => setLoading(false));
-    } else {
-      setRegistrations([]);
-    }
+        } catch (error) {
+          setRegistrations([]);
+        } finally {
+          setShowSpinner(false);
+        }
+      } else {
+        setRegistrations([]);
+      }
+    };
+  
+    fetchData();
   }, [eventId]);
+  
 
   const handlePaymentStatusChange = async (userId) => {
-
     const result = await Swal.fire({
       title: "Confirmar Pago",
       text: "¿Deseas confirmar el pago para este usuario?",
@@ -78,7 +84,7 @@ export const useEventRegistrations = (eventId) => {
     4. se envía un correo electrónico
      */
     if (result.isConfirmed) {
-      setLoading(true); //dispara el spinner
+      setShowSpinner(true); //dispara el spinner
 
       /* 1. actualizamos el registro en la DB
       updatePayment tiene validacion retorna un objeto response
@@ -86,8 +92,9 @@ export const useEventRegistrations = (eventId) => {
       const updatePaymentResponse = await updatePayment(eventId, userId);
 
       if (updatePaymentResponse.status) {
-
-        const updatedRegistrations = await getEventRegistrationsWithUserData(eventId);
+        const updatedRegistrations = await getEventRegistrationsWithUserData(
+          eventId
+        );
         setRegistrations(updatedRegistrations);
 
         paymentActions.setPaymentStatus = true;
@@ -96,8 +103,8 @@ export const useEventRegistrations = (eventId) => {
         3. enviamos el mail de confirmación */
         try {
           //Llamo a la funcion getUserId de firebase.services que retorna id, data
-          const userDataResponse = await getUserById(userId)
-          console.log("Payment user data is_ ", userDataResponse)
+          const userDataResponse = await getUserById(userId);
+          console.log("Payment user data is_ ", userDataResponse);
 
           //armo el objeto para enviar el email
           const fetchData = {
@@ -125,26 +132,22 @@ export const useEventRegistrations = (eventId) => {
               paymentActions.sendEmailError = objectResponse.error;
             }
           } else {
-            paymentActions.sendEmailError = "Error al procesar el envío del email";
+            paymentActions.sendEmailError =
+              "Error al procesar el envío del email";
           }
-
         } catch (error) {
           paymentActions.sendEmailError = error;
         } finally {
-          setLoading(false);
+          setShowSpinner(false)
         }
-
       } else {
         paymentActions.setPaymentError = updatePaymentResponse.error;
       }
 
-      if (
-        paymentActions.setPaymentStatus &&
-        paymentActions.sendEmailStatus
-      ) {
+      if (paymentActions.setPaymentStatus && paymentActions.sendEmailStatus) {
         Swal.fire({
           title: "¡Pago confirmado!",
-          html: '<p>Pago registrado exitosamente</p><p>Se ha enviado un correo de confirmación</p>',
+          html: "<p>Pago registrado exitosamente</p><p>Se ha enviado un correo de confirmación</p>",
           icon: "success",
           background: "#FAFAFA",
           color: "#025951",
@@ -156,14 +159,16 @@ export const useEventRegistrations = (eventId) => {
       } else {
         Swal.fire({
           title: `Ups, Algo ha salido mal!`,
-          html: `<p>Estado de pago: ${paymentActions.setPaymentStatus
-            ? "exitoso"
-            : paymentActions.setPaymentError
-            }</p>
-          <p>Envío de email de confirmación: ${paymentActions.sendEmailStatus
+          html: `<p>Estado de pago: ${
+            paymentActions.setPaymentStatus
+              ? "exitoso"
+              : paymentActions.setPaymentError
+          }</p>
+          <p>Envío de email de confirmación: ${
+            paymentActions.sendEmailStatus
               ? "exitoso"
               : paymentActions.sendEmailError
-            }</p>
+          }</p>
           `,
           icon: "error",
           background: "#FAFAFA",
@@ -175,7 +180,7 @@ export const useEventRegistrations = (eventId) => {
         });
       }
 
-      setLoading(false);
+      setShowSpinner(false)
     }
   };
 
@@ -194,7 +199,6 @@ export const useEventRegistrations = (eventId) => {
 
   return {
     registrations: paginatedRegistrations,
-    loading,
     handlePaymentStatusChange,
     searchTerm,
     setSearchTerm,
@@ -202,6 +206,6 @@ export const useEventRegistrations = (eventId) => {
     setPage,
     rowsPerPage,
     setRowsPerPage,
-    totalRegistrations: filteredRegistrations.length
+    totalRegistrations: filteredRegistrations.length,
   };
 };

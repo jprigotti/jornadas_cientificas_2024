@@ -1,17 +1,19 @@
 import { useState, useEffect } from "react";
 import { getUserById } from "../../../services/firebase.services";
 import { useGlobal } from "../../../hooks/useGlobal";
+import { useAuth } from "../../../core/auth/hooks/useAuth";
 
-export const useProfile = (userId) => {
+export const useProfile = () => {
+  const { user } = useAuth();
   const [userData, setUserData] = useState(null);
-  const { showSpinner, setShowSpinner } = useGlobal();
+  const { setShowSpinner } = useGlobal();
 
   useEffect(() => {
     const fetchUserData = async () => {
-      if (!userId) return;
+      if (!user.uid) return;
       setShowSpinner(true);
       try {
-        const res = await getUserById(userId);
+        const res = await getUserById(user.uid);
         console.log("getUserById response is: ", res);
         setUserData(res);
       } catch (error) {
@@ -22,7 +24,7 @@ export const useProfile = (userId) => {
     };
 
     fetchUserData();
-  }, [userId]);
+  }, [user.uid]);
 
   return { userData };
 };

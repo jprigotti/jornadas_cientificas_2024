@@ -13,7 +13,7 @@ const PerfilView = () => {
   }, []); // El array vacío asegura que se ejecute solo al montar el componente
 
   const { user } = useAuth();
-  const { userData } = useProfile(user.uid);
+  const { userData } = useProfile();
 
   return (
     <>
@@ -22,8 +22,8 @@ const PerfilView = () => {
         <AdminProfile userId={user.uid} />
       ) : (
         <>
-          <UserProfile userId={user.uid} />
-          <Registration userId={user.uid} />
+          <UserProfile />
+          <Registration />
         </>
       )}
       <Spinner />

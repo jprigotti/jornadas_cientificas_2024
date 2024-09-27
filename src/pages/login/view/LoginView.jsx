@@ -4,6 +4,7 @@ import SignInForm from "../components/SignInForm";
 import SignUpForm from "../components/SignUpForm";
 import PagesBannerView from "../../../components/pagesBanner/view/PagesBannerView";
 import ForgotPassword from "../components/ForgotPassword";
+import Spinner from "../../../components/spinner/Spinner";
 
 const LoginView = () => {
   useEffect(() => {
@@ -81,6 +82,7 @@ const LoginView = () => {
           </div>
         )}
       </section>
+      <Spinner />
     </div>
   );
 };

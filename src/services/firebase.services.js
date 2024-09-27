@@ -73,16 +73,16 @@ export const addRegistration = async (userId, eventId) => {
   return res;
 };
 
-export const setRegistration = async (eventId, userId) => {
+export const setRegistration = async (eventId, userData) => {
   const registrationData = {
     parentDocId: eventId,
-    childDocId: userId,
+    childDocId: userData.id,
     parentCollection: COLLECTIONS.EVENTS,
     childCollection: COLLECTIONS.REGISTRATION,
     persistData: {
       registrationTime: new Date(),
       status: "registered",
-      payment: "pending",
+      payment: userData.category == "estudiante" ? "exento" : "pending"
     },
   };
   const res = await setSubcollectionDocument(registrationData);

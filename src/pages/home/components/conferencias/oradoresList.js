@@ -35,7 +35,7 @@ export const oradoresList = [
       "La Inteligencia Artificial aplicada a la salud: aliado o enemigo",
     image: "/images/invitados/Rigotti.png",
     name: "Ing. Juan Pablo Rigotti",
-    cv: "Ingeniero en Electrónica UNLaM. Equipo de Sistemas del Hstal Santojanni, Instructor de Programación en Talento Tech - Ministerio de Educación GCBA. Emprendedor",
+    cv: "Ingeniero en Electrónica UNLaM. Equipo de Sistemas del Hstal Santojanni. Instructor de Programación en Talento Tech - Ministerio de Educación GCBA. Programador y Emprendedor",
     stream: "pending",
   },
 ];

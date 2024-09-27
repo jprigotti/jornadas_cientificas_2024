@@ -18,7 +18,7 @@ const Intro = () => {
         </h2>
 
         <div className="w-full laptop1:w-3/4 m-auto">
-          <div class="font-poppins space-y-4 pb-10">
+          <div className="font-poppins space-y-4 pb-10">
             <p className="text-indent indent-6 text-justify font-poppins text-[14px] laptop1:text-[18px]">
               Les damos la bienvenida a esta nueva edición de las jornadas
               científicas del Hospital Santojanni y CESACs del área

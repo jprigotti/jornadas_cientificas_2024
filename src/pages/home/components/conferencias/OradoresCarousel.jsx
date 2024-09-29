@@ -1,8 +1,9 @@
 import React from "react";
-import { Pagination } from "swiper/modules";
+import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { oradoresList } from "./oradoresList";
 import OradorCard from "./OradorCard";
+
 
 const OradoresCarousel = () => {
   return (
@@ -10,8 +11,8 @@ const OradoresCarousel = () => {
       <Swiper
         loop={false}
         centeredSlides={true}
-        pagination={true} // Enable navigation arrows
-        modules={[Pagination]} // Add the Navigation module
+        navigation={{ clickable: true }} // Properly configure pagination
+        modules={[Navigation]} // Add the Navigation module
         breakpoints={{
           300: {
             slidesPerView: 1, // Para pantallas pequeñas

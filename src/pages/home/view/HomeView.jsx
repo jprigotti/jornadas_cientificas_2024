@@ -5,7 +5,7 @@ import Autoridades from "../components/Autoridades";
 import Invitados from "../components/invitados/Invitados";
 import Conferencias from "../components/conferencias/Conferencias";
 import Colaboran from "../components/Colaboran";
-import JornadasNumeros from "../components/JornadasNumeros";
+import JornadasNumeros from "../components/jorndasNumeros/JornadasNumeros";
 
 const HomeView = () => {
   useEffect(() => {

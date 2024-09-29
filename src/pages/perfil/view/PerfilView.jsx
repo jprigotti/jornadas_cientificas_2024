@@ -6,6 +6,7 @@ import PagesBannerView from "../../../components/pagesBanner/view/PagesBannerVie
 import { useProfile } from "../hooks/useProfile";
 import AdminProfile from "../components/AdminProfile";
 import Spinner from "../../../components/spinner/Spinner";
+import Certificates from "../components/Certificates";
 
 const PerfilView = () => {
   useEffect(() => {
@@ -24,6 +25,7 @@ const PerfilView = () => {
         <>
           <UserProfile />
           <Registration />
+          <Certificates />
         </>
       )}
       <Spinner />

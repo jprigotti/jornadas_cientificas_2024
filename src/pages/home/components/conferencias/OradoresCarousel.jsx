@@ -10,7 +10,7 @@ const OradoresCarousel = () => {
       <Swiper
         loop={false}
         centeredSlides={true}
-        Pagination={true} // Enable navigation arrows
+        pagination={true} // Enable navigation arrows
         modules={[Pagination]} // Add the Navigation module
         breakpoints={{
           300: {

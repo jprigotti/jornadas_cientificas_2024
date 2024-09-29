@@ -1,6 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useBanner } from "../hooks/useBanner";
+import ButtonVioletMD from "../../../components/buttons/ButtonVioletMD";
+import ButtonBlueMD from "../../../components/buttons/ButtonBlueMD";
 
 
 const Banner = () => {
@@ -74,18 +76,9 @@ const Banner = () => {
         </div>
 
         <div className="gap-y-5 flex flex-col items-center laptop1:flex-row laptop1:justify-center laptop1:space-x-10">
-          <button
-            className="w-[250px] text-xl font-bold px-5 py-3 bg-LightBlue text-White rounded-full hover:bg-Blue hover:shadow-lg transition duration-300 ease-in-out"
-            onClick={handleClickAranceles}
-          >
-            Aranceles
-          </button>
-          <button
-            className="w-[250px] text-xl font-bold px-5 py-3 bg-LightViolet text-White rounded-full hover:bg-Violet hover:shadow-lg transition duration-300 ease-in-out"
-            onClick={handleInscripcion}
-          >
-            Incribirme
-          </button>
+
+          <ButtonBlueMD onClick = {handleClickAranceles} label={"Aranceles"}/>
+          <ButtonVioletMD onClick = {handleInscripcion} label={"Incribirme"}/>
         </div>
       </div>
     </div>

@@ -87,8 +87,8 @@ const UserProfile = () => {
               >
                 <option value="">Seleccione...</option>{" "}
                 {/* Placeholder option */}
-                {serviciosList.map((servicio) => (
-                  <option value={servicio}>{servicio}</option>
+                {serviciosList.map((servicio, index) => (
+                  <option key={index} value={servicio}>{servicio}</option>
                 ))}
               </select>
             ) : (

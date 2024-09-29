@@ -43,7 +43,6 @@ export const useRegistration = () => {
 
       try {
         const res = await getRegistration(eventId, user.uid);
-        console.log("getUserRegistration response is: ", res);
         setUserRegistration(res.data);
       } catch (error) {
         console.log("Unable to retrieve user inscription");

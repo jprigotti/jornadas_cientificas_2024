@@ -19,8 +19,8 @@ const ComisionCard = ({ comite }) => {
           <p>{presidente}</p>
           <p>{secretario}</p>
           <p>Vocales:</p>
-          {vocales.map((vocal) => (
-            <p className="ps-2">{`${
+          {vocales.map((vocal, index) => (
+            <p key={index} className="ps-2">{`${
               vocal.genero == "Dra." ? "Dra." : vocal.genero
             } ${vocal.nombre}`}</p>
           ))}
@@ -28,8 +28,8 @@ const ComisionCard = ({ comite }) => {
       ) : (
         <div className="p-3">
           <p>Asesores:</p>
-          {comite.asesores.map((asesor) => (
-            <p className="ps-2">{`${
+          {comite.asesores.map((asesor, index) => (
+            <p key={index} className="ps-2">{`${
               asesor.genero == "Dra." ? "Dra." : asesor.genero
             } ${asesor.nombre}`}</p>
           ))}

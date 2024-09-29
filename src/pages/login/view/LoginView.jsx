@@ -22,43 +22,42 @@ const LoginView = () => {
           <div className="w-full">
             {!forgotPassword ? <SignInForm /> : <ForgotPassword />}
             <div className="pt-5">
-              {/* switch registracion */}
+              {/* Switch registration */}
               <div>
                 <p className="text-center">
-                  No tenes cuenta?
-                  <span>
-                    <button
-                      className="ps-2"
-                      onClick={() => setIsRegistered(!isRegistered)}
-                    >
-                      Click <strong>aquí</strong> para registrarse
-                    </button>
-                  </span>
+                  ¿No tienes cuenta?
+                  <button
+                    className="ps-2 text-blue-500 underline"
+                    onClick={() => setIsRegistered(false)}
+                  >
+                    Click <strong>aquí</strong> para registrarse
+                  </button>
                 </p>
               </div>
+
               {/* Switch login */}
               <div className="pt-5">
                 <p className="text-center">
-                  {!forgotPassword ? <p>Olvidaste tu contraseña</p> : <p></p>}
-                  <span>
-                    <button
-                      className="ps-2"
-                      onClick={() => setForgotPassword(!forgotPassword)}
-                    >
-                      {!forgotPassword ? (
-                        <p>
-                          {" "}
-                          Click <strong>aquí</strong> para recuperar la
-                          contraseña
-                        </p>
-                      ) : (
-                        <p>
-                          {" "}
-                          Click <strong>aquí</strong> para iniciar sesión
-                        </p>
-                      )}
-                    </button>
-                  </span>
+                  {!forgotPassword ? (
+                    <>
+                      ¿Olvidaste tu contraseña?
+                      <button
+                        className="ps-2 text-blue-500 underline"
+                        onClick={() => setForgotPassword(true)}
+                      >
+                        Click <strong>aquí</strong> para recuperar la contraseña
+                      </button>
+                    </>
+                  ) : (
+                    <>
+                      <button
+                        className="ps-2 text-blue-500 underline"
+                        onClick={() => setForgotPassword(false)}
+                      >
+                        Click <strong>aquí</strong> para iniciar sesión
+                      </button>
+                    </>
+                  )}
                 </p>
               </div>
             </div>
@@ -68,15 +67,13 @@ const LoginView = () => {
             <SignUpForm />
             <div className="pt-5">
               <p className="text-center">
-                Tenes cuenta?
-                <span>
-                  <button
-                    className="ps-2"
-                    onClick={() => setIsRegistered(!isRegistered)}
-                  >
-                    Click <strong>aquí</strong> para ingresar
-                  </button>
-                </span>
+                ¿Tienes cuenta?
+                <button
+                  className="ps-2 text-blue-500 underline"
+                  onClick={() => setIsRegistered(true)}
+                >
+                  Click <strong>aquí</strong> para ingresar
+                </button>
               </p>
             </div>
           </div>

@@ -8,7 +8,15 @@ export const useProfile = () => {
   const { user } = useAuth();
   const [userData, setUserData] = useState(null);
   const { setShowSpinner } = useGlobal();
-  const [formData, setFormData] = useState({});
+  const [formData, setFormData] = useState({
+    name: "",
+    lastName: "",
+    dni: "",
+    cell: "",
+    servicio: "",
+    category: "",
+    email: "",
+  });
   const [editing, setEditing] = useState(false);
 
   useEffect(() => {
@@ -17,7 +25,6 @@ export const useProfile = () => {
       setShowSpinner(true);
       try {
         const res = await getUserById(user.uid);
-        console.log("getUserById response is: ", res);
         setUserData(res);
         setFormData({
           name: res?.name || "",
@@ -78,6 +85,6 @@ export const useProfile = () => {
     handleSubmit,
     editing,
     handleEdit,
-    handleCancel
+    handleCancel,
   };
 };

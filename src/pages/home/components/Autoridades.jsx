@@ -37,7 +37,7 @@ const Autoridades = () => {
           {authorities.map((authority, index) => (
             <div
               key={index}
-              className="bg-White opacity-70 rounded-lg p-5 shadow-lightShadowGrey hover:shadow-LightViolet transition-shadow duration-200 flex flex-col justify-center items-center"
+              className="bg-White opacity-70 rounded-lg p-5 shadow-lightShadowGrey hover:shadow-LightViolet transition-shadow duration-200 flex flex-col justify-center items-center hover:opacity-90"
             >
               <h3 className="text-xl font-semibold">{authority.title}</h3>
               <p className="text-gray-700 mt-2">{authority.name}</p>

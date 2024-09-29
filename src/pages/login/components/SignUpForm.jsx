@@ -3,6 +3,7 @@ import VisibilityOffIcon from "./VisibilityOffIcon";
 import VisibilityOnIcon from "./VisibilityOnIcon";
 import { useSignUpForm } from "../hooks/useSignUpForm";
 import ReCAPTCHA from "react-google-recaptcha";
+import { serviciosList } from "./serviciosList";
 
 const SignUpForm = () => {
   const {
@@ -92,6 +93,25 @@ const SignUpForm = () => {
             />
             {errors.email && (
               <span className="text-sm text-Red">{errors.email}</span>
+            )}
+          </div>
+          <div className="flex flex-col mb-5">
+            <label className="text-White pb-2">Servicio:</label>
+            <select
+              name="servicio"
+              value={formData.servicio} // Assuming you have state in your formData
+              onChange={handleChange}
+              className={`rounded-lg shadow-lightShadowGrey shadow appearance-none px-5 py-2 mb-1 focus:outline-none focus:shadow-lightShadow ${
+                errors.servicio && "focus:outline border border-Red"
+              }`}
+            >
+              <option value="">Seleccione...</option> {/* Placeholder option */}
+              {serviciosList.map((servicio) => (
+                <option value={servicio}>{servicio}</option>
+              ))}
+            </select>
+            {errors.servicio && (
+              <span className="text-sm text-Red">{errors.servicio}</span>
             )}
           </div>
           <div className="flex flex-col mb-5">

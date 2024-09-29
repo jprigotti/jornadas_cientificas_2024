@@ -176,10 +176,7 @@ export const updateDocument = async (data) => {
         // Create a reference to the document in the subcollection
         const docRef = doc(db, data.collection, data.docId);
 
-        // Update the specific field in the document
-        const field = data.field;
-        const value = data.value;
-        await updateDoc(docRef, { field: value });
+        await updateDoc(docRef, data.userData);
         response.status = true;
     } catch (error) {
         response.status = false;

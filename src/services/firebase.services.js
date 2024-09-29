@@ -5,7 +5,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithPopup,
   sendEmailVerification,
-  sendPasswordResetEmail
+  sendPasswordResetEmail,
 } from "firebase/auth";
 
 import { auth } from "../core/config/firebase.config";
@@ -23,6 +23,7 @@ import {
   getDocumentsFromSubcollection,
   getDocumentsByIdsFromCollection,
 } from "../core/db/firestore.db";
+import { collection } from "firebase/firestore";
 
 // Authentication Functions
 export const signUpWithEmail = async (email, password) => {
@@ -73,16 +74,16 @@ export const addRegistration = async (userId, eventId) => {
   return res;
 };
 
-export const setRegistration = async (eventId, userId) => {
+export const setRegistration = async (eventId, userData) => {
   const registrationData = {
     parentDocId: eventId,
-    childDocId: userId,
+    childDocId: userData.id,
     parentCollection: COLLECTIONS.EVENTS,
     childCollection: COLLECTIONS.REGISTRATION,
     persistData: {
       registrationTime: new Date(),
       status: "registered",
-      payment: "pending",
+      payment: userData.category == "estudiante" ? "exento" : "pending",
     },
   };
   const res = await setSubcollectionDocument(registrationData);
@@ -97,6 +98,16 @@ export const getRegistration = async (eventId, userId) => {
     childCollection: COLLECTIONS.REGISTRATION,
   };
   const res = await getDocumentByIdFromSubcollection(data);
+  return res;
+};
+
+export const updateUserData = async (userId, formData) => {
+  const data = {
+    collection: COLLECTIONS.USERS,
+    docId: userId,
+    userData: formData,
+  };
+  const res = updateDocument(data);
   return res;
 };
 
@@ -166,23 +177,21 @@ export const getEventRegistrationsWithUserData = async (eventId) => {
   }
 };
 
-
 export const recoverPassword = async (email) => {
   const response = {
     status: false,
-    error: null
-  }
+    error: null,
+  };
 
   try {
-    const resetPassResponse = sendPasswordResetEmail(auth, email)
+    const resetPassResponse = sendPasswordResetEmail(auth, email);
     response.status = true;
   } catch (error) {
-    response.error = error
+    response.error = error;
   }
 
   return response;
-
-}
+};
 // Servicio para obtener datos del evento con usuarios y su estado de pago
 
 // export const getEventRegistrationsWithUserData = async (eventId) => {

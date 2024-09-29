@@ -16,7 +16,7 @@ const colaboradores = [
 
 const Colaboran = () => {
   return (
-    <section className="bg-White py-10 laptop1:ms-40 ">
+    <section className="bg-White py-20 laptop1:ms-40 ">
       <div className='flex flex-col items-center px-3'>
       <h2 className="main-title text-center pb-10 relative z-10">
           Colaboran con las jornadas

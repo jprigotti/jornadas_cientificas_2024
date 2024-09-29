@@ -88,7 +88,9 @@ const EventRegistrationsTable = ({ eventId }) => {
                   <TableCell align="center" sx={{fontSize: 18}}>{registration.user.lastName}</TableCell>
                   <TableCell align="center" sx={{fontSize: 18}}>{registration.user.category}</TableCell>
                   <TableCell align="center" sx={{fontSize: 18}}>
-                    {registration.payment === "pending" ? "Pendiente" : "Pagado"}
+                    {registration.payment === "exento" ? "Exento" : 
+                    registration.payment === "pending" ? "Pendiente" : 
+                    registration.payment === "paid" ? "Pagado" : "Estado desconocido"}
                   </TableCell>
                   <TableCell align="center" sx={{fontSize: 18}}>
                     {registration.payment === "pending" && (

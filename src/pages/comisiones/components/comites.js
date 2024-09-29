@@ -83,7 +83,10 @@ export const comites = [
         "vocales": [
             { "nombre": "Romina Plasnic", "genero": "Dra." },
             { "nombre": "Daiana Cichello", "genero": "Ts." },
-            { "nombre": "Paola Lo Schiavo", "genero": "" }
+            { "nombre": "Paola Lo Schiavo", "genero": "" },
+            { "nombre": "Marcelo Corigliano", "genero": "" },
+            { "nombre": "Santiago Fiorino", "genero": "" }
+
         ]
     },
     {

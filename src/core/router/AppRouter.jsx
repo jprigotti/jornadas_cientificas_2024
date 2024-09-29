@@ -1,4 +1,4 @@
-import { Navigate, createBrowserRouter } from "react-router-dom";
+import { Navigate, createBrowserRouter, createHashRouter } from "react-router-dom";
 import PrivateRoute from "./PrivateRoute";
 import PublicRoute from "./PublicRoute";
 
@@ -11,7 +11,7 @@ import Galeria from "../../pages/galeria/view/GaleriaView";
 import Login from "../../pages/login/view/LoginView";
 import PerfilView from "../../pages/perfil/view/PerfilView";
 
-export const appRouter = createBrowserRouter([
+export const appRouter = createHashRouter([
   {
     path: "/",
     element: (

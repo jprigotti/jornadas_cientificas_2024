@@ -1,8 +1,12 @@
-import React from "react";
+import React, {useEffect} from "react";
 import PagesBannerView from "../../../components/pagesBanner/view/PagesBannerView";
-import Table from "../components/Table"
+import Table from "../components/Table";
 
 const DownloadView = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scroll al top de la página
+  }, []); // El array vacío asegura que se ejecute solo al montar el componente
+
   return (
     <div>
       <PagesBannerView title="Descargas" />

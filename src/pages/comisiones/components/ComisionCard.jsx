@@ -13,16 +13,28 @@ const ComisionCard = ({ comite }) => {
       <p className="rounded-lg text-center pt-3 font-semiBold text-lg bg-gradient-to-b from-PauBackground via-White to-White text-white">
         {comite.comiteNombre}
       </p>
-      <div className="p-3">
-        <p>{presidente}</p>
-        <p>{secretario}</p>
-        <p>Vocales:</p>
-        {vocales.map((vocal) => (
-          <p className="ps-2">{`${
-            vocal.genero == "Dra." ? "Dra." : vocal.genero
-          } ${vocal.nombre}`}</p>
-        ))}
-      </div>
+      {comite.mostrarCargos == "true" ? (
+        <div className="p-3">
+          {comite.coordinadorGeneral != "" && (<p>{comite.coordinadorGeneral}</p>)}
+          <p>{presidente}</p>
+          <p>{secretario}</p>
+          <p>Vocales:</p>
+          {vocales.map((vocal) => (
+            <p className="ps-2">{`${
+              vocal.genero == "Dra." ? "Dra." : vocal.genero
+            } ${vocal.nombre}`}</p>
+          ))}
+        </div>
+      ) : (
+        <div className="p-3">
+          <p>Asesores:</p>
+          {comite.asesores.map((asesor) => (
+            <p className="ps-2">{`${
+              asesor.genero == "Dra." ? "Dra." : asesor.genero
+            } ${asesor.nombre}`}</p>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

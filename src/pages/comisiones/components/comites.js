@@ -97,7 +97,7 @@ export const comites = [
         "secretarioNombre": "Nancy Di Biasi",
         "secretarioGenero": "Dra.",
         "vocales": [
-            { "nombre": "Juliana Cocao", "genero": "Dra." },
+            { "nombre": "Juliana Caccavo", "genero": "Dra." },
             { "nombre": "María Inés Marquez", "genero": "Ts." },
             { "nombre": "Sandra Arcieri", "genero": "Dra." },
             { "nombre": "Amhed Sabrá", "genero": "Dr." },

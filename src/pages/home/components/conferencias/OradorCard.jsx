@@ -4,7 +4,7 @@ import PlayIcon from "./PlayIcon";
 const OradorCard = ({ orador }) => {
   return (
     <div className="w-[300px] h-[660px] p-2 rounded-xl">
-      <div className="bg-White opacity-75 h-full py-5 px-2 hover:opacity-100">
+      <div className="bg-White opacity-90 h-full py-5 px-2 hover:opacity-100">
         <p className="text-lg text-start font-semiBold text-Green text-center">
           {orador.date}
         </p>

@@ -3,22 +3,22 @@ import {
   getEventRegistrationsWithUserData,
   updatePayment,
   getUserById,
+  getUserByDni,
+  getUserRegistrationByDni,
 } from "../../../services/firebase.services";
 import Swal from "sweetalert2";
 import { useGlobal } from "../../../hooks/useGlobal";
 
-
-export const useEventRegistrations = (eventId) => {
-
+export const useEventRegistrations = (searchDni) => {
   /*******************************************************
    * DECLARACION DE VARIABLES
    *******************************************************/
-  const [registrations, setRegistrations] = useState([]);
+  const [renderUsers, setRenderUsers] = useState([""]);
   const [searchTerm, setSearchTerm] = useState("");
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
-
   const { showSpinner, setShowSpinner } = useGlobal();
+  const [refreshTable, setRefreshTable] = useState(true);
 
   //Creo este object hook state para registrar las acciones de useRegistration y generar el reporte final.
   const paymentActions = {
@@ -28,6 +28,7 @@ export const useEventRegistrations = (eventId) => {
     sendEmailError: null,
   };
 
+  const eventId = "ZbclMy93Cs9jzEYAgVui";
   const urlFetchAPI =
     "https://script.google.com/macros/s/AKfycby7UEKG0qsW81lVPB8Cx7rG96bGSqW9lsS5GQdKZTXLwh-0XJCUtnUOJQB0mwJtgI4FPA/exec";
   //   Link Spreadsheet https://docs.google.com/spreadsheets/d/1i7ULoXCjNaLVKFfaDxGUTUZEXzhI9trsJPiaJYO5Ndc/edit?gid=0#gid=0
@@ -35,30 +36,30 @@ export const useEventRegistrations = (eventId) => {
 
   //Reestablecer la página a 0 en la paginación cuando cambia el eventID
   useEffect(() => {
-    setPage(0);
-  }, [eventId]);
+    const fetchUserData = async () => {
+      try {
+        // Call the service that returns userData + userRegistration
+        if (searchDni) {
+          const userResponse = await getUserRegistrationByDni(
+            eventId,
+            searchDni
+          );
 
-  //Cargar los registros de datos cuando cambia el eventId
-  useEffect(() => {
-    const fetchData = async () => {
-      if (eventId) {
-        try {
-          setShowSpinner(true);
-          const data = await getEventRegistrationsWithUserData(eventId);
-          setRegistrations(data);
-        } catch (error) {
-          setRegistrations([]);
-        } finally {
-          setShowSpinner(false);
+          if (userResponse && userResponse.status) {
+            console.log(userResponse.data); // Check the retrieved data
+            setRenderUsers(userResponse.data); // Update renderUsers
+          } else {
+            console.error(userResponse.error); // Log error if there's an issue
+          }
         }
-      } else {
-        setRegistrations([]);
+      } catch (error) {
+        console.error("An error occurred while fetching user data: ", error);
       }
     };
-  
-    fetchData();
-  }, [eventId]);
-  
+
+    // Call the asynchronous function inside useEffect
+    fetchUserData();
+  }, [searchDni, refreshTable]); // Add dependencies to trigger re-fetch
 
   const handlePaymentStatusChange = async (userId) => {
     const result = await Swal.fire({
@@ -92,10 +93,7 @@ export const useEventRegistrations = (eventId) => {
       const updatePaymentResponse = await updatePayment(eventId, userId);
 
       if (updatePaymentResponse.status) {
-        const updatedRegistrations = await getEventRegistrationsWithUserData(
-          eventId
-        );
-        setRegistrations(updatedRegistrations);
+        setRefreshTable(!refreshTable);
 
         paymentActions.setPaymentStatus = true;
         /*
@@ -138,7 +136,7 @@ export const useEventRegistrations = (eventId) => {
         } catch (error) {
           paymentActions.sendEmailError = error;
         } finally {
-          setShowSpinner(false)
+          setShowSpinner(false);
         }
       } else {
         paymentActions.setPaymentError = updatePaymentResponse.error;
@@ -180,25 +178,12 @@ export const useEventRegistrations = (eventId) => {
         });
       }
 
-      setShowSpinner(false)
+      setShowSpinner(false);
     }
   };
 
-  // Filtra registros basados en el término de búsqueda
-  const filteredRegistrations = registrations.filter((registration) =>
-    `${registration.user?.name} ${registration.user?.lastName}`
-      .toLowerCase()
-      .includes(searchTerm.toLowerCase())
-  );
-
-  // Calcula registros para la paginación
-  const paginatedRegistrations = filteredRegistrations.slice(
-    page * rowsPerPage,
-    page * rowsPerPage + rowsPerPage
-  );
-
   return {
-    registrations: paginatedRegistrations,
+    renderUsers,
     handlePaymentStatusChange,
     searchTerm,
     setSearchTerm,
@@ -206,6 +191,5 @@ export const useEventRegistrations = (eventId) => {
     setPage,
     rowsPerPage,
     setRowsPerPage,
-    totalRegistrations: filteredRegistrations.length,
   };
 };

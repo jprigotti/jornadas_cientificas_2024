@@ -15,6 +15,7 @@ import {
   getDocuments,
   setDocument,
   getDocumentById,
+  getDocumentByField,
   getDocumentByIdFromSubcollection,
   addSubcollectionDocument,
   setSubcollectionDocument,
@@ -51,6 +52,58 @@ export const getUserById = async (id) => {
   const res = await getDocumentById(id, COLLECTIONS.USERS);
   return res;
 };
+
+export const getUserByDni = async (dni) => {
+  const field = "dni";
+  const res = await getDocumentByField(COLLECTIONS.USERS, field, dni);
+  return res;
+};
+
+export const getUserRegistrationByDni = async (eventId, dni) => {
+  const res = {
+    status: false,
+    error: null,
+    data: [],  // Initialize data as an array
+  };
+
+  try {
+    // Fetch the user document by DNI
+    const field = "dni";
+    const userRes = await getDocumentByField(COLLECTIONS.USERS, field, dni);
+
+    // Ensure user was found
+    if (!userRes.status || !userRes.data || userRes.data.length === 0) {
+      throw new Error(`User with DNI ${dni} not found`);
+    }
+
+    // Iterate over the found users (if there are multiple)
+    for (const user of userRes.data) {
+      // Fetch the registration for the event for each user
+      const registrationRes = await getRegistration(eventId, user.id);
+
+      // Combine user data with registration data
+      const userWithRegistration = {
+        ...user,  // Spread user data
+        ...(registrationRes.status && registrationRes.data ? registrationRes.data : {}),  // Merge registration data if available
+      };
+
+      // Add the combined object to the res.data array
+      res.data.push(userWithRegistration);
+    }
+
+    // Set status to true when successful
+    res.status = true;
+
+  } catch (error) {
+    // Handle errors
+    res.status = false;
+    res.error = error.message;
+  }
+
+  return res;
+};
+
+
 
 export const getAllEvents = async () => {
   const res = await getDocuments(COLLECTIONS.EVENTS);

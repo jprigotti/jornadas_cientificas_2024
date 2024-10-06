@@ -22,7 +22,7 @@ const EventRegistrationsTable = ({searchDni}) => {
   ];
 
   return (
-    <>
+    <div className="w-full pb-20">
       <TableContainer
         component={Paper}
         sx={{ boxShadow: 3, borderRadius: 2, maxHeight: 900 }}
@@ -109,7 +109,7 @@ const EventRegistrationsTable = ({searchDni}) => {
           </TableBody>
         </Table>
       </TableContainer>
-    </>
+    </div>
   );
 };
 

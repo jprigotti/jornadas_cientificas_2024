@@ -40,6 +40,7 @@ export const useEventRegistrations = (searchDni) => {
       try {
         // Call the service that returns userData + userRegistration
         if (searchDni) {
+          setShowSpinner(true);
           const userResponse = await getUserRegistrationByDni(
             eventId,
             searchDni
@@ -54,6 +55,8 @@ export const useEventRegistrations = (searchDni) => {
         }
       } catch (error) {
         console.error("An error occurred while fetching user data: ", error);
+      } finally {
+        setShowSpinner(false);
       }
     };
 

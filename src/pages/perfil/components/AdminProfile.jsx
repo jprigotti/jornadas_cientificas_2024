@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { useProfile } from "../hooks/useProfile";
 import EventRegistrationsTable from "./EventRegistrationsTable";
 import { useEventRegistrations } from "../hooks/useEventRegistrations";
@@ -7,12 +7,22 @@ const AdminProfile = ({ userId }) => {
   const { userData } = useProfile(userId);
   const [searchDni, setSearchDni] = useState(null);
 
+  const [formData, setFormData] = useState({
+    dni: "",
+  });
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
   const handleSubmitSearchUser = (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
     const dni = formData.get("dni");
     console.log("Search DNI: ", dni);
     setSearchDni(dni);
+    setFormData({ ...formData, dni: "" });
   };
 
   return (
@@ -22,7 +32,7 @@ const AdminProfile = ({ userId }) => {
       </h2>
 
       {/* Form search user */}
-      <div className="w-full">
+      <div className="w-full pb-10">
         <form onSubmit={handleSubmitSearchUser}>
           <div className="w-full m-auto rounded-xl p-10 bg-gradient-to-b from-LightGreen to-Green text-white tablet:w-1/2 laptop1:w-1/2 laptop2:w-[500px]">
             <div className="flex flex-col mb-5">
@@ -31,10 +41,11 @@ const AdminProfile = ({ userId }) => {
               </label>
               <input
                 id="dni"
-                type="text"
                 name="dni"
+                type="text"
                 className="w-full px-2 py-2 mb-5 rounded-lg shadow-lightShadowGrey"
-                required
+                onChange={handleInputChange}
+                value={formData.dni}
               />
             </div>
           </div>
@@ -50,7 +61,6 @@ const AdminProfile = ({ userId }) => {
         </form>
       </div>
 
-      <div></div>
       <EventRegistrationsTable searchDni={searchDni} />
     </div>
   );

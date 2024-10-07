@@ -77,7 +77,7 @@ const EventRegistrationsTable = ({searchDni}) => {
                       ? "Pendiente"
                       : renderUser.payment === "paid"
                       ? "Pagado"
-                      : "Estado desconocido"}
+                      : "Inscripción pendiente"}
                   </TableCell>
                   <TableCell align="center" sx={{ fontSize: 18 }}>
                     {renderUser.payment === "pending" && (

@@ -1,28 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useProfile } from "../hooks/useProfile";
 import EventRegistrationsTable from "./EventRegistrationsTable";
 import { useEventRegistrations } from "../hooks/useEventRegistrations";
 
 const AdminProfile = ({ userId }) => {
   const { userData } = useProfile(userId);
-  const [searchDni, setSearchDni] = useState(null);
-
-  const [formData, setFormData] = useState({
-    dni: "",
-  });
-
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
-    setFormData({ ...formData, [name]: value });
-  };
+  const [searchDni, setSearchDni] = useState("");
+  const dniInputRef = useRef(null);
 
   const handleSubmitSearchUser = (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
     const dni = formData.get("dni");
-    console.log("Search DNI: ", dni);
     setSearchDni(dni);
-    setFormData({ ...formData, dni: "" });
+    dniInputRef.current.value = "";
   };
 
   return (
@@ -44,8 +35,7 @@ const AdminProfile = ({ userId }) => {
                 name="dni"
                 type="text"
                 className="w-full px-2 py-2 mb-5 rounded-lg shadow-lightShadowGrey"
-                onChange={handleInputChange}
-                value={formData.dni}
+                ref={dniInputRef}
               />
             </div>
           </div>

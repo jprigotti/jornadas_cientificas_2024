@@ -13,7 +13,7 @@ export const useEventRegistrations = (searchDni) => {
   /*******************************************************
    * DECLARACION DE VARIABLES
    *******************************************************/
-  const [renderUsers, setRenderUsers] = useState([""]);
+  const [renderUsers, setRenderUsers] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);

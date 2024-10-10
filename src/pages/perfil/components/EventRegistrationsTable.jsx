@@ -8,9 +8,12 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import Button from "@mui/material/Button";
 import { useEventRegistrations } from "../hooks/useEventRegistrations";
+import { useProfile } from "../hooks/useProfile";
 
-const EventRegistrationsTable = ({searchDni}) => {
-  const { renderUsers, handlePaymentStatusChange } = useEventRegistrations(searchDni);
+const EventRegistrationsTable = ({ searchDni }) => {
+  const { renderUsers, handlePaymentStatusChange } =
+    useEventRegistrations(searchDni);
+  const { convert_category } = useProfile();
 
   const tableItems = [
     "Dni",
@@ -47,7 +50,7 @@ const EventRegistrationsTable = ({searchDni}) => {
             </TableRow>
           </TableHead>
           <TableBody>
-          {console.log("renderUsers from table component; ", renderUsers)}
+            {console.log("renderUsers from table component; ", renderUsers)}
             {renderUsers?.length > 0 ? (
               renderUsers?.map((renderUser) => (
                 <TableRow
@@ -68,7 +71,7 @@ const EventRegistrationsTable = ({searchDni}) => {
                     {renderUser.lastName}
                   </TableCell>
                   <TableCell align="center" sx={{ fontSize: 18 }}>
-                    {renderUser.category}
+                    {convert_category[renderUser.category]}
                   </TableCell>
                   <TableCell align="center" sx={{ fontSize: 18 }}>
                     {renderUser.payment === "exento"

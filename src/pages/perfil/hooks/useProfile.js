@@ -20,12 +20,15 @@ export const useProfile = () => {
   const [editing, setEditing] = useState(false);
 
   const convert_category = {
-    estudiante: "Estudiante",
     bioquimico: "Bioquímico/a",
+    estudiante: "Estudiante",
+    enfermero: "Enfermero/a",
+    farmaceutico: "Farmacéutico/a",
     kinesiologo: "Kinesiologo/a",
     medico: "Médico/a",
     residente: "Residente",
-    trabajor_social: "Trabajador/a Social",
+    trabajador_social: "Trabajador/a Social",
+    otros: "Otros"
   };
 
   useEffect(() => {

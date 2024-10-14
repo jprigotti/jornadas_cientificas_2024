@@ -125,12 +125,15 @@ const SignUpForm = () => {
               }`}
             >
               <option value="">Seleccione...</option> {/* Placeholder option */}
-              <option value="estudiante">Estudiante</option>
               <option value="bioquimico">Bioquímico/a</option>
+              <option value="enfermero">Enfermero/a</option>
+              <option value="estudiante">Estudiante</option>
+              <option value="farmaceutico">Farmacéutico/a</option>
               <option value="kinesiologo">Kinesiologo/a</option>
               <option value="medico">Médico/a</option>
               <option value="residente">Residente</option>
-              <option value="trabajor_social">Trabajador/a Social</option>
+              <option value="trabajador_social">Trabajador/a Social</option>
+              <option value="otros">Otros</option>
 
             </select>
             {errors.category && (

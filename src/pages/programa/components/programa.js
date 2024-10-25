@@ -1,5 +1,42 @@
 export const programa = [
+    {
+        "categoria": "mesa_redonda",
+        "dia": "12",
+        "hora": "11:00 - 12:00 hs",
+        "ubicacion": "Aulas 2P A-B",
+        "titulo": "El Hospital Público ante situaciones extraordinarias: Plan de Manejo",
+        "presidente": {
+            "nombre": "Dr. Pablo Manjarín",
+            "servicio": "Guardia de Emergencias"
+        },
+        "secretarios": [
+            {
+                "nombre": "Dr. Ernesto Faraoni",
+                "servicio": "Dra. Lorena Romano"
+            }, {
+                "nombre": "Dr. Ernesto Faraoni",
+                "servicio": "Dra. Lorena Romano"
+            }
+        ],
+        "disertantes": [
+            {
+                "nombre": "Dra. Patricia Delnero",
+                "servicio": "Guardia de Emergencias, adultos",
+                "tema": "Protocolo ante incidente externo"
+            },
+            {
+                "nombre": "Dra. Silvana Oviedo",
+                "servicio": "Guardia de Emergencias, pediatría",
+                "tema": "Protocolo ante incidente interno"
+            },
+            {
+                "nombre": "Dra. Mariela García",
+                "servicio": "SAME, Ministerio de Salud CABA",
+                "tema": "Coordinación de SAME"
+            }
+        ]
 
+    }
 ]
 
 

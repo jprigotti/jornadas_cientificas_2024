@@ -6,7 +6,9 @@ export const programa = [
 
 
 /**
-inscripcion_card: {
+
+inscripcion_card
+{
 categoria: "inscripcion",
 dia:
 hora: 
@@ -14,7 +16,9 @@ ubicacion:
 descripcion:
 } 
 
-apertura: {
+****************************
+apertura
+{
 categoria: "apertura",
 dia:
 hora: 
@@ -22,7 +26,9 @@ ubicacion:
 descripcion:
 }
 
-conferencia: {
+****************************
+conferencia
+{
 categoria: "conferencia"
 dia:
 hora: 
@@ -31,14 +37,18 @@ titulo:
 orador:
 }
 
-vino_honor: {
+***************************
+vino_honor
+{
 categoria: "vino_de_honor"
 dia:
 hora: 
 ubicacion:
 }
 
-temas_libres: {
+***************************
+temas_libres
+{
 category: "temas_libres"
 dia:
 hora: 
@@ -51,14 +61,20 @@ trabajos: [
 
 }
 
-trabajos_premio: {
+***************************
+trabajos_premio
+{
 }
 
-break: {
+***************************
+break
+{
 categoria: "break"
 hora: }
 
-mesa_redonda: {
+****************************
+mesa_redonda
+{
 categoria: "mesa_redonda"
 dia:
 hora:

@@ -1,8 +1,24 @@
-import React, {useState} from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { programa } from "../components/programa";
+import { ProgramaContext } from "../context/ProgramaContext";
+
+
 export const usePrograma = () => {
 
-    const calendario = ["8-11", "12-11", "13-11", "14-11", "15-11"]
-    const [showPrograma, setShowPrograma] = useState(calendario[0])
+    const { calendario,
+        programaDay,
+        setProgramaDay,
+        programaFiltrado,
+        setProgramaFiltrado
+    } = useContext(ProgramaContext)
+
+
+
+
+    useEffect(() => {
+        const programaFiler = programa.filter(item => item.dia == programaDay)
+        setProgramaFiltrado(programaFiler)
+    }, [programaDay]);
 
 
     const ordenarPrograma = (programa) => {
@@ -20,8 +36,9 @@ export const usePrograma = () => {
 
     return {
         calendario,
-        showPrograma,
-        setShowPrograma,
-        ordenarPrograma
+        programaDay,
+        setProgramaDay,
+        programaFiltrado,
+        setProgramaFiltrado
     }
 }

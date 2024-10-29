@@ -1,4 +1,8 @@
+import React, {useState} from "react";
 export const usePrograma = () => {
+
+    const calendario = ["8-11", "12-11", "13-11", "14-11", "15-11"]
+    const [showPrograma, setShowPrograma] = useState(calendario[0])
 
 
     const ordenarPrograma = (programa) => {
@@ -15,6 +19,9 @@ export const usePrograma = () => {
 
 
     return {
+        calendario,
+        showPrograma,
+        setShowPrograma,
         ordenarPrograma
     }
 }

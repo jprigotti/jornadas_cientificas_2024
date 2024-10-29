@@ -28,7 +28,7 @@ export const useProfile = () => {
     medico: "Médico/a",
     residente: "Residente",
     trabajador_social: "Trabajador/a Social",
-    otros: "Otros"
+    otros: "Otros profesionales"
   };
 
   useEffect(() => {

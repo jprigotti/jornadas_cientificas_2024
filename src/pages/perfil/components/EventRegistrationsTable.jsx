@@ -7,57 +7,29 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import Button from "@mui/material/Button";
-import TablePagination from "@mui/material/TablePagination";
-import TextField from "@mui/material/TextField";
 import { useEventRegistrations } from "../hooks/useEventRegistrations";
+import { useProfile } from "../hooks/useProfile";
 
-const EventRegistrationsTable = ({ eventId }) => {
-  const {
-    registrations,
-    searchTerm,
-    setSearchTerm,
-    page,
-    setPage,
-    rowsPerPage,
-    setRowsPerPage,
-    totalRegistrations,
-    handlePaymentStatusChange,
-  } = useEventRegistrations(eventId);
+const EventRegistrationsTable = ({ searchDni }) => {
+  const { renderUsers, handlePaymentStatusChange } =
+    useEventRegistrations(searchDni);
+  const { convert_category } = useProfile();
 
-  const tableItems = ["Dni", "Nombre", "Apellido","Categoría", "Estado del Pago", "Acciones"];
-
-  const handleSearchChange = (event) => {
-    setSearchTerm(event.target.value);
-    setPage(0);
-  };
-
-  const handleChangePage = (event, newPage) => {
-    setPage(newPage);
-  };
-
-  const handleChangeRowsPerPage = (event) => {
-    setRowsPerPage(parseInt(event.target.value, 10));
-    setPage(0);
-  };
-
-  console.log("Hay registraciones?",registrations)
+  const tableItems = [
+    "Dni",
+    "Nombre",
+    "Apellido",
+    "Categoría",
+    "Estado del Pago",
+    "Acciones",
+  ];
 
   return (
-    <>
-      <TextField
-        label="Buscar por nombre o apellido"
-        id="standard-size-normal"
-        value={searchTerm}
-        onChange={handleSearchChange}
-        variant="standard"
-        sx={{
-          marginBottom: 2,
-          width: "100%",
-          maxWidth: 400,
-        }}
-      />
-
-      <TableContainer component={Paper} sx={{ boxShadow: 3, borderRadius: 2, maxHeight: 900 }}>
+    <div className="w-full pb-20">
+      <TableContainer
+        component={Paper}
+        sx={{ boxShadow: 3, borderRadius: 2, maxHeight: 900 }}
+      >
         <Table sx={{ minWidth: 650 }}>
           <TableHead>
             <TableRow sx={{ backgroundColor: "#005996" }}>
@@ -65,7 +37,12 @@ const EventRegistrationsTable = ({ eventId }) => {
                 <TableCell
                   key={index}
                   align="center"
-                  sx={{ fontWeight: "bold", color: "#fff", padding: "10px 16px", width: 150 }}
+                  sx={{
+                    fontWeight: "bold",
+                    color: "#fff",
+                    padding: "10px 16px",
+                    width: 150,
+                  }}
                 >
                   {header}
                 </TableCell>
@@ -73,31 +50,44 @@ const EventRegistrationsTable = ({ eventId }) => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {registrations?.length > 0 ? (
-              registrations?.map((registration) => (
+            {console.log("renderUsers from table component; ", renderUsers)}
+            {renderUsers?.length > 0 ? (
+              renderUsers?.map((renderUser) => (
                 <TableRow
-                  key={registration.id}
-                  sx={{ "&:last-child td, &:last-child th": { border: 0 },
-                  backgroundColor: registration.id % 2 === 0 ? "#f9f9f9" : "#fff",
-                }}
+                  key={renderUser.id}
+                  sx={{
+                    "&:last-child td, &:last-child th": { border: 0 },
+                    backgroundColor:
+                      renderUser.id % 2 === 0 ? "#f9f9f9" : "#fff",
+                  }}
                 >
                   <TableCell component="th" scope="row" align="center">
-                    {registration.user.dni} {/* Asumiendo que hay un campo dni */}
+                    {renderUser.dni} {/* Asumiendo que hay un campo dni */}
                   </TableCell>
-                  <TableCell align="center" sx={{fontSize: 18}}>{registration.user.name}</TableCell>
-                  <TableCell align="center" sx={{fontSize: 18}}>{registration.user.lastName}</TableCell>
-                  <TableCell align="center" sx={{fontSize: 18}}>{registration.user.category}</TableCell>
-                  <TableCell align="center" sx={{fontSize: 18}}>
-                    {registration.payment === "exento" ? "Exento" : 
-                    registration.payment === "pending" ? "Pendiente" : 
-                    registration.payment === "paid" ? "Pagado" : "Estado desconocido"}
+                  <TableCell align="center" sx={{ fontSize: 18 }}>
+                    {renderUser.name}
                   </TableCell>
-                  <TableCell align="center" sx={{fontSize: 18}}>
-                    {registration.payment === "pending" && (
+                  <TableCell align="center" sx={{ fontSize: 18 }}>
+                    {renderUser.lastName}
+                  </TableCell>
+                  <TableCell align="center" sx={{ fontSize: 18 }}>
+                    {convert_category[renderUser.category]}
+                  </TableCell>
+                  <TableCell align="center" sx={{ fontSize: 18 }}>
+                    {renderUser.payment === "exento"
+                      ? "Exento"
+                      : renderUser.payment === "pending"
+                      ? "Pendiente"
+                      : renderUser.payment === "paid"
+                      ? "Pagado"
+                      : "Inscripción pendiente"}
+                  </TableCell>
+                  <TableCell align="center" sx={{ fontSize: 18 }}>
+                    {renderUser.payment === "pending" && (
                       <Button
                         variant="contained"
                         size="small"
-                        onClick={() => handlePaymentStatusChange(registration.id)}
+                        onClick={() => handlePaymentStatusChange(renderUser.id)}
                         sx={{
                           backgroundColor: "#005996",
                           color: "#fff",
@@ -114,7 +104,7 @@ const EventRegistrationsTable = ({ eventId }) => {
               ))
             ) : (
               <TableRow>
-                <TableCell colSpan={5} align="center" sx={{fontSize: 18}}>
+                <TableCell colSpan={5} align="center" sx={{ fontSize: 18 }}>
                   No se encuentran registros
                 </TableCell>
               </TableRow>
@@ -122,20 +112,8 @@ const EventRegistrationsTable = ({ eventId }) => {
           </TableBody>
         </Table>
       </TableContainer>
-
-      <TablePagination
-        component="div"
-        count={totalRegistrations}
-        page={page}
-        onPageChange={handleChangePage}
-        rowsPerPage={rowsPerPage}
-        labelRowsPerPage="Seleccione Filas por página"
-        onRowsPerPageChange={handleChangeRowsPerPage}
-        sx={{ marginTop: 2 }}
-      />
-    </>
+    </div>
   );
 };
 
 export default EventRegistrationsTable;
-

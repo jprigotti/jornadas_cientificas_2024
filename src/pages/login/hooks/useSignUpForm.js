@@ -108,41 +108,74 @@ export const useSignUpForm = () => {
 
   const validate = () => {
     let formErrors = {};
+    let cleanedData = { ...formData };
 
-    if (!formData.name) {
+    // Name validation
+    if (!formData.name || !formData.name.trim()) {
       formErrors.name = "Nombre es requerido";
+    } else {
+      cleanedData.name = formData.name.trim();
     }
-    if (!formData.lastName) {
+
+    // Last name validation
+    if (!formData.lastName || !formData.lastName.trim()) {
       formErrors.lastName = "Apellido es requerido";
+    } else {
+      cleanedData.lastName = formData.lastName.trim();
     }
-    if (!formData.cell) {
+
+    // DNI validation
+    if (!formData.dni || !formData.dni.trim()) {
       formErrors.dni = "DNI es requerido";
+    } else {
+      const clearDni = formData.dni.replace(/[.\-\s]/g, "");
+      cleanedData.dni = clearDni;
     }
-    if (!formData.cell) {
+
+    // Cell phone validation
+    if (!formData.cell || !formData.cell.trim()) {
       formErrors.cell = "Celular es requerido";
+    } else {
+      const clearCell = formData.cell.replace(/[.\-\s]/g, "");
+      cleanedData.cell = clearCell;
     }
 
-    if (!formData.email) {
+    // Email validation
+    if (!formData.email || !formData.email.trim()) {
       formErrors.email = "Email es requerido";
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      formErrors.email = "Email is invalid";
+    } else if (!/\S+@\S+\.\S+/.test(formData.email.trim())) {
+      formErrors.email = "Email es inválido";
+    } else {
+      cleanedData.email = formData.email.trim();
     }
 
-    if (!formData.servicio) {
+    // Servicio validation
+    if (!formData.servicio || !formData.servicio.trim()) {
       formErrors.servicio = "Servicio es requerido";
     }
 
-    if (!formData.category) {
+    // Category validation
+    if (!formData.category || !formData.category.trim()) {
       formErrors.category = "Categoría es requerido";
     }
 
-    if (!formData.password) {
+    // Password validation
+    if (!formData.password || !formData.password.trim()) {
       formErrors.password = "Contraseña es requerida";
     } else if (formData.password.length < 6) {
       formErrors.password = "La contraseña debe tener al menos 6 caracteres";
+    }else{
+      cleanedData.password = formData.password.trim()
     }
 
+    // Set errors and return them
     setErrors(formErrors);
+
+    // If no errors, update formData with cleaned values
+    if (Object.keys(formErrors).length === 0) {
+      setFormData(cleanedData);
+    }
+
     return formErrors;
   };
 

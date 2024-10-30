@@ -19,6 +19,18 @@ export const useProfile = () => {
   });
   const [editing, setEditing] = useState(false);
 
+  const convert_category = {
+    bioquimico: "Bioquímico/a",
+    estudiante: "Estudiante",
+    enfermero: "Enfermero/a",
+    farmaceutico: "Farmacéutico/a",
+    kinesiologo: "Kinesiologo/a",
+    medico: "Médico/a",
+    residente: "Residente",
+    trabajador_social: "Trabajador/a Social",
+    otros: "Otros profesionales"
+  };
+
   useEffect(() => {
     const fetchUserData = async () => {
       if (!user.uid) return;
@@ -78,7 +90,10 @@ export const useProfile = () => {
     }
   };
 
+
+
   return {
+    convert_category,
     userData,
     formData,
     handleChange,

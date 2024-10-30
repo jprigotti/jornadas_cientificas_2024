@@ -9,7 +9,7 @@ import { serviciosList } from "../../login/components/serviciosList";
 const UserProfile = () => {
   const { user } = useAuth();
   const {
-    userData,
+    convert_category,
     formData,
     handleEdit,
     handleChange,
@@ -35,7 +35,11 @@ const UserProfile = () => {
           <div className="flex items-center">
             <p className="min-w-[50px] me-10">Nombre:</p>
             <input
-              className={editing ? "w-full bg-CardGrayLight p-2 rounded-lg shadow-lightShadowGrey" : "w-full"}
+              className={
+                editing
+                  ? "w-full bg-CardGrayLight p-2 rounded-lg shadow-lightShadowGrey"
+                  : "w-full"
+              }
               type="text"
               name="name"
               value={formData.name}
@@ -46,7 +50,11 @@ const UserProfile = () => {
           <div className="flex pt-3">
             <p className="min-w-[50px] me-10">Apellido:</p>
             <input
-              className={editing ? "w-full bg-CardGrayLight p-2 rounded-lg shadow-lightShadowGrey" : "w-full"}
+              className={
+                editing
+                  ? "w-full bg-CardGrayLight p-2 rounded-lg shadow-lightShadowGrey"
+                  : "w-full"
+              }
               type="text"
               name="lastName"
               value={formData.lastName}
@@ -57,7 +65,11 @@ const UserProfile = () => {
           <div className="flex pt-3">
             <p className="min-w-[50px] border-1 me-10">DNI:</p>
             <input
-              className={editing ? "w-full bg-CardGrayLight p-2 rounded-lg shadow-lightShadowGrey" : "w-full"}
+              className={
+                editing
+                  ? "w-full bg-CardGrayLight p-2 rounded-lg shadow-lightShadowGrey"
+                  : "w-full"
+              }
               type="text"
               name="dni"
               value={formData.dni}
@@ -68,7 +80,11 @@ const UserProfile = () => {
           <div className="flex pt-3">
             <p className="min-w-[50px] me-10">Cell:</p>
             <input
-              className={editing ? "w-full bg-CardGrayLight p-2 rounded-lg shadow-lightShadowGrey" : "w-full"}
+              className={
+                editing
+                  ? "w-full bg-CardGrayLight p-2 rounded-lg shadow-lightShadowGrey"
+                  : "w-full"
+              }
               type="text"
               name="cell"
               value={formData.cell}
@@ -88,7 +104,9 @@ const UserProfile = () => {
                 <option value="">Seleccione...</option>{" "}
                 {/* Placeholder option */}
                 {serviciosList.map((servicio, index) => (
-                  <option key={index} value={servicio}>{servicio}</option>
+                  <option key={index} value={servicio}>
+                    {servicio}
+                  </option>
                 ))}
               </select>
             ) : (
@@ -100,15 +118,16 @@ const UserProfile = () => {
             <input
               type="text"
               name="category"
-              value={formData.category}
+              value={convert_category[formData.category]}
               onChange={handleChange}
               disabled
             />
           </div>
 
           <div className="flex pt-3">
-            <p className="w-[50px] me-10">Email:</p>
+            <p className="w-[50px] me-12">Email:</p>
             <input
+            className="w-full"
               type="email"
               name="email"
               value={formData.email}

@@ -58,10 +58,10 @@ const SignUpForm = () => {
               value={formData.dni}
               onChange={handleChange}
               className={`rounded-lg shadow-lightShadowGrey shadow appearance-none px-5 py-2 mb-1 focus:outline-none focus:shadow-lightShadow ${
-                errors.cell && "focus:outline border border-Red"
+                errors.dni && "focus:outline border border-Red"
               }`}
             />
-            {errors.cell && (
+            {errors.dni && (
               <span className="text-sm text-Red">{errors.dni}</span>
             )}
           </div>
@@ -125,9 +125,16 @@ const SignUpForm = () => {
               }`}
             >
               <option value="">Seleccione...</option> {/* Placeholder option */}
-              <option value="medico">Médico</option>
-              <option value="residente">Residente</option>
+              <option value="bioquimico">Bioquímico/a</option>
+              <option value="enfermero">Enfermero/a</option>
               <option value="estudiante">Estudiante</option>
+              <option value="farmaceutico">Farmacéutico/a</option>
+              <option value="kinesiologo">Kinesiologo/a</option>
+              <option value="medico">Médico/a</option>
+              <option value="residente">Residente</option>
+              <option value="trabajador_social">Trabajador/a Social</option>
+              <option value="otros">Otros</option>
+
             </select>
             {errors.category && (
               <span className="text-sm text-Red">{errors.category}</span>

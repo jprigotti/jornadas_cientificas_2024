@@ -25,7 +25,14 @@ const NavPrograma = () => {
   return (
     <div className="h-[40px] flex items-center my-10">
       <div className="h-full bg-Violet flex items-center ps-4 rounded-tl-xl rounded-bl-xl">
-        <button onClick={handlePrevious}>
+        <button
+          onClick={handlePrevious}
+          className={
+            currentDayIndex === 0
+              ? "opacity-50 cursor-not-allowed"
+              : "cursor-pointer"
+          }
+        >
           <LeftArrowIcon width={"30px"} height={"30px"} />
         </button>
       </div>
@@ -37,7 +44,14 @@ const NavPrograma = () => {
       </div>
 
       <div className="h-full bg-Violet flex items-center px-2 rounded-tr-xl rounded-br-xl">
-        <button onClick={handleNext}>
+        <button
+          onClick={handleNext}
+          className={
+            currentDayIndex === calendario.length - 1
+              ? "opacity-50 cursor-not-allowed"
+              : "cursor-pointer"
+          }
+        >
           <RightArrowIcon width={"30px"} height={"30px"} />
         </button>
       </div>

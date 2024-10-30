@@ -1,11 +1,54 @@
-import React from 'react'
-import { usePrograma } from '../hooks/usePrograma'
+import React, { useState } from "react";
+import { usePrograma } from "../hooks/usePrograma";
+import LeftArrowIcon from "../svgIcons/LeftArrowIcon";
+import RightArrowIcon from "../svgIcons/RightArrowIcon";
 
 const NavPrograma = () => {
+  const { calendario, calendarioMuestra, setProgramaDay } = usePrograma();
 
-  const { calendario, setProgramaDay } = usePrograma();
+  const [currentDayIndex, setCurrentDayIndex] = useState(0);
+
+  const handleNext = () => {
+    if (currentDayIndex < calendario.length - 1) {
+      setCurrentDayIndex(currentDayIndex + 1);
+      setProgramaDay(calendario[currentDayIndex + 1]);
+    }
+  };
+
+  const handlePrevious = () => {
+    if (currentDayIndex > 0) {
+      setCurrentDayIndex(currentDayIndex - 1);
+      setProgramaDay(calendario[currentDayIndex - 1]);
+    }
+  };
 
   return (
+    <div className="h-[40px] flex items-center my-10">
+      <div className="h-full bg-Violet flex items-center ps-4 rounded-tl-xl rounded-bl-xl">
+        <button onClick={handlePrevious}>
+          <LeftArrowIcon width={"30px"} height={"30px"} />
+        </button>
+      </div>
+
+      <div className="h-full bg-Violet flex items-center mx-1">
+        <h2 className="px-5 w-[150px] text-White text-center font-semiBold">
+          {calendarioMuestra[currentDayIndex]}
+        </h2>
+      </div>
+
+      <div className="h-full bg-Violet flex items-center px-2 rounded-tr-xl rounded-br-xl">
+        <button onClick={handleNext}>
+          <RightArrowIcon width={"30px"} height={"30px"} />
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default NavPrograma;
+
+/**
+ *   return (
     <div className='d-flex py-10'>
       {calendario.map((day, index) => {
         return (
@@ -18,6 +61,4 @@ const NavPrograma = () => {
       })}
     </div>
   )
-}
-
-export default NavPrograma
+ */

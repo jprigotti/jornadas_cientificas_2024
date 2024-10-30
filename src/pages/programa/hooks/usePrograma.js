@@ -6,6 +6,7 @@ import { ProgramaContext } from "../context/ProgramaContext";
 export const usePrograma = () => {
 
     const { calendario,
+        calendarioMuestra,
         programaDay,
         setProgramaDay,
         programaFiltrado,
@@ -36,6 +37,7 @@ export const usePrograma = () => {
 
     return {
         calendario,
+        calendarioMuestra,
         programaDay,
         setProgramaDay,
         programaFiltrado,

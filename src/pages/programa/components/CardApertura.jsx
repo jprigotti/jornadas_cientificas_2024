@@ -1,17 +1,20 @@
 import React from "react";
+import ClockIcon from "../svgIcons/ClockIcon";
+import LocationIcon from "../svgIcons/LocationIcon";
 
 const CardApertura = ({ data }) => {
   return (
-    <div className="p-2">
-      <div className="bg-White w-1/2 rounded-xl p-5">
-        <h2>{data.descripcion}</h2>
-        <p>{data.dia}</p>
-        <p>
-          <strong>Hora:</strong> {data.hora}
-        </p>
-        <p>
-          <strong>Ubicación:</strong> {data.ubicacion}
-        </p>
+    <div className="w-full bg-White rounded-xl shadow-lg p-3 mb-3">
+      <div className="flex justify-start items-center py-3">
+        <ClockIcon with={"25px"} height={"25px"} />
+        <p className="font-bold ps-3 text-Violet">{data.hora}</p>
+      </div>
+
+      <h2 className="font-semiBold pb-3">{data.descripcion}</h2>
+
+      <div className="flex justify-center items-center py-3">
+        <LocationIcon with={"25px"} height={"25px"} />
+        <p className="font-bold ps-3 text-Violet">{data.ubicacion}</p>
       </div>
     </div>
   );

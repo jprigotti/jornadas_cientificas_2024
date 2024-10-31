@@ -6,6 +6,7 @@ import { usePrograma } from "../hooks/usePrograma";
 import CardApertura from "./CardApertura";
 import CardConferencia from "./CardConferencia"
 import CardVinoHonor from "./CardVinoHonor"
+import CardBreak from "./CardBreak";
 
 const ProgramaContainer = () => {
   const { programaFiltrado } = usePrograma();
@@ -23,6 +24,8 @@ const ProgramaContainer = () => {
           <CardConferencia key={index} data={item} />
         ) : item.categoria == "vino_de_honor" ? (
           <CardVinoHonor key={index} data={item} />
+        ) : item.categoria == "break" ? (
+          <CardBreak key={index} data={item} />
         ) : null
       )}
     </div>

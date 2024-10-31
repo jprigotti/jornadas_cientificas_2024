@@ -37,6 +37,7 @@ export const programa = [
         "orador": "Dr. Vadim Mischanchuk"
     },
     {
+        "dia": "12",
         "categoria": "break",
         "hora": "10:30 - 11:00"
     },
@@ -168,6 +169,7 @@ export const programa = [
         "orador": "Prof. Lic. Eduardo Sacheri"
     },
     {
+        "dia": "13",
         "categoria": "break",
         "hora": "10:30 - 11:00"
     },
@@ -280,6 +282,7 @@ export const programa = [
         "orador": "Ing. Juan Pablo Rigotti"
     },
     {
+        "dia": "14",
         "categoria": "break",
         "hora": "10:30 - 11:00"
     },
@@ -313,7 +316,7 @@ export const programa = [
             },
             {
                 "nombre": "Dra. Jimena Figoni, Dr. Federico Alberione, Dr. Juan Pablo Casasco",
-                "servicio": "???",
+                "servicio": "",
                 "tema": "Práctica con simulador"
             }
         ]

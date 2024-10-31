@@ -10,29 +10,29 @@ export const programa = [
     {
         "categoria": "apertura",
         "dia": "8",
-        "hora": "09:00 - 09:20",
+        "hora": "09:00",
         "ubicacion": "2 Piso Aulas A-B",
         "descripcion": "Apertura"
     },
     {
         "categoria": "conferencia",
         "dia": "8",
-        "hora": "9:30",
-        "ubicacion": "Aulas 2P A-B",
+        "hora": "10:30",
+        "ubicacion": "2 Piso Aulas A-B",
         "titulo": "Sistema de salud en la Argentina en crisis. Qué papel debe jugar el hospital público.",
         "orador": "Dr. Ruben Luca"
     },
     {
         "categoria": "vino_de_honor",
         "dia": "8",
-        "hora": "11:00",
-        "ubicacion": "a dfinir"
+        "hora": "12:00",
+        "ubicacion": "2 Piso Aulas A-B"
     },
     {
         "categoria": "conferencia",
         "dia": "12",
         "hora": "9:30",
-        "ubicacion": "Aulas 2P A-B",
+        "ubicacion": "2 Piso Aulas A-B",
         "titulo": "El acto médico bajo la lupa de la justicia.",
         "orador": "Dr. Vadim Mischanchuk"
     },
@@ -44,7 +44,7 @@ export const programa = [
         "categoria": "mesa_redonda",
         "dia": "12",
         "hora": "11:00 - 12:00 hs",
-        "ubicacion": "Aulas 2P A-B",
+        "ubicacion": "2 Piso Aulas A-B",
         "titulo": "El Hospital Público ante situaciones extraordinarias: Plan de Manejo",
         "presidente": {
             "nombre": "Dr. Pablo Manjarín",
@@ -82,8 +82,8 @@ export const programa = [
         "categoria": "mesa_redonda",
         "dia": "12",
         "hora": "11:00 - 12:00 hs",
-        "ubicacion": "Aulas 4P",
-        "titulo": "Cáncer de Mama en Mujeres Jóvene",
+        "ubicacion": "4 Piso Aula F",
+        "titulo": "Cáncer de Mama en Mujeres Jóvenes",
         "presidente": {
             "nombre": "Dra. Guillermina Amestica",
             "servicio": "Ginecología"
@@ -133,8 +133,8 @@ export const programa = [
         "categoria": "mesa_redonda",
         "dia": "12",
         "hora": "12:00 - 12:30 hs",
-        "ubicacion": "Aulas 2P A-B",
-        "titulo": "Presentación del Protocolo para el manejo de Catéter de Presión Intracraneal en el Hospital D. F. Sanotjanni",
+        "ubicacion": "2 Piso Aulas A-B",
+        "titulo": "Presentación del Protocolo para el manejo de Catéter de Presión Intracraneal en el Hospital D. F. Santojanni",
         "presidente": {
             "nombre": "Dr. Pablo Iturrieta",
             "servicio": "Neurocirugía"
@@ -148,7 +148,7 @@ export const programa = [
         },
         "disertantes": [
             {
-                "nombre": " Dr.Pablo Santángelo",
+                "nombre": "Dr.Pablo Santángelo",
                 "servicio": "Neurocirugía",
                 "tema": ""
             },
@@ -156,14 +156,14 @@ export const programa = [
                 "nombre": "Dra. Victoria Roca",
                 "servicio": "Guardia de Emergencias",
                 "tema": ""
-            },
+            }
         ]
     },
     {
         "categoria": "conferencia",
         "dia": "13",
         "hora": "9:30",
-        "ubicacion": "Aulas 2P A-B",
+        "ubicacion": "2 Piso Aulas A-B",
         "titulo": "La construcción del estado argentino y su relación con la salud pública en el Siglo XIX",
         "orador": "Prof. Lic. Eduardo Sacheri"
     },
@@ -175,7 +175,7 @@ export const programa = [
         "categoria": "mesa_redonda",
         "dia": "13",
         "hora": "11:00 - 12:00 hs",
-        "ubicacion": "Aulas ??",
+        "ubicacion": "2 Piso Aulas A-B",
         "titulo": "Consenso institucional de prevención de la infección quirúrgica: abordaje transdisciplinario.",
         "presidente": {
             "nombre": "Dra. Daniela D’Alessandro",
@@ -210,7 +210,7 @@ export const programa = [
         "categoria": "mesa_redonda",
         "dia": "13",
         "hora": "11:00 - 12:00 hs",
-        "ubicacion": "Aulas ??",
+        "ubicacion": "4 Piso Aula F",
         "titulo": "El paciente con EPOC e Insuficiencia Cardíaca: cuándo se interna en UCO y cuándo en UTI, ¿cambia el manejo?",
         "presidente": {
             "nombre": "Dr. Carlos Ruano",
@@ -225,22 +225,22 @@ export const programa = [
         },
         "disertantes": [
             {
-                "nombre": "A definir",
+                "nombre": "Dr. Nicolas Caiña",
                 "servicio": "Guardia de Emergencias",
-                "tema": "Manejo de paciente con EPOC e Insuficiencia Cardíaca en guardia"
+                "tema": "Manejo inicial en Shock Room"
             },
             {
                 "nombre": "Dr. Daniel Chiacharaz",
                 "servicio": "UTI",
-                "tema": "¿Cuándo debe ser internado en Terapia Intensiva?"
+                "tema": "Cuando se debe internar en UTI"
             },
             {
                 "nombre": "Dr. Gustavo Lanosa",
                 "servicio": "UCO",
-                "tema": "¿Cuándo debe ser internado en Unidad Coronaria? "
+                "tema": "Cuándo se debe priorizar lo cardiológico. Manejo en UCO"
             },
             {
-                "nombre": "A definir",
+                "nombre": "Andres Leoz",
                 "servicio": "Kinesiología",
                 "tema": "Manejo ventilatorio del paciente"
             }
@@ -250,14 +250,14 @@ export const programa = [
         "categoria": "mesa_redonda",
         "dia": "13",
         "hora": "12:00 - 12:30 hs",
-        "ubicacion": "Aulas ??",
+        "ubicacion": "4 Piso Aula F",
         "titulo": "Problemas que retrasan las cirugías por fractura de cadera ",
         "presidente": {
             "nombre": "Dr. Lautaro Seoane",
             "servicio": "Traumatología"
         },
         "secretario": {
-            "titulo": "Secretario",
+            "titulo": "Secretaria",
             "secretarios": [{
                 "nombre": "Dra. Karina Méndez",
                 "servicio": "Traumatología"
@@ -266,23 +266,8 @@ export const programa = [
         "disertantes": [
             {
                 "nombre": "Dr. Johan Rodríguez",
-                "servicio": "Guardia de Emergencias",
-                "tema": "Manejo de paciente con EPOC e Insuficiencia Cardíaca en guardia"
-            },
-            {
-                "nombre": "Dr. Daniel Chiacharaz",
-                "servicio": "UTI",
-                "tema": "¿Cuándo debe ser internado en Terapia Intensiva?"
-            },
-            {
-                "nombre": "Dr. Gustavo Lanosa",
-                "servicio": "UCO",
-                "tema": "¿Cuándo debe ser internado en Unidad Coronaria? "
-            },
-            {
-                "nombre": "A definir",
-                "servicio": "Kinesiología",
-                "tema": "Manejo ventilatorio del paciente"
+                "servicio": "Traumatología",
+                "tema": ""
             }
         ]
     },
@@ -290,7 +275,7 @@ export const programa = [
         "categoria": "conferencia",
         "dia": "14",
         "hora": "9:30",
-        "ubicacion": "Aulas 2P A-B",
+        "ubicacion": "2 Piso Aulas A-B",
         "titulo": "La inteligencia artificial aplicada a la salud: aliado o enemigo.",
         "orador": "Ing. Juan Pablo Rigotti"
     },
@@ -302,7 +287,7 @@ export const programa = [
         "categoria": "mesa_redonda",
         "dia": "14",
         "hora": "11:00 - 12:00 hs",
-        "ubicacion": "Aulas ??",
+        "ubicacion": "2 Piso Aulas A-B",
         "titulo": "Actualización de programas en formación médica, desarrollos de entornos virtuales y simulación quirúrgica.",
         "presidente": {
             "nombre": "Dr. Gustavo Masenga",
@@ -318,7 +303,7 @@ export const programa = [
         "disertantes": [
             {
                 "nombre": "Dra. Andrea Andreacchio",
-                "servicio": "(Directora General de Docencia, Investigación y Desarrollo Profesional, Ministerio de Salud, CABA",
+                "servicio": "Directora General de Docencia, Investigación y Desarrollo Profesional, Ministerio de Salud, CABA",
                 "tema": ""
             },
             {
@@ -330,6 +315,41 @@ export const programa = [
                 "nombre": "Dra. Jimena Figoni, Dr. Federico Alberione, Dr. Juan Pablo Casasco",
                 "servicio": "???",
                 "tema": "Práctica con simulador"
+            }
+        ]
+    },
+    {
+        "categoria": "mesa_redonda",
+        "dia": "14",
+        "hora": "12:00 - 12:30 hs",
+        "ubicacion": "4 Piso Aula F",
+        "titulo": "Cáncer Cutáneo: Detección precoz y Tratamiento avanzado",
+        "presidente": {
+            "nombre": "Dr. Juan Pablo Bavio",
+            "servicio": "Oncología"
+        },
+        "secretario": {
+            "titulo": "Secretario",
+            "secretarios": [{
+                "nombre": "Dra. Daniela Bresolin Tuduri",
+                "servicio": "Dermatología"
+            }]
+        },
+        "disertantes": [
+            {
+                "nombre": "Dra. Eugenia Wamba",
+                "servicio": "Dermatología",
+                "tema": ""
+            },
+            {
+                "nombre": "Dra. María Florencia Pedrini Cinqualbrez",
+                "servicio": "Dermatología",
+                "tema": ""
+            },
+            {
+                "nombre": "Invitado Laboratorio Bristol",
+                "servicio": "Melanoma avanzado",
+                "tema": "Inmunoterapia"
             }
         ]
     }

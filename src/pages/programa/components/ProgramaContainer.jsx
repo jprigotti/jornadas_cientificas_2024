@@ -4,6 +4,8 @@ import CardMesaRedonda from "./CardMesaRedonda";
 import CardInscripcion from "./CardInscripcion";
 import { usePrograma } from "../hooks/usePrograma";
 import CardApertura from "./CardApertura";
+import CardConferencia from "./CardConferencia"
+import CardVinoHonor from "./CardVinoHonor"
 
 const ProgramaContainer = () => {
   const { programaFiltrado } = usePrograma();
@@ -17,6 +19,10 @@ const ProgramaContainer = () => {
           <CardInscripcion key={index} data={item} />
         ) : item.categoria == "apertura" ? (
           <CardApertura key={index} data={item} />
+        ) : item.categoria == "conferencia" ? (
+          <CardConferencia key={index} data={item} />
+        ) : item.categoria == "vino_de_honor" ? (
+          <CardVinoHonor key={index} data={item} />
         ) : null
       )}
     </div>

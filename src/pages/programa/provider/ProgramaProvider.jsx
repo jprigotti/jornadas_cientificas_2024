@@ -7,6 +7,15 @@ const ProgramaProvider = ({ children }) => {
     const [programaDay, setProgramaDay] = useState(calendario[0])
     const [programaFiltrado, setProgramaFiltrado] = useState()
 
+    const categorias = {
+        inscripcion: "Inscripción",
+        apertura: "Apertura",
+        conferencia: "Conferencia",
+        vino_de_honor: "Vino de Honor",
+        break: "Break",
+        mesa_redonda: "Mesa redonda"
+    }
+
     return (
         <ProgramaContext.Provider
             value={
@@ -16,7 +25,8 @@ const ProgramaProvider = ({ children }) => {
                     programaDay,
                     setProgramaDay,
                     programaFiltrado,
-                    setProgramaFiltrado
+                    setProgramaFiltrado,
+                    categorias
                 }
             }>
             {children}

@@ -29,7 +29,7 @@ export default {
       'TealGreen_3': "#97C3C6",
       'TealGreen_4': "#A3CDD2",
       'CardGrayLight':'#EAEAEA',
-      'CardGrayDark':'##4F4F4F'
+      'CardGrayDark':'#4F4F4F'
 
     },
     fontFamily: {

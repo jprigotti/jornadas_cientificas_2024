@@ -79,6 +79,47 @@ export const getDocumentById = async (id, name) => {
     }
 };
 
+
+// GET_DOCUMENT_BY_FIELD
+export const getDocumentByField = async (collectionName, field, value) => {
+    const response = {
+        status: null,
+        error: null,
+        data: []
+    };
+
+    try {
+        // Reference to the Firestore collection
+        const docsRef = collection(db, collectionName);
+        
+        // Create a query where the specified field matches the given value
+        const docsQuery = query(docsRef, where(field, '==', value));
+        
+        // Execute the query
+        const querySnapshot = await getDocs(docsQuery);
+        
+        // Map through the query results and construct the data array
+        const documents = querySnapshot.docs.map(doc => ({
+            id: doc.id,
+            ...doc.data()
+        }));
+        
+        // If documents are found, return them in the response
+        response.status = true;
+        response.data = documents;
+        
+    } catch (error) {
+        // Handle any errors that occur during the query
+        response.status = false;
+        response.error = error;
+    }
+
+    return response;
+};
+
+
+
+
 /*GET_DOCUMENTS_BY_ID_FROM_SUBCOLLECTION
 * recibe como argumentos:
 parentCollection and parentDocId
@@ -176,10 +217,7 @@ export const updateDocument = async (data) => {
         // Create a reference to the document in the subcollection
         const docRef = doc(db, data.collection, data.docId);
 
-        // Update the specific field in the document
-        const field = data.field;
-        const value = data.value;
-        await updateDoc(docRef, { field: value });
+        await updateDoc(docRef, data.userData);
         response.status = true;
     } catch (error) {
         response.status = false;
@@ -276,3 +314,4 @@ export const getDocumentsByIdsFromCollection = async (docsCollection, docIds) =>
 
     return response;
 }
+

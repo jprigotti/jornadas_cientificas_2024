@@ -5,7 +5,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithPopup,
   sendEmailVerification,
-  sendPasswordResetEmail
+  sendPasswordResetEmail,
 } from "firebase/auth";
 
 import { auth } from "../core/config/firebase.config";
@@ -15,6 +15,7 @@ import {
   getDocuments,
   setDocument,
   getDocumentById,
+  getDocumentByField,
   getDocumentByIdFromSubcollection,
   addSubcollectionDocument,
   setSubcollectionDocument,
@@ -23,6 +24,7 @@ import {
   getDocumentsFromSubcollection,
   getDocumentsByIdsFromCollection,
 } from "../core/db/firestore.db";
+import { collection } from "firebase/firestore";
 
 // Authentication Functions
 export const signUpWithEmail = async (email, password) => {
@@ -51,6 +53,58 @@ export const getUserById = async (id) => {
   return res;
 };
 
+export const getUserByDni = async (dni) => {
+  const field = "dni";
+  const res = await getDocumentByField(COLLECTIONS.USERS, field, dni);
+  return res;
+};
+
+export const getUserRegistrationByDni = async (eventId, dni) => {
+  const res = {
+    status: false,
+    error: null,
+    data: [],  // Initialize data as an array
+  };
+
+  try {
+    // Fetch the user document by DNI
+    const field = "dni";
+    const userRes = await getDocumentByField(COLLECTIONS.USERS, field, dni);
+
+    // Ensure user was found
+    if (!userRes.status || !userRes.data || userRes.data.length === 0) {
+      throw new Error(`User with DNI ${dni} not found`);
+    }
+
+    // Iterate over the found users (if there are multiple)
+    for (const user of userRes.data) {
+      // Fetch the registration for the event for each user
+      const registrationRes = await getRegistration(eventId, user.id);
+
+      // Combine user data with registration data
+      const userWithRegistration = {
+        ...user,  // Spread user data
+        ...(registrationRes.status && registrationRes.data ? registrationRes.data : {}),  // Merge registration data if available
+      };
+
+      // Add the combined object to the res.data array
+      res.data.push(userWithRegistration);
+    }
+
+    // Set status to true when successful
+    res.status = true;
+
+  } catch (error) {
+    // Handle errors
+    res.status = false;
+    res.error = error.message;
+  }
+
+  return res;
+};
+
+
+
 export const getAllEvents = async () => {
   const res = await getDocuments(COLLECTIONS.EVENTS);
   return res;
@@ -73,16 +127,16 @@ export const addRegistration = async (userId, eventId) => {
   return res;
 };
 
-export const setRegistration = async (eventId, userId) => {
+export const setRegistration = async (eventId, userData) => {
   const registrationData = {
     parentDocId: eventId,
-    childDocId: userId,
+    childDocId: userData.id,
     parentCollection: COLLECTIONS.EVENTS,
     childCollection: COLLECTIONS.REGISTRATION,
     persistData: {
       registrationTime: new Date(),
       status: "registered",
-      payment: "pending",
+      payment: userData.category == "estudiante" ? "exento" : "pending",
     },
   };
   const res = await setSubcollectionDocument(registrationData);
@@ -97,6 +151,16 @@ export const getRegistration = async (eventId, userId) => {
     childCollection: COLLECTIONS.REGISTRATION,
   };
   const res = await getDocumentByIdFromSubcollection(data);
+  return res;
+};
+
+export const updateUserData = async (userId, formData) => {
+  const data = {
+    collection: COLLECTIONS.USERS,
+    docId: userId,
+    userData: formData,
+  };
+  const res = updateDocument(data);
   return res;
 };
 
@@ -166,23 +230,21 @@ export const getEventRegistrationsWithUserData = async (eventId) => {
   }
 };
 
-
 export const recoverPassword = async (email) => {
   const response = {
     status: false,
-    error: null
-  }
+    error: null,
+  };
 
   try {
-    const resetPassResponse = sendPasswordResetEmail(auth, email)
+    const resetPassResponse = sendPasswordResetEmail(auth, email);
     response.status = true;
   } catch (error) {
-    response.error = error
+    response.error = error;
   }
 
   return response;
-
-}
+};
 // Servicio para obtener datos del evento con usuarios y su estado de pago
 
 // export const getEventRegistrationsWithUserData = async (eventId) => {

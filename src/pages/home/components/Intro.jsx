@@ -18,7 +18,7 @@ const Intro = () => {
         </h2>
 
         <div className="w-full laptop1:w-3/4 m-auto">
-          <div class="font-poppins space-y-4 pb-10">
+          <div className="font-poppins space-y-4 pb-10">
             <p className="text-indent indent-6 text-justify font-poppins text-[14px] laptop1:text-[18px]">
               Les damos la bienvenida a esta nueva edición de las jornadas
               científicas del Hospital Santojanni y CESACs del área
@@ -51,8 +51,8 @@ const Intro = () => {
               alt="Presidenta Jornadas"
             />
             <div className="ps-10 flex flex-col items-center">
-              <img className="w-[150px]" src="/images/signature.png" alt="" />
-              <p>Presidenta XXXIX Jornadas Científicas</p>
+              {/* <img className="w-[150px]" src="/images/signature.png" alt="" /> */}
+              <p className="pt-5 tablet:pt-24">Presidenta XXXIX Jornadas Científicas</p>
               <p>Dra. María Vivona</p>
             </div>
           </div>

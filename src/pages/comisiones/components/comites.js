@@ -1,6 +1,7 @@
 export const comites = [
     {
         "comiteNombre" : "Comité cientifico",
+        "mostrarCargos" : "true",
         "presidenteNombre": "Javier Castillo",
         "presidenteGenero": "Dr.",
         "secretarioNombre": "Beatriz Lauge",
@@ -23,18 +24,21 @@ export const comites = [
     },
     {
         "comiteNombre" : "Comité de mesas redondas",
+        "mostrarCargos" : "true",
         "presidenteNombre": "Marcelo Katz",
         "presidenteGenero": "Dr.",
-        "secretarioNombre": "Daniel Gil",
+        "secretarioNombre": "Dafne Lópezl",
         "secretarioGenero": "Dra.",
         "vocales": [
             { "nombre": "Patricia Del Nero", "genero": "Dra." },
-            { "nombre": "Dafne López", "genero": "Dra." },
-            { "nombre": "Claudia Alfonso", "genero": "Bq." }
+            { "nombre": "Claudia Alfonso", "genero": "Bq." },
+            { "nombre": "Cinthia Guzmán", "genero": "Dra." },
+            { "nombre": "Guadalupe Aranda", "genero": "Ts." }
         ]
     },
     {
         "comiteNombre" : "Comité de conferencias",
+        "mostrarCargos" : "true",
         "presidenteNombre": "Pamela Rossi",
         "presidenteGenero": "Dra.",
         "secretarioNombre": "Flavia Scibetta",
@@ -47,6 +51,7 @@ export const comites = [
     },
     {
         "comiteNombre" : "Comité de temas libres",
+        "mostrarCargos" : "true",
         "presidenteNombre": "Alvaro Otreras",
         "presidenteGenero": "Dr.",
         "secretarioNombre": "Aldana Rondinella",
@@ -61,6 +66,7 @@ export const comites = [
     },
     {
         "comiteNombre" : "Comité de relaciones publicas",
+        "mostrarCargos" : "true",
         "presidenteNombre": "Sandra Gonzalez",
         "presidenteGenero": "Dra.",
         "secretarioNombre": "Soledad Elías",
@@ -69,23 +75,29 @@ export const comites = [
     },
     {
         "comiteNombre" : "Comité de Informàtica y redes sociales",
+        "mostrarCargos" : "true",
         "presidenteNombre": "Juan Pablo Rigotti",
         "presidenteGenero": "",
         "secretarioNombre": "Julián Nardi",
         "secretarioGenero": "",
         "vocales": [
-            { "nombre": "Romina Plasnic", "genero": "" },
-            { "nombre": "Daiana Cichello", "genero": "" }
+            { "nombre": "Romina Plasnic", "genero": "Dra." },
+            { "nombre": "Daiana Cichello", "genero": "Ts." },
+            { "nombre": "Paola Lo Schiavo", "genero": "" },
+            { "nombre": "Marcelo Corigliano", "genero": "" },
+            { "nombre": "Santiago Fiorino", "genero": "" }
+
         ]
     },
     {
         "comiteNombre" : "Comité de recepciòn y actos publicos",
+        "mostrarCargos" : "true",
         "presidenteNombre": "Silvia Birnembaum",
         "presidenteGenero": "Bioquimica",
         "secretarioNombre": "Nancy Di Biasi",
         "secretarioGenero": "Dra.",
         "vocales": [
-            { "nombre": "Juliana Cocao", "genero": "" },
+            { "nombre": "Juliana Caccavo", "genero": "Dra." },
             { "nombre": "María Inés Marquez", "genero": "Ts." },
             { "nombre": "Sandra Arcieri", "genero": "Dra." },
             { "nombre": "Amhed Sabrá", "genero": "Dr." },
@@ -94,26 +106,29 @@ export const comites = [
     },
     {
         "comiteNombre" : "Comité de Cultura",
+        "mostrarCargos" : "true",
         "presidenteNombre": "Gachy Suarez",
-        "presidenteGenero": "",
+        "presidenteGenero": "Bq.",
         "secretarioNombre": "Cecilia Ormazabal",
         "secretarioGenero": "Bq.",
         "vocales": [
             { "nombre": "Victoria Bronzatti", "genero": "Dra." },
-            { "nombre": "Camilo Prado", "genero": "" }
+            { "nombre": "Camilo Prado", "genero": "" },
+            { "nombre": "Consuelo Suarez", "genero": "" }
         ]
     },
     {
         "comiteNombre" : "Comité asesor",
-        "presidenteNombre": "Ruben Luca",
-        "presidenteGenero": "Dr.",
-        "vocales": [
+        "mostrarCargos" : "false",
+        "asesores": [
+            { "nombre": "Ruben Luca", "genero": "Dr." },
             { "nombre": "Teresa Rodriguez Brieschke", "genero": "Dra." },
             { "nombre": "Guillermina Améstica", "genero": "Dra." }
         ]
     },
     {
         "comiteNombre" : "Comité de area programàtica",
+        "mostrarCargos" : "true",
         "presidenteNombre": "Claudia Falotico",
         "presidenteGenero": "Dra.",
         "secretarioNombre": "Sandra Eidner",
@@ -127,12 +142,13 @@ export const comites = [
     },
     {
         "comiteNombre" : "Comité Residentes y concurrentes",
-        "presidenteNombre": "Gonzalo Barbieri",
-        "presidenteGenero": "Dr.",
-        "secretarioNombre": "Sofía Pisano",
-        "secretarioGenero": "Dra.",
+        "mostrarCargos" : "true",
+        "coordinadorGeneral" : "Coordinador General: Dr. Gonzalo Barbieri",
+        "presidenteNombre": "Sofía Pisano",
+        "presidenteGenero": "Dra.",
+        "secretarioNombre": "Jimena González Alije",
+        "secretarioGenero": "Ts.",
         "vocales": [
-            { "nombre": "Jimena González Alije", "genero": "Ts." },
             { "nombre": "Jorge García", "genero": "Dr." },
             { "nombre": "Yanina Pastori", "genero": "Dra." },
             { "nombre": "Virginia Scarano", "genero": "Dra." },

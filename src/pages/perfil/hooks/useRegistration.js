@@ -6,17 +6,20 @@ import {
   updatePayment,
 } from "../../../services/firebase.services";
 import Swal from "sweetalert2";
+import { useAuth } from "../../../core/auth/hooks/useAuth";
+import { useGlobal } from "../../../hooks/useGlobal";
 
-export const useRegistration = (userId) => {
+export const useRegistration = () => {
   /*******************************************************
    * DECLARACION DE VARIABLES
    *******************************************************/
   const eventId = "ZbclMy93Cs9jzEYAgVui"; //eventId Jornadas 2024
-  const [loading, setLoading] = useState(true);
   const [userRegistration, setUserRegistration] = useState(null);
   const [reload, setReload] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const { userData } = useProfile(userId);
+  const { user } = useAuth();
+  const { userData } = useProfile(user.uid);
+  const { setShowSpinner } = useGlobal();
 
   //Creo este object hook state para registrar las acciones de useRegistration y generar el reporte final.
   const registrationActions = {
@@ -36,35 +39,34 @@ export const useRegistration = (userId) => {
    *******************************************************/
   useEffect(() => {
     const fetchRegistration = async () => {
-      if (!userId) return;
+      if (!user.uid) return;
 
       try {
-        const res = await getRegistration(eventId, userId);
-        console.log("getUserRegistration response is: ", res);
+        const res = await getRegistration(eventId, user.uid);
         setUserRegistration(res.data);
       } catch (error) {
         console.log("Unable to retrieve user inscription");
       } finally {
-        setLoading(false);
       }
     };
 
     fetchRegistration();
-  }, [userId, reload]);
+  }, [user.uid, reload]);
 
   /*******************************************************
    * FUNCIONES
    *******************************************************/
-  const handleRegistration = async (userId) => {
-    setIsSubmitting(true);
-    const setRegistrationResponse = await setRegistration(eventId, userId);
+  const handleRegistration = async () => {
+    try {
+      setIsSubmitting(true);
+      setShowSpinner(true);
 
-    if (setRegistrationResponse.status) {
-      console.log("Registration status: ", setRegistrationResponse.status);
-      registrationActions.setRegistrationStatus = true;
+      const setRegistrationResponse = await setRegistration(eventId, userData);
 
-      //Si setRegistration fue exitoso, entonces enviamos el email de confirmacion
-      try {
+      if (setRegistrationResponse.status) {
+        registrationActions.setRegistrationStatus = true;
+
+        //Si setRegistration fue exitoso, entonces enviamos el email de confirmacion
         const fetchData = {
           userData: userData,
           action: "registration",
@@ -87,42 +89,55 @@ export const useRegistration = (userId) => {
         } else {
           registrationActions.sendEmailError = objectResponse.error;
         }
-      } catch (error) {
-        registrationActions.sendEmailError = error;
+      } else {
+        console.log(
+          "Registration failed with: ",
+          setRegistrationResponse.error
+        );
+        registrationActions.setRegistrationError =
+          setRegistrationResponse.error;
       }
-    } else {
-      console.log("Registration failed with: ", setRegistrationResponse.error);
-      registrationActions.setRegistrationError = setRegistrationResponse.error;
-    }
 
-    if (
-      registrationActions.setRegistrationStatus &&
-      registrationActions.sendEmailStatus
-    ) {
-      Swal.fire({
-        title: `Registración exitosa!`,
-        html: "<p>Te enviamos un correo electrónico con la confirmación</p><p>Si sos Médico o Residente, recordá pasar por AMM para abonar el arancel</p>",
-        background: "#FAFAFA",
-        color: "#025951",
-        iconColor: "#025951",
-        icon: "success",
-        confirmButtonText: "Aceptar",
-        confirmButtonColor: "#038C7F",
-      });
-    } else {
+      if (
+        registrationActions.setRegistrationStatus &&
+        registrationActions.sendEmailStatus
+      ) {
+        Swal.fire({
+          title: `Registración exitosa!`,
+          html: "<p>Te enviamos un correo electrónico con la confirmación</p><p>Si sos Médico o Residente, recordá pasar por AMM para abonar el arancel</p>",
+          background: "#FAFAFA",
+          color: "#025951",
+          iconColor: "#025951",
+          icon: "success",
+          confirmButtonText: "Aceptar",
+          confirmButtonColor: "#038C7F",
+        });
+      } else {
+        Swal.fire({
+          title: `Ups, Algo ha salido mal!`,
+          html: `<p>Estado registración: ${
+            registrationActions.setRegistrationStatus
+              ? "exitoso"
+              : registrationActions.setRegistrationError
+          }</p>
+          <p>Envío de email de confirmación: ${
+            registrationActions.sendEmailStatus
+              ? "exitoso"
+              : registrationActions.sendEmailError
+          }</p>
+          `,
+          background: "#FAFAFA",
+          color: "#025951",
+          iconColor: "#025951",
+          icon: "error",
+          confirmButtonText: "Aceptar",
+          confirmButtonColor: "#038C7F",
+        });
+      }
+    } catch (error) {
       Swal.fire({
         title: `Ups, Algo ha salido mal!`,
-        html: `<p>Estado registración: ${
-          registrationActions.setRegistrationStatus
-            ? "exitoso"
-            : registrationActions.setRegistrationError
-        }</p>
-        <p>Envío de email de confirmación: ${
-          registrationActions.sendEmailStatus
-            ? "exitoso"
-            : registrationActions.sendEmailError
-        }</p>
-        `,
+        text: { error },
         background: "#FAFAFA",
         color: "#025951",
         iconColor: "#025951",
@@ -130,10 +145,11 @@ export const useRegistration = (userId) => {
         confirmButtonText: "Aceptar",
         confirmButtonColor: "#038C7F",
       });
+    } finally {
+      setIsSubmitting(false);
+      setReload(!reload);
+      setShowSpinner(false);
     }
-
-    setIsSubmitting(false);
-    setReload(!reload);
   };
 
   const handlePayment = async (userId) => {
@@ -151,7 +167,6 @@ export const useRegistration = (userId) => {
   };
 
   return {
-    loading,
     userRegistration,
     handleRegistration,
     isSubmitting,

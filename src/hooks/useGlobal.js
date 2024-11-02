@@ -3,11 +3,15 @@ import { GlobalContext } from "../context/GlobalContext";
 
 export const useGlobal = () => {
     const {
-        desktopView
+        desktopView,
+        showSpinner,
+        setShowSpinner
     } = useContext(GlobalContext)
 
     return {
-        desktopView
+        desktopView,
+        showSpinner,
+        setShowSpinner
     };
 }
 

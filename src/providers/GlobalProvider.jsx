@@ -5,6 +5,7 @@ const GlobalProvider = ({ children }) => {
 
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const [desktopView, setDesktopView] = useState(false);
+    const [showSpinner, setShowSpinner] = useState(false)
 
     useEffect(() => {
         function handleResize() {
@@ -24,6 +25,8 @@ const GlobalProvider = ({ children }) => {
             value={
                 {
                     desktopView,
+                    showSpinner,
+                    setShowSpinner
                 }
             }>
 

@@ -10,7 +10,8 @@ export const usePrograma = () => {
         programaDay,
         setProgramaDay,
         programaFiltrado,
-        setProgramaFiltrado
+        setProgramaFiltrado,
+        categorias
     } = useContext(ProgramaContext)
 
 
@@ -41,6 +42,7 @@ export const usePrograma = () => {
         programaDay,
         setProgramaDay,
         programaFiltrado,
-        setProgramaFiltrado
+        setProgramaFiltrado,
+        categorias
     }
 }

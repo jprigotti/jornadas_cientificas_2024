@@ -1,11 +1,10 @@
+// Card.js
 import React from "react";
 import ClockIcon from "../svgIcons/ClockIcon";
-import LocationIcon from "../svgIcons/LocationIcon";
 import { usePrograma } from "../hooks/usePrograma";
+import BreakIcon from "../svgIcons/BreakIcon";
 
-
-const CardApertura = ({ data }) => {
-
+const CardBreak = ({ data }) => {
   const { categorias } = usePrograma();
 
   return (
@@ -15,14 +14,14 @@ const CardApertura = ({ data }) => {
         <p className="font-bold ps-3 text-PauGreenDark">{data.hora}</p>
       </div>
 
-      <h2 className="font-semiBold text-PauGreenDark pb-3">{categorias[data.categoria]}</h2>
-
       <div className="flex justify-center items-center py-3">
-        <LocationIcon with={"25px"} height={"25px"} />
-        <p className="font-bold ps-3 text-Violet">{data.ubicacion}</p>
+        <BreakIcon with={"25px"} height={"25px"} />
+        <h2 className="ps-2 font-semiBold text-PauGreenDark">
+          {categorias[data.categoria]}
+        </h2>
       </div>
     </div>
   );
 };
 
-export default CardApertura;
+export default CardBreak;

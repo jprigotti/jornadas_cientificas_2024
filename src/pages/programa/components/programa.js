@@ -142,6 +142,7 @@ export const programa = [
     hora: "09:00",
     ubicacion: "2 Piso Aulas A-B",
     descripcion: "Apertura",
+    linkStreaming: "https://youtube.com/live/Y78Ne3PrAWQ",
   },
   {
     categoria: "conferencia",
@@ -151,6 +152,8 @@ export const programa = [
     titulo:
       "Sistema de salud en la Argentina en crisis. Qué papel debe jugar el hospital público.",
     orador: "Dr. Ruben Luca",
+    isStreaming: true,
+    linkStreaming: "https://youtube.com/live/BQX-8Xgu7fs"
   },
   {
     categoria: "vino_de_honor",

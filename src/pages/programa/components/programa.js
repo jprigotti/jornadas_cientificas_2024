@@ -1,5 +1,135 @@
 export const programa = [
   {
+    categoria: "temas_libres",
+    dia: "8",
+    hora: "8:00 a 9:00",
+    ubicacion: "Aula 5 Piso ",
+    presidente: "Valeria Barrera Secretario",
+    secretario: "Cecilia Ormazábal",
+    trabajos: [
+      {
+        titulo:
+          "5- Consolidar la atención sanitaria a través del trabajo en red: valoración de la participación del banco de sangre del Hospital Santojanni",
+        abstract:
+          "https://drive.google.com/uc?id=1myQsrRz_mpuTiH7vDh46TcYSOpYPmvp8&export=download",
+      },
+      {
+        titulo:
+         "8- Prácticas promotoras de la Salud Mental Comunitaria (SMC) desde los equipos de los Centros de Salud del Área Programática del Hospital Santojanni",
+        abstract:
+          "https://drive.google.com/uc?id=1aJl_IJHeUW2UrIK0lQixKsFEXYHlB8Lj&export=download",
+      },
+      {
+        titulo:
+         "60- Desde el ingreso al apto quirúrgico",
+        abstract:
+          "https://drive.google.com/uc?id=1PgpyDTYZ2XCYjyv_OfzN9ddPEY0jqtGL&export=download",
+      },
+    ],
+  },
+  {
+    categoria: "temas_libres",
+    dia: "8",
+    hora: "8:00 a 9:00",
+    ubicacion: "Aula 3 Piso ",
+    presidente: "Valeria Garralda Secretario",
+    secretario: "Matias Landi",
+    trabajos: [
+      {
+        titulo:
+          "3-Biopsia renal realizada por nefrologos: experiencia de 5 años en nuestro servicio",
+        abstract:
+          "https://drive.google.com/uc?id=1IgR_uXVSFDdUQR-UmIy8232sjdSiWMgg&export=download",
+      },
+      {
+        titulo:
+         "72-Fístula peritoneo cutánea por oblito post cesárea",
+        abstract:
+          "https://drive.google.com/uc?id=1jien7dfEM7nInD72ITq0fj1ct2k02Apg&export=download",
+      },
+      {
+        titulo:
+         "65-Terapia endoscópica de vacío para manejo de defectos transmurales en el tracto digestivo superior como alternativa terapéutica costo efectiva",
+        abstract:
+          "https://drive.google.com/uc?id=1cSebphRj3yk3jSw0PoNxh3JnO4ooYKF6&export=download",
+      },
+      {
+        titulo:
+         "30-Operación de ravitch para el tratamiento de las malformaciones torácica severas",
+        abstract:
+          "https://drive.google.com/uc?id=1Px0B0ho1sJuR3PYOFjXk-zfXIgkTGq-X&export=download",
+      },
+    ],
+  },
+  {
+    categoria: "temas_libres",
+    dia: "8",
+    hora: "8:00 a 9:00",
+    ubicacion: "Aula 219 - 2 Piso ",
+    presidente: "Silvina Lucilli",
+    secretario: " Javier Castillo",
+    trabajos: [
+      {
+        titulo:
+          "77-Impacto en la intervención de un consultorio especializado en pacientes con asma grave en variables clínicas, funcionales respiratorias, exacerbaciones y uso de corticoides al año de seguimiento",
+        abstract:
+          "https://drive.google.com/uc?id=1kTViCVhFViyUpirskupn7eM0hI5mL_L-&export=download",
+      },
+      {
+        titulo:
+         "78- Remisión clínica en pacientes con Asma Grave tratados con terapia biológica en el Hospital Santojanni",
+        abstract:
+          "https://drive.google.com/uc?id=1eJop0cN4FZTK_xsz-NUVlT2IYs9ryUMv&export=download",
+      },
+      {
+        titulo:
+         "17-Epidemiología a nivel local: aumento de casos de tuberculosis en el área del CeSAC 28, características epidemiológicas",
+        abstract:
+          "https://drive.google.com/uc?id=1EJxPiZYMAMn-1IUzN6qhoH7S0dkZPjxO&export=download",
+      },
+      {
+        titulo:
+         "74-Características clínicas y biomarcadores de sujetos con asma grave no T2",
+        abstract:
+          "https://drive.google.com/uc?id=12pP3gDfZ1JtEZRorvnt3DJVtaac2flCg&export=download",
+      },
+    ],
+  },
+  {
+    categoria: "temas_libres",
+    dia: "8",
+    hora: "8:00 a 9:00",
+    ubicacion: "Aula 1 Piso B ",
+    presidente: "Guillermo Keller",
+    secretario: "Noemí Guerra",
+    trabajos: [
+      {
+        titulo:
+          "19- Descripción de la velocidad de onda de pulso en pacientes tabaquistas y ex tabaquistas y uso de herramientas de ia para predicción de riesgos",
+        abstract:
+          "https://drive.google.com/uc?id=1QXEe1kP-TtxqK3T_csAAFnPb2pF2U7gG&export=download",
+      },
+      {
+        titulo:
+         "27-Comunicación en salud: la sala de espera como dispositivo de educación para la salud",
+        abstract:
+          "https://drive.google.com/uc?id=118FR2OwXAz5Ae_QLYsKKJ2WVjiMkv1u9&export=download",
+      },
+      {
+        titulo:
+         "35-Evaluación de pacientes en la unidad febril de urgencias: desarrollo de estrategias de screening local",
+        abstract:
+          "https://drive.google.com/uc?id=1bH4IqVmY9B5FyeG_6aeDEn4qF6fpII9p&export=download",
+      },
+      {
+        titulo:
+         "40-Desarrollo de una herramienta digital para la prevención del pie diabético",
+        abstract:
+          "https://drive.google.com/uc?id=1AN9l1uN4qeAliY-m952MeKvxdfhxkPNV&export=download",
+      },
+    ],
+  },
+  {
     categoria: "inscripcion",
     dia: "8",
     hora: "08:00",
@@ -347,7 +477,7 @@ export const programa = [
   {
     categoria: "mesa_redonda",
     dia: "14",
-    hora: "12:00 - 12:30 hs",
+    hora: "11:00 - 12:00 hs",
     ubicacion: "4 Piso Aula F",
     titulo: "Cáncer Cutáneo: Detección precoz y Tratamiento avanzado",
     presidente: {
@@ -492,7 +622,7 @@ ubicacion:
 ***************************
 temas_libres
 {
-category: "temas_libres"
+categoria: "temas_libres"
 dia:
 hora: 
 ubicacion: 

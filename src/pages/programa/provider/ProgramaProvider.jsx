@@ -14,7 +14,8 @@ const ProgramaProvider = ({ children }) => {
         vino_de_honor: "Vino de Honor",
         break: "Break",
         mesa_redonda: "Mesa redonda",
-        jornadas_residentes: "Jornadas Residentes"
+        jornadas_residentes: "Jornadas Residentes",
+        temas_libres: "Temas Libres"
     }
 
     return (

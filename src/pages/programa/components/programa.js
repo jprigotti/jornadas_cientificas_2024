@@ -1,29 +1,46 @@
 export const programa = [
   {
+    categoria: "inscripcion",
+    dia: "8",
+    hora: "08:00",
+    ubicacion: "AMM",
+    descripcion: "Inscripciones",
+  },
+  {
+    categoria: "apertura",
+    dia: "8",
+    hora: "09:00",
+    ubicacion: "2 Piso Aulas A-B",
+    descripcion: "Apertura",
+    linkStreaming: "https://youtube.com/live/Y78Ne3PrAWQ",
+  },
+  {
     categoria: "temas_libres",
     dia: "8",
     hora: "8:00 a 9:00",
     ubicacion: "Aula 5 Piso ",
-    presidente: "Valeria Barrera Secretario",
+    presidente: "Valeria Barrera",
     secretario: "Cecilia Ormazábal",
     trabajos: [
       {
         titulo:
           "5- Consolidar la atención sanitaria a través del trabajo en red: valoración de la participación del banco de sangre del Hospital Santojanni",
         abstract:
-          "https://drive.google.com/uc?id=1myQsrRz_mpuTiH7vDh46TcYSOpYPmvp8&export=download",
+          "https://drive.google.com/uc?id=17ZzswtrZqdEzfh_CqXT8xL1hGtpsm78H&export=download",
+        autor: "Medicina transfusional (Silvia Birnenbaum, Estela Gonzalez, Andrea Ravettini, Nancy Di Biasi, Gustavo Magaldi)",
       },
       {
         titulo:
-         "8- Prácticas promotoras de la Salud Mental Comunitaria (SMC) desde los equipos de los Centros de Salud del Área Programática del Hospital Santojanni",
+          "8- Prácticas promotoras de la Salud Mental Comunitaria (SMC) desde los equipos de los Centros de Salud del Área Programática del Hospital Santojanni",
         abstract:
-          "https://drive.google.com/uc?id=1aJl_IJHeUW2UrIK0lQixKsFEXYHlB8Lj&export=download",
+          "https://drive.google.com/uc?id=1JKxT1PYyO1bJedwYG3a34_CDGSW9yRYe&export=download",
+          autor: "Residencia Interdisciplinaria de Educación y Promoción de la Salud (RIEPS) (Moreschi, Agostina, Ponce Reberte, Sofía, Ruesga, Luisina, Coullery, Antonela)"
       },
       {
-        titulo:
-         "60- Desde el ingreso al apto quirúrgico",
+        titulo: "60- Desde el ingreso al apto quirúrgico",
         abstract:
-          "https://drive.google.com/uc?id=1PgpyDTYZ2XCYjyv_OfzN9ddPEY0jqtGL&export=download",
+          "https://drive.google.com/uc?id=1KXVZiEoR8snvUY_SsS6bO6uwJmqmTHuy&export=download",
+          autor: "Servicio de Ortopedia y traumatología (Quiroga Alejandro, Rodríguez Johan, Seoane Lautaro, Agrazo Lucas, Cusolito Victoria)"
       },
     ],
   },
@@ -40,24 +57,27 @@ export const programa = [
           "3-Biopsia renal realizada por nefrologos: experiencia de 5 años en nuestro servicio",
         abstract:
           "https://drive.google.com/uc?id=1IgR_uXVSFDdUQR-UmIy8232sjdSiWMgg&export=download",
+          autor: "Servicio de Nefrología y Anatomía Patológica (Paz Wasiuchnik, Vanina Gisela; Dayan, Federico; Labonia, Walter (1), Recalde, Vanina (2))"
       },
       {
-        titulo:
-         "72-Fístula peritoneo cutánea por oblito post cesárea",
+        titulo: "72-Fístula peritoneo cutánea por oblito post cesárea",
         abstract:
           "https://drive.google.com/uc?id=1jien7dfEM7nInD72ITq0fj1ct2k02Apg&export=download",
+          autor: "Servicio de Cirugía General (Dra. Coulomme Gabriela, Dra. Garralda Valeria, Dra. Ceriana Paula, Dr. Casavilla Gustavo, Dra. Crocitta Carla)"
       },
       {
         titulo:
-         "65-Terapia endoscópica de vacío para manejo de defectos transmurales en el tracto digestivo superior como alternativa terapéutica costo efectiva",
+          "60-Terapia endoscópica de vacío para manejo de defectos transmurales en el tracto digestivo superior como alternativa terapéutica costo efectiva",
         abstract:
           "https://drive.google.com/uc?id=1cSebphRj3yk3jSw0PoNxh3JnO4ooYKF6&export=download",
+          autor: "Servicio de Cirugía Percutánea (Dr. Córdoba Juan Pablo, Dr. Cuello Martín, Dra. Conde María, Dr. Ambrosis Juan Ignacio)"
       },
       {
         titulo:
-         "30-Operación de ravitch para el tratamiento de las malformaciones torácica severas",
+          "30-Operación de ravitch para el tratamiento de las malformaciones torácica severas",
         abstract:
-          "https://drive.google.com/uc?id=1Px0B0ho1sJuR3PYOFjXk-zfXIgkTGq-X&export=download",
+          "https://drive.google.com/uc?id=1BxD4_UsX05vuXByWG5BUcPwsyaf6fYj5&export=download",
+          autor: "Cirugía de Tórax (Julieta Tortone – Virginia Scarano- Loreley Toresan – Valeria Garralda-Pedro Fulone)"
       },
     ],
   },
@@ -66,32 +86,36 @@ export const programa = [
     dia: "8",
     hora: "8:00 a 9:00",
     ubicacion: "Aula 219 - 2 Piso ",
-    presidente: "Silvina Lucilli",
-    secretario: " Javier Castillo",
+    presidente: "Dra. Silvina Lucilli",
+    secretario: "Dra. Paola Villan",
     trabajos: [
       {
         titulo:
           "77-Impacto en la intervención de un consultorio especializado en pacientes con asma grave en variables clínicas, funcionales respiratorias, exacerbaciones y uso de corticoides al año de seguimiento",
         abstract:
           "https://drive.google.com/uc?id=1kTViCVhFViyUpirskupn7eM0hI5mL_L-&export=download",
+          autor: "Unidad Neumotisiología y Servicio de Kinesiología del Hospital Santojanni (Fernando Saldarini , Brichetti Valeria , Mauro Andreu , Matias Bertozzi , Guzman Cyntia)"
       },
       {
         titulo:
-         "78- Remisión clínica en pacientes con Asma Grave tratados con terapia biológica en el Hospital Santojanni",
+          "78- Remisión clínica en pacientes con Asma Grave tratados con terapia biológica en el Hospital Santojanni",
         abstract:
           "https://drive.google.com/uc?id=1eJop0cN4FZTK_xsz-NUVlT2IYs9ryUMv&export=download",
+          autor: "Unidad Neumotisiología y Servicio de Kinesiología del Hospital Santojanni (Fernando Saldarini , Brichetti Valeria , Mauro Andreu , Matias Bertozzi , Guzman Cyntia)"
       },
       {
         titulo:
-         "17-Epidemiología a nivel local: aumento de casos de tuberculosis en el área del CeSAC 28, características epidemiológicas",
+          "89-Epidemiología a nivel local: aumento de casos de tuberculosis en el área del CeSAC 28, características epidemiológicas",
         abstract:
           "https://drive.google.com/uc?id=1EJxPiZYMAMn-1IUzN6qhoH7S0dkZPjxO&export=download",
+          autor: "CeSAC 28 (Santomaso, C. Agustina, Bustos, Liliana, Febrer, Daniela, Galetar, María Julieta, Ramírez María Victoria)"
       },
       {
         titulo:
-         "74-Características clínicas y biomarcadores de sujetos con asma grave no T2",
+          "74-Características clínicas y biomarcadores de sujetos con asma grave no T2",
         abstract:
           "https://drive.google.com/uc?id=12pP3gDfZ1JtEZRorvnt3DJVtaac2flCg&export=download",
+          autor: "Servicio de Neumonología (Saldarini Fernando, Brichetti Valeria, Andreau Mauro, Bertozzi Matías, Guzmán Matias)"
       },
     ],
   },
@@ -108,41 +132,23 @@ export const programa = [
           "19- Descripción de la velocidad de onda de pulso en pacientes tabaquistas y ex tabaquistas y uso de herramientas de ia para predicción de riesgos",
         abstract:
           "https://drive.google.com/uc?id=1QXEe1kP-TtxqK3T_csAAFnPb2pF2U7gG&export=download",
+          autor: "Consultorios Externos del HDFS, equipo de cesación tabáquica del HDFS y UTN de Buenos Aires (Galli C, Loprete Lucrecia, García, Charterjee P , Celenza Alejandra)"
       },
       {
         titulo:
-         "27-Comunicación en salud: la sala de espera como dispositivo de educación para la salud",
+          "27-Comunicación en salud: la sala de espera como dispositivo de educación para la salud",
         abstract:
           "https://drive.google.com/uc?id=118FR2OwXAz5Ae_QLYsKKJ2WVjiMkv1u9&export=download",
+          autor: "Residencia Interdisciplinaria de Educación y Promoción de la Salud (RIEPS) (Bareille, María Paula, Cerezo, Lucia Daniela, Ponce Reberte, Sofía, Ramos, Delfina, Simoni, Paola)"
       },
       {
         titulo:
-         "35-Evaluación de pacientes en la unidad febril de urgencias: desarrollo de estrategias de screening local",
+          "35-Evaluación de pacientes en la unidad febril de urgencias: desarrollo de estrategias de screening local",
         abstract:
           "https://drive.google.com/uc?id=1bH4IqVmY9B5FyeG_6aeDEn4qF6fpII9p&export=download",
-      },
-      {
-        titulo:
-         "40-Desarrollo de una herramienta digital para la prevención del pie diabético",
-        abstract:
-          "https://drive.google.com/uc?id=1AN9l1uN4qeAliY-m952MeKvxdfhxkPNV&export=download",
+          autor: "Departamento de Urgencias del HDFS (Jorge Alejandro Aimar, Guadalupe Vernetti, Patricia Mariana Delnero, Carlos Hurtado, Guillermo Alberto Keller."
       },
     ],
-  },
-  {
-    categoria: "inscripcion",
-    dia: "8",
-    hora: "08:00",
-    ubicacion: "AMM",
-    descripcion: "Inscripciones",
-  },
-  {
-    categoria: "apertura",
-    dia: "8",
-    hora: "09:00",
-    ubicacion: "2 Piso Aulas A-B",
-    descripcion: "Apertura",
-    linkStreaming: "https://youtube.com/live/Y78Ne3PrAWQ",
   },
   {
     categoria: "conferencia",
@@ -153,7 +159,7 @@ export const programa = [
       "Sistema de salud en la Argentina en crisis. Qué papel debe jugar el hospital público.",
     orador: "Dr. Ruben Luca",
     isStreaming: true,
-    linkStreaming: "https://youtube.com/live/BQX-8Xgu7fs"
+    linkStreaming: "https://youtube.com/live/BQX-8Xgu7fs",
   },
   {
     categoria: "vino_de_honor",

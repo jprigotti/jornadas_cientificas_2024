@@ -29,10 +29,16 @@ const OradorCard = ({ orador }) => {
         </div>
         <p className="py-10 text-sm h-[200px]">{orador.cv}</p>
         <div className="flex justify-center">
-          <button className="flex items-center text-lg bg-Violet rounded-full px-5 py-1 text-White">
-            Stream
-            <PlayIcon width={"30px"} height={"30px"} />
-          </button>
+          <a
+            href={orador.linkStreaming ? orador.linkStreaming : "#"}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button className="flex items-center text-lg bg-Violet rounded-full px-5 py-1 text-White">
+              Stream
+              <PlayIcon width="30px" height="30px" />
+            </button>
+          </a>
         </div>
       </div>
     </div>

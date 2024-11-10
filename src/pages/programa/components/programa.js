@@ -1085,7 +1085,7 @@ export const programa = [
       {
         titulo: "76- SEXUALIDAD EN MUJERES CON INCONTINENCIA DE ORINA: ESTUDIO COMPARATIVO",
         abstract: "https://drive.google.com/uc?id=1QhaBT00S-i8q14R9QhWI0kdi1OKApiQr&export=download",
-        autor: "Ginecología HDFS (Tucillo Florencia Victoria [1] , Carou Julieta Ayelén [2] , Vendramini Agustina [3] , Saldaño Joaquín [4] , Del Re Norberto [5] , Pesado, Analia)",
+        autor: "Tucillo Florencia Victoria[1], Perlov Mauro[2], Rada Micaela[3], Carou Julieta Ayelén[4], Vendramini Agustina[5], Saldaño Joaquín[6], Del Re Norberto[7], Pesado, Analia [8]",
       },
       {
         titulo: "9- NUTRICIÓN DURANTE EL EMBARAZO: ¿ES UNA VARIABLE CLAVE EN EL DESARROLLO DE DIABETES GESTACIONAL?",
@@ -1232,6 +1232,7 @@ export const programa = [
       "Giovanni Avila",
       "Liseth Flores",
       "Tortone Julieta",
+      "Jessica Alvarado"
     ],
   },
   {
@@ -1267,7 +1268,7 @@ export const programa = [
     tema: "Obesidad y diabetes",
     presidente: "Anthony Frank Capcha",
     coordinador: "Evelyn Gualino",
-    disertantes: ["Leonel Trivisono", "Marlon Bolivar", "Gisela Lazzaro"],
+    disertantes: ["Leonel Trivisono", "Marlon Bolivar", "Gisela Lazzaro", "Pablo Herbas"],
   },
 ];
 

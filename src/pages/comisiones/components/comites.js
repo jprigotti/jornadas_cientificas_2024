@@ -19,7 +19,8 @@ export const comites = [
             { "nombre": "Marcelo Strin", "genero": "Dr." },
             { "nombre": "Gisela Sesa", "genero": "Ts." },
             { "nombre": "Agustína Verdamin", "genero": "Dra." },
-            { "nombre": "Vernónica Varela", "genero": "Dra." }
+            { "nombre": "Vernónica Varela", "genero": "Dra." },
+            { "nombre": "Daniela D’ Alessandro", "genero": "Dra." }
         ]
     },
     {

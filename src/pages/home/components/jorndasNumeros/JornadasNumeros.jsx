@@ -2,12 +2,13 @@ import React from "react";
 import { useJornadasNumero } from "./useJornadasNumeros";
 
 const JornadasNumeros = () => {
-const {inscriptos, trabajos, disertantes, conferencias, ref } = useJornadasNumero();
+  const { inscriptos, trabajos, disertantes, conferencias, ref } = useJornadasNumero();
 
   return (
     <section ref={ref} className="bg-White pt-24 laptop1:ms-40">
       <div>
-        <p className="mt-10 mb-1 px-3 text-center">Las jornadas 2023 en números</p>
+        <p className="font-bold text-xl mt-10 mb-1 px-3 text-center text-White"><span className="bg-Green p-2 rounded-sm">Las jornadas 2023 en números</span></p>
+        {/* <p className="mt-10 mb-1 px-3 text-center">Las jornadas 2023 en números</p> */}
         {/* Course Hightligh */}
         <div className="w-full flex flex-wrap">
           {/* Box_1 */}

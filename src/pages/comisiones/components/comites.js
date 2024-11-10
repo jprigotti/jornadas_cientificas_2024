@@ -45,7 +45,7 @@ export const comites = [
         "secretarioNombre": "Flavia Scibetta",
         "secretarioGenero": "Dra.",
         "vocales": [
-            { "nombre": "María Bernardi", "genero": "Dra." },
+            { "nombre": "Mara De Bernardi", "genero": "Dra." },
             { "nombre": "Federico Gauna", "genero": "Dr." },
             { "nombre": "Wamba Eugenia", "genero": "Dra." }
         ]
@@ -82,7 +82,7 @@ export const comites = [
         "secretarioNombre": "Julián Nardi",
         "secretarioGenero": "",
         "vocales": [
-            { "nombre": "Romina Plasnic", "genero": "Dra." },
+            { "nombre": "Romina Plafnik", "genero": "Dra." },
             { "nombre": "Daiana Cichello", "genero": "Ts." },
             { "nombre": "Paola Lo Schiavo", "genero": "" },
             { "nombre": "Marcelo Corigliano", "genero": "" },

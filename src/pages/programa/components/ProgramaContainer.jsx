@@ -8,6 +8,7 @@ import CardConferencia from "./CardConferencia"
 import CardVinoHonor from "./CardVinoHonor"
 import CardBreak from "./CardBreak";
 import CardResidentes from "./CardResidentes";
+import CardTemasLibres from "./CardTemasLibres";
 
 const ProgramaContainer = () => {
   const { programaFiltrado } = usePrograma();
@@ -29,6 +30,8 @@ const ProgramaContainer = () => {
           <CardBreak key={index} data={item} />
         ) : item.categoria == "jornadas_residentes" ? (
           <CardResidentes key={index} data={item} />
+        ) : item.categoria == "temas_libres" ? (
+          <CardTemasLibres key={index} data={item} />
         ) : null
       )}
     </div>

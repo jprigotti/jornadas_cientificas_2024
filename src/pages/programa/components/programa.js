@@ -401,6 +401,8 @@ export const programa = [
     ubicacion: "2 Piso Aulas A-B",
     titulo: "El acto médico bajo la lupa de la justicia.",
     orador: "Dr. Vadim Mischanchuk",
+    isStreaming: true,
+    linkStreaming: "https://youtube.com/live/oCQr84GVhUQ",
   },
   {
     dia: "12",
@@ -572,6 +574,47 @@ export const programa = [
     categoria: "temas_libres",
     dia: "13",
     hora: "8:00 a 9:00",
+    ubicacion: "Aula 4 A Piso",
+    presidente: "Dr Pablo Iturrieta",
+    secretario: "Dra Verónica Alonso",
+    trabajos: [
+      {
+        titulo:
+          "52- HAMARTOMA PULMONAR COMO NÓDULO PULMONAR SOLITARIO: PRESENTACIÓN DE UN CASOS",
+        abstract:
+          "",
+        autor:
+          "Servicio de Cirugía General (Tortone, Julieta Scarano, Virginia Crocitta, Carla Felice, Candelaria Tutor: Toresan, Loreley)",
+      },
+      {
+        titulo: "55-EMPIEMA SUBDURAL Y ABSCESO CEREBRAL SECUNDARIO A SINUSITIS: PRESENTACIÓN DE UN CASO",
+        abstract:
+          "",
+        autor:
+          "Servicio de Neurocirugía (Lederhos, Nicolás; Riffo, Joaquín; Fernández Demczuk, Nerina; Facchin, Nicolás; Folmer Sofía)",
+      },
+      {
+        titulo:
+          "64-“Extracción transparietohepática de stent biliar endoscópico”",
+        abstract:
+          "",
+        autor:
+          "Cirugía Percutánea (Dr. Córdoba Juan Pablo, Dr. Cuello Martín, Dra. Conde María, Dr. Ambrosis Juan Ignacio)",
+      },
+      {
+        titulo:
+          "67- SÍNDROME DE OBSTRUCCIÓN DEFECATORIA EN MUJERES CON PROLAPSO POSTERIOR DE ÓRGANOS PÉLVICOS TRATADAS CON CIRUGÍA PÉLVICA RECONSTRUCTIVA: ESTUDIO DE COHORTE PROSPECTIVA.",
+        abstract:
+          "",
+        autor:
+          "Servicio de Ginecología HDFS (Gauna Tatiana [1] , Vendramini Agustina [2] , Saldaño Joaquín [3] , Del Re Norberto [4] , Retamozo Jose [5])",
+      },
+    ],
+  },
+  {
+    categoria: "temas_libres",
+    dia: "13",
+    hora: "8:00 a 9:00",
     ubicacion: "Aula 4 B Piso",
     presidente: "Dr. Javier Castillo",
     secretario: "Daniela Rey",
@@ -672,6 +715,8 @@ export const programa = [
     titulo:
       "La construcción del estado argentino y su relación con la salud pública en el Siglo XIX",
     orador: "Prof. Lic. Eduardo Sacheri",
+    isStreaming: true,
+    linkStreaming: "https://youtube.com/live/sCI3bh2rkog",
   },
   {
     dia: "13",
@@ -979,6 +1024,8 @@ export const programa = [
     ubicacion: "2 Piso Aulas A-B",
     titulo: "La inteligencia artificial aplicada a la salud: aliado o enemigo.",
     orador: "Ing. Juan Pablo Rigotti",
+    isStreaming: true,
+    linkStreaming: "https://youtube.com/live/GkYQ5gGNQ0Y",
   },
   {
     dia: "14",
@@ -1084,7 +1131,7 @@ export const programa = [
       {
         titulo: "76- SEXUALIDAD EN MUJERES CON INCONTINENCIA DE ORINA: ESTUDIO COMPARATIVO",
         abstract: "https://drive.google.com/uc?id=1QhaBT00S-i8q14R9QhWI0kdi1OKApiQr&export=download",
-        autor: "Tucillo Florencia Victoria[1], Perlov Mauro[2], Rada Micaela[3], Carou Julieta Ayelén[4], Vendramini Agustina[5], Saldaño Joaquín[6], Del Re Norberto[7], Pesado, Analia [8]",
+        autor: "Tucillo Florencia Victoria[1], Perlov Mauro[2], Rada Micaela[3], Carou Julieta Ayelén[4], Vendramini Agustina[5], Saldaño Joaquín[6], Del Re Norberto[7], Pesado Analia [8]",
       },
       {
         titulo: "9- NUTRICIÓN DURANTE EL EMBARAZO: ¿ES UNA VARIABLE CLAVE EN EL DESARROLLO DE DIABETES GESTACIONAL?",

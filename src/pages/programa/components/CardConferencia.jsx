@@ -37,7 +37,7 @@ const CardConferencia = ({ data }) => {
             <PlayIcon width={"50px"} height={"50px"} fill={"#584ba0"} />
           </a>
           <p className="font-bold ps-3 text-White">
-            <span className="bg-Violet p-2 rounded-sm">Miralo en vivo por YouTube</span>
+            <span className="bg-Violet p-2 rounded-sm">Miralo por YouTube</span>
           </p>
         </div>
       )}

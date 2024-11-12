@@ -3,7 +3,7 @@ export const invitadosList = [
     id: "1",
     image: "/images/invitados/Vadim.png",
     name: "Dr. Vadim Mischanchuk",
-    cv1: "Abogado panelista UBA | Especialista en temas de Derecho en Salud",
+    cv1: "Abogado Penalista UBA | Especialista en temas de Derecho en Salud",
     cv2: "Abogado UBA con título de Orientación en Derecho Penal. Especializado en temas de Derecho en Salud y Bioética. Dedicación exclusiva en Defensa Médica. Prevención de Riesgos en Medicina Legal. Docente del IDHS. Abogado en Asociación de Médicos Municipales en SEGUROS MÉDICOS S.A.",
   },
   {

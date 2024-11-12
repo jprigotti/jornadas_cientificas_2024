@@ -16,7 +16,7 @@ export const oradoresList = [
     image: "/images/invitados/Vadim.png",
     name: "Dr. Vadim Mischanchuk",
     cv: "Abogado UBA con título de Orientación en Derecho Penal. Especializado en temas de Derecho en Salud y Bioética. Dedicación exclusiva en Defensa Médica. Prevención de Riesgos en Medicina Legal",
-    linkStreaming: "pending",
+    linkStreaming: "https://www.youtube.com/live/oCQr84GVhUQ",
   },
   {
     id: "3",

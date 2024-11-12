@@ -27,7 +27,7 @@ const InvitadosCarousel = () => {
             slidesPerView: 2, // Para pantallas más grandes
           },
           1024: {
-            slidesPerView: 2, // Para pantallas muy grandes
+            slidesPerView: 3, // Para pantallas muy grandes
           },
         }}
       >

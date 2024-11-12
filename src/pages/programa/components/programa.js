@@ -880,8 +880,7 @@ export const programa = [
         titulo:
           "85-Sub Diagnóstico Clínico de Virus Sincicial Respiratorio (VSR)",
         abstract: "https://drive.google.com/uc?id=1eJgVy6pTuiJMpuZd0wSjHE6jl-qILu_a&export=download",
-        autor:
-          "Medicina interna HDFS (Antolini,L.;Gualino,E.;Lucilli,S.;Camporini,A.;Devoto,M.;Alonso,M;Ortuño, C.;Csipka,P.;Chinen,J.;Saldarini,F.;D'Alessandro,D.)",
+        autor: `Medicina interna HDFS (Antolini,L.; Gualino,E.; Lucilli,S.; Camporini,A.; Devoto,M.; Alonso,M; Ortuño, C.; Csipka,P.; Chinen,J.; Saldarini,F.; D'Alessandro,D.)`
       },
       {
         titulo:

@@ -28,7 +28,7 @@ export const comites = [
         "mostrarCargos" : "true",
         "presidenteNombre": "Marcelo Katz",
         "presidenteGenero": "Dr.",
-        "secretarioNombre": "Dafne Lópezl",
+        "secretarioNombre": "Dafne López",
         "secretarioGenero": "Dra.",
         "vocales": [
             { "nombre": "Patricia Del Nero", "genero": "Dra." },
@@ -45,7 +45,7 @@ export const comites = [
         "secretarioNombre": "Flavia Scibetta",
         "secretarioGenero": "Dra.",
         "vocales": [
-            { "nombre": "María Bernardi", "genero": "Dra." },
+            { "nombre": "Mara De Bernardi", "genero": "Dra." },
             { "nombre": "Federico Gauna", "genero": "Dr." },
             { "nombre": "Wamba Eugenia", "genero": "Dra." }
         ]
@@ -82,7 +82,7 @@ export const comites = [
         "secretarioNombre": "Julián Nardi",
         "secretarioGenero": "",
         "vocales": [
-            { "nombre": "Romina Plasnic", "genero": "Dra." },
+            { "nombre": "Romina Plafnik", "genero": "Dra." },
             { "nombre": "Daiana Cichello", "genero": "Ts." },
             { "nombre": "Paola Lo Schiavo", "genero": "" },
             { "nombre": "Marcelo Corigliano", "genero": "" },
@@ -144,7 +144,7 @@ export const comites = [
     {
         "comiteNombre" : "Comité Residentes y concurrentes",
         "mostrarCargos" : "true",
-        "coordinadorGeneral" : "Coordinador General: Dr. Gonzalo Barbieri",
+        "coordinadorGeneral" : "Dr. Gonzalo Barbieri",
         "presidenteNombre": "Sofía Pisano",
         "presidenteGenero": "Dra.",
         "secretarioNombre": "Jimena González Alije",

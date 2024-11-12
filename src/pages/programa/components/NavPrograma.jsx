@@ -4,9 +4,9 @@ import LeftArrowIcon from "../svgIcons/LeftArrowIcon";
 import RightArrowIcon from "../svgIcons/RightArrowIcon";
 
 const NavPrograma = () => {
-  const { calendario, calendarioMuestra, setProgramaDay } = usePrograma();
+  const { calendario, calendarioMuestra, setProgramaDay, currentDayIndex, setCurrentDayIndex } = usePrograma();
 
-  const [currentDayIndex, setCurrentDayIndex] = useState(0);
+
 
   const handleNext = () => {
     if (currentDayIndex < calendario.length - 1) {
@@ -23,7 +23,7 @@ const NavPrograma = () => {
   };
 
   return (
-    <div className="h-[40px] flex items-center my-10">
+    <div className="h-[40px] flex items-center mt-10 mb-5">
       <div className="h-full bg-Violet flex items-center ps-4 rounded-tl-xl rounded-bl-xl">
         <button
           onClick={handlePrevious}

@@ -105,6 +105,11 @@ export const getUserRegistrationByDni = async (eventId, dni) => {
 
 
 
+export const getAllUsers = async () => {
+  const res = await getDocuments(COLLECTIONS.USERS);
+  return res;
+};
+
 export const getAllEvents = async () => {
   const res = await getDocuments(COLLECTIONS.EVENTS);
   return res;

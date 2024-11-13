@@ -2,8 +2,10 @@ import React, { useState, useRef } from "react";
 import { useProfile } from "../hooks/useProfile";
 import EventRegistrationsTable from "./EventRegistrationsTable";
 import { useEventRegistrations } from "../hooks/useEventRegistrations";
+import { useReports } from "../hooks/useReports";
 
 const AdminProfile = ({ userId }) => {
+  const {generateReport} = useReports();
   const { userData } = useProfile(userId);
   const [searchDni, setSearchDni] = useState("");
   const dniInputRef = useRef(null);
@@ -52,6 +54,10 @@ const AdminProfile = ({ userId }) => {
       </div>
 
       <EventRegistrationsTable searchDni={searchDni} />
+
+      <div>
+        <button onClick={generateReport}>Generar Reporte</button>
+      </div>
     </div>
   );
 };

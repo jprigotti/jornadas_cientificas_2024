@@ -574,22 +574,22 @@ export const programa = [
     categoria: "temas_libres",
     dia: "13",
     hora: "8:00 a 9:00",
-    ubicacion: "Aula 4 A Piso",
+    ubicacion: "Aula 4 Piso A",
     presidente: "Dr Pablo Iturrieta",
     secretario: "Dra Verónica Alonso",
     trabajos: [
       {
         titulo:
-          "52- HAMARTOMA PULMONAR COMO NÓDULO PULMONAR SOLITARIO: PRESENTACIÓN DE UN CASOS",
+          "52-HALLAZGOS DE FALSOS POSITIVOS EN EL DIAGNÓSTICO DE CÁNCER DE PULMÓN",
         abstract:
-          "",
+          "https://drive.google.com/uc?id=1K6KQJHIUhh49sq1icllFwB6iFnpemY0m&export=download",
         autor:
-          "Servicio de Cirugía General (Tortone, Julieta Scarano, Virginia Crocitta, Carla Felice, Candelaria Tutor: Toresan, Loreley)",
+          "Servicio de Cirugía General (Autores: Dra. Julieta Tortone, Dra. Virginia Scarano, Dra. Loreley Toresan, Dra. Valeria Garralda y el Dr. Pedro Fullone.",
       },
       {
         titulo: "55-EMPIEMA SUBDURAL Y ABSCESO CEREBRAL SECUNDARIO A SINUSITIS: PRESENTACIÓN DE UN CASO",
         abstract:
-          "",
+          "https://drive.google.com/uc?id=1CNjN3NKPwPBf_yOi4wzprLeDlRrJ9was&export=download",
         autor:
           "Servicio de Neurocirugía (Lederhos, Nicolás; Riffo, Joaquín; Fernández Demczuk, Nerina; Facchin, Nicolás; Folmer Sofía)",
       },
@@ -597,7 +597,7 @@ export const programa = [
         titulo:
           "64-“Extracción transparietohepática de stent biliar endoscópico”",
         abstract:
-          "",
+          "https://drive.google.com/uc?id=10mrEND3YwRpXUrZWiJCwiMzClIzftQdX&export=download",
         autor:
           "Cirugía Percutánea (Dr. Córdoba Juan Pablo, Dr. Cuello Martín, Dra. Conde María, Dr. Ambrosis Juan Ignacio)",
       },
@@ -605,9 +605,17 @@ export const programa = [
         titulo:
           "67- SÍNDROME DE OBSTRUCCIÓN DEFECATORIA EN MUJERES CON PROLAPSO POSTERIOR DE ÓRGANOS PÉLVICOS TRATADAS CON CIRUGÍA PÉLVICA RECONSTRUCTIVA: ESTUDIO DE COHORTE PROSPECTIVA.",
         abstract:
-          "",
+          "https://drive.google.com/uc?id=1Cv0tkAx38WvPpu-O6EWNptIp-O5A4_8P&export=download",
         autor:
           "Servicio de Ginecología HDFS (Gauna Tatiana [1] , Vendramini Agustina [2] , Saldaño Joaquín [3] , Del Re Norberto [4] , Retamozo Jose [5])",
+      },
+      {
+        titulo:
+          "62- LESIONES INVETERADAS DE AQUILES",
+        abstract:
+          "https://drive.google.com/uc?id=1FoiLLrPYS77YRyWjm2aE7Vdo4kJ0nEOU&export=download",
+        autor:
+          "Lucas Agrazo, Luciano Mariani, Lautaro Seoane, Victoria Cusolito, Johan Rodriguez.",
       },
     ],
   },

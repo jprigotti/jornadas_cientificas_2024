@@ -57,7 +57,7 @@ Docente universitaria UBA
 Coordinadora general de las residencias quirúrgicas con orientación y post básicas quirúrgicas (DGDIYDP del MSGCABA)`,
   },
   {
-    id: "5",
+    id: "7",
     image: "/images/invitados/Knezevick.png",
     name: "Dr. Fernando Knezevick",
     cv1: "Dr. Especialista en Neurocirugía",
@@ -66,7 +66,7 @@ Ex Presidentes de la Asociación Argentina de Neurocirugía.
 Ex Presidente de la Sociedad Argentina de Neurocirugía de la Asociación Medica Argentina.`,
   },
   {
-    id: "6",
+    id: "8",
     image: "/images/invitados/Casasco.png",
     name: "Dr. Juan Pablo Casasco",
     cv1: "Jefe de Servicio de  Neurocirugía del Hospital Ramón Carrillo.",

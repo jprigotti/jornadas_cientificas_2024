@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import PagesBannerView from "../../../components/pagesBanner/view/PagesBannerView";
 import ProgramaContainer from "../components/ProgramaContainer";
 import NavPrograma from "../components/NavPrograma";
@@ -6,6 +6,11 @@ import ProgramaProvider from "../provider/ProgramaProvider";
 import SearchProgram from "../components/SearchProgram";
 
 const ProgramaView = () => {
+  useEffect(() => {
+    // Scroll al top de la página al cargar
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <ProgramaProvider>
       <div>
@@ -17,7 +22,6 @@ const ProgramaView = () => {
         </section>
       </div>
     </ProgramaProvider>
-
   );
 };
 

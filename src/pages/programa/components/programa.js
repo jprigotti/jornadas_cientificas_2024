@@ -1080,6 +1080,8 @@ export const programa = [
         tema: "Práctica con simulador",
       },
     ],
+    isStreaming: true,
+    linkStreaming: "https://youtube.com/live/X_oF070g-Fw",
   },
   {
     categoria: "mesa_redonda",

@@ -36,6 +36,6 @@ export const oradoresList = [
     image: "/images/invitados/Rigotti.png",
     name: "Ing. Juan Pablo Rigotti",
     cv: "Ingeniero en Electrónica UNLaM. Equipo de Sistemas del Hstal Santojanni. Instructor de Programación en Talento Tech GCBA. Jefe de TP Desarrollo Web en UADE. Emprendedor",
-    linkStreaming: "pending",
+    linkStreaming: "https://www.youtube.com/live/GkYQ5gGNQ0Y",
   },
 ];

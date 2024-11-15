@@ -1153,6 +1153,16 @@ export const programa = [
         abstract: "https://drive.google.com/uc?id=1QDlYbPMxao5e1k5uFbkEPJsI2BugdW0S&export=download",
         autor: "Anatomía Patológica HDFS (Dr. Garcia, Jorge. Dra. Carral, Evelyn. Dr. Elizondo, Agustín. Dra. Pisano, Sofía. Dra. Recalde, Vanina.)",
       },
+      {
+        titulo: "67-SÍNDROME DE OBSTRUCCIÓN DEFECATORIA EN MUJERES CON PROLAPSO POSTERIOR DE ÓRGANOS PÉLVICOS TRATADAS CON CIRUGÍA PÉLVICA RECONSTRUCTIVA: ESTUDIO DE COHORTE PROSPECTIVA.",
+        abstract: "https://drive.google.com/uc?id=1Cv0tkAx38WvPpu-O6EWNptIp-O5A4_8P&export=download",
+        autor: "Gauna Tatiana [1] , Vendramini Agustina [2] , Saldaño Joaquín [3] , Del ReNorberto [4] , Retamozo Jose [5]",
+      },
+      {
+        titulo: "85-SUBDIAGNÓSTICO CLÍNICO DE VIRUS SINCICIAL RESPIRATORIO (VSR)",
+        abstract: "https://drive.google.com/uc?id=1eJgVy6pTuiJMpuZd0wSjHE6jl-qILu_a&export=download",
+        autor: "Autores:Antolini,L.; Gualino,E.; Lucilli,S.; Camporini,A.; Devoto,M.; Alonso,M;Ortuño,C.; Csipka,P.; Chinen,J.; Saldarini,F.; D'Alessandro,D.",
+      },
     ],
   },
   {
@@ -1325,6 +1335,14 @@ export const programa = [
     presidente: "Anthony Frank Capcha",
     coordinador: "Evelyn Gualino",
     disertantes: ["Leonel Trivisono", "Marlon Bolivar", "Gisela Lazzaro", "Pablo Herbas"],
+  },
+  {
+    categoria: "clausura",
+    dia: "15",
+    hora: "11:30",
+    ubicacion: "2 Piso Aulas A-B",
+    descripcion: "Cierre de Jornadas",
+    linkStreaming: "",
   },
 ];
 

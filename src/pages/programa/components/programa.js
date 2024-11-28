@@ -401,6 +401,8 @@ export const programa = [
     ubicacion: "2 Piso Aulas A-B",
     titulo: "El acto médico bajo la lupa de la justicia.",
     orador: "Dr. Vadim Mischanchuk",
+    isStreaming: true,
+    linkStreaming: "https://youtube.com/live/oCQr84GVhUQ",
   },
   {
     dia: "12",
@@ -572,6 +574,55 @@ export const programa = [
     categoria: "temas_libres",
     dia: "13",
     hora: "8:00 a 9:00",
+    ubicacion: "Aula 4 Piso A",
+    presidente: "Dr Pablo Iturrieta",
+    secretario: "Dra Verónica Alonso",
+    trabajos: [
+      {
+        titulo:
+          "52-HALLAZGOS DE FALSOS POSITIVOS EN EL DIAGNÓSTICO DE CÁNCER DE PULMÓN",
+        abstract:
+          "https://drive.google.com/uc?id=1K6KQJHIUhh49sq1icllFwB6iFnpemY0m&export=download",
+        autor:
+          "Servicio de Cirugía General (Autores: Dra. Julieta Tortone, Dra. Virginia Scarano, Dra. Loreley Toresan, Dra. Valeria Garralda y el Dr. Pedro Fullone.",
+      },
+      {
+        titulo: "55-EMPIEMA SUBDURAL Y ABSCESO CEREBRAL SECUNDARIO A SINUSITIS: PRESENTACIÓN DE UN CASO",
+        abstract:
+          "https://drive.google.com/uc?id=1CNjN3NKPwPBf_yOi4wzprLeDlRrJ9was&export=download",
+        autor:
+          "Servicio de Neurocirugía (Lederhos, Nicolás; Riffo, Joaquín; Fernández Demczuk, Nerina; Facchin, Nicolás; Folmer Sofía)",
+      },
+      {
+        titulo:
+          "64-“Extracción transparietohepática de stent biliar endoscópico”",
+        abstract:
+          "https://drive.google.com/uc?id=10mrEND3YwRpXUrZWiJCwiMzClIzftQdX&export=download",
+        autor:
+          "Cirugía Percutánea (Dr. Córdoba Juan Pablo, Dr. Cuello Martín, Dra. Conde María, Dr. Ambrosis Juan Ignacio)",
+      },
+      {
+        titulo:
+          "67- SÍNDROME DE OBSTRUCCIÓN DEFECATORIA EN MUJERES CON PROLAPSO POSTERIOR DE ÓRGANOS PÉLVICOS TRATADAS CON CIRUGÍA PÉLVICA RECONSTRUCTIVA: ESTUDIO DE COHORTE PROSPECTIVA.",
+        abstract:
+          "https://drive.google.com/uc?id=1Cv0tkAx38WvPpu-O6EWNptIp-O5A4_8P&export=download",
+        autor:
+          "Servicio de Ginecología HDFS (Gauna Tatiana [1] , Vendramini Agustina [2] , Saldaño Joaquín [3] , Del Re Norberto [4] , Retamozo Jose [5])",
+      },
+      {
+        titulo:
+          "62- LESIONES INVETERADAS DE AQUILES",
+        abstract:
+          "https://drive.google.com/uc?id=1FoiLLrPYS77YRyWjm2aE7Vdo4kJ0nEOU&export=download",
+        autor:
+          "Lucas Agrazo, Luciano Mariani, Lautaro Seoane, Victoria Cusolito, Johan Rodriguez.",
+      },
+    ],
+  },
+  {
+    categoria: "temas_libres",
+    dia: "13",
+    hora: "8:00 a 9:00",
     ubicacion: "Aula 4 B Piso",
     presidente: "Dr. Javier Castillo",
     secretario: "Daniela Rey",
@@ -672,6 +723,8 @@ export const programa = [
     titulo:
       "La construcción del estado argentino y su relación con la salud pública en el Siglo XIX",
     orador: "Prof. Lic. Eduardo Sacheri",
+    isStreaming: true,
+    linkStreaming: "https://youtube.com/live/sCI3bh2rkog",
   },
   {
     dia: "13",
@@ -880,8 +933,7 @@ export const programa = [
         titulo:
           "85-Sub Diagnóstico Clínico de Virus Sincicial Respiratorio (VSR)",
         abstract: "https://drive.google.com/uc?id=1eJgVy6pTuiJMpuZd0wSjHE6jl-qILu_a&export=download",
-        autor:
-          "Medicina interna HDFS (Antolini,L.;Gualino,E.;Lucilli,S.;Camporini,A.;Devoto,M.;Alonso,M;Ortuño, C.;Csipka,P.;Chinen,J.;Saldarini,F.;D'Alessandro,D.)",
+        autor: `Medicina interna HDFS (Antolini,L.; Gualino,E.; Lucilli,S.; Camporini,A.; Devoto,M.; Alonso,M; Ortuño, C.; Csipka,P.; Chinen,J.; Saldarini,F.; D'Alessandro,D.)`
       },
       {
         titulo:
@@ -980,6 +1032,8 @@ export const programa = [
     ubicacion: "2 Piso Aulas A-B",
     titulo: "La inteligencia artificial aplicada a la salud: aliado o enemigo.",
     orador: "Ing. Juan Pablo Rigotti",
+    isStreaming: true,
+    linkStreaming: "https://youtube.com/live/GkYQ5gGNQ0Y",
   },
   {
     dia: "14",
@@ -1026,6 +1080,8 @@ export const programa = [
         tema: "Práctica con simulador",
       },
     ],
+    isStreaming: true,
+    linkStreaming: "https://youtube.com/live/X_oF070g-Fw",
   },
   {
     categoria: "mesa_redonda",
@@ -1085,7 +1141,7 @@ export const programa = [
       {
         titulo: "76- SEXUALIDAD EN MUJERES CON INCONTINENCIA DE ORINA: ESTUDIO COMPARATIVO",
         abstract: "https://drive.google.com/uc?id=1QhaBT00S-i8q14R9QhWI0kdi1OKApiQr&export=download",
-        autor: "Ginecología HDFS (Tucillo Florencia Victoria [1] , Carou Julieta Ayelén [2] , Vendramini Agustina [3] , Saldaño Joaquín [4] , Del Re Norberto [5] , Pesado, Analia)",
+        autor: "Tucillo Florencia Victoria[1], Perlov Mauro[2], Rada Micaela[3], Carou Julieta Ayelén[4], Vendramini Agustina[5], Saldaño Joaquín[6], Del Re Norberto[7], Pesado Analia [8]",
       },
       {
         titulo: "9- NUTRICIÓN DURANTE EL EMBARAZO: ¿ES UNA VARIABLE CLAVE EN EL DESARROLLO DE DIABETES GESTACIONAL?",
@@ -1096,6 +1152,16 @@ export const programa = [
         titulo: "92-Adenocarcinoma de tipo mesonéfrico de ovario: Revisión de la literatura a propósito de un caso",
         abstract: "https://drive.google.com/uc?id=1QDlYbPMxao5e1k5uFbkEPJsI2BugdW0S&export=download",
         autor: "Anatomía Patológica HDFS (Dr. Garcia, Jorge. Dra. Carral, Evelyn. Dr. Elizondo, Agustín. Dra. Pisano, Sofía. Dra. Recalde, Vanina.)",
+      },
+      {
+        titulo: "67-SÍNDROME DE OBSTRUCCIÓN DEFECATORIA EN MUJERES CON PROLAPSO POSTERIOR DE ÓRGANOS PÉLVICOS TRATADAS CON CIRUGÍA PÉLVICA RECONSTRUCTIVA: ESTUDIO DE COHORTE PROSPECTIVA.",
+        abstract: "https://drive.google.com/uc?id=1Cv0tkAx38WvPpu-O6EWNptIp-O5A4_8P&export=download",
+        autor: "Gauna Tatiana [1] , Vendramini Agustina [2] , Saldaño Joaquín [3] , Del ReNorberto [4] , Retamozo Jose [5]",
+      },
+      {
+        titulo: "85-SUBDIAGNÓSTICO CLÍNICO DE VIRUS SINCICIAL RESPIRATORIO (VSR)",
+        abstract: "https://drive.google.com/uc?id=1eJgVy6pTuiJMpuZd0wSjHE6jl-qILu_a&export=download",
+        autor: "Autores:Antolini,L.; Gualino,E.; Lucilli,S.; Camporini,A.; Devoto,M.; Alonso,M;Ortuño,C.; Csipka,P.; Chinen,J.; Saldarini,F.; D'Alessandro,D.",
       },
     ],
   },
@@ -1232,6 +1298,7 @@ export const programa = [
       "Giovanni Avila",
       "Liseth Flores",
       "Tortone Julieta",
+      "Jessica Alvarado"
     ],
   },
   {
@@ -1267,7 +1334,15 @@ export const programa = [
     tema: "Obesidad y diabetes",
     presidente: "Anthony Frank Capcha",
     coordinador: "Evelyn Gualino",
-    disertantes: ["Leonel Trivisono", "Marlon Bolivar", "Gisela Lazzaro"],
+    disertantes: ["Leonel Trivisono", "Marlon Bolivar", "Gisela Lazzaro", "Pablo Herbas"],
+  },
+  {
+    categoria: "clausura",
+    dia: "15",
+    hora: "11:30",
+    ubicacion: "2 Piso Aulas A-B",
+    descripcion: "Cierre de Jornadas",
+    linkStreaming: "",
   },
 ];
 

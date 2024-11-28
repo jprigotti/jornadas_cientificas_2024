@@ -28,7 +28,7 @@ export const comites = [
         "mostrarCargos" : "true",
         "presidenteNombre": "Marcelo Katz",
         "presidenteGenero": "Dr.",
-        "secretarioNombre": "Dafne Lópezl",
+        "secretarioNombre": "Dafne López",
         "secretarioGenero": "Dra.",
         "vocales": [
             { "nombre": "Patricia Del Nero", "genero": "Dra." },
@@ -144,7 +144,7 @@ export const comites = [
     {
         "comiteNombre" : "Comité Residentes y concurrentes",
         "mostrarCargos" : "true",
-        "coordinadorGeneral" : "Coordinador General: Dr. Gonzalo Barbieri",
+        "coordinadorGeneral" : "Dr. Gonzalo Barbieri",
         "presidenteNombre": "Sofía Pisano",
         "presidenteGenero": "Dra.",
         "secretarioNombre": "Jimena González Alije",

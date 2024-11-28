@@ -16,7 +16,7 @@ export const oradoresList = [
     image: "/images/invitados/Vadim.png",
     name: "Dr. Vadim Mischanchuk",
     cv: "Abogado UBA con título de Orientación en Derecho Penal. Especializado en temas de Derecho en Salud y Bioética. Dedicación exclusiva en Defensa Médica. Prevención de Riesgos en Medicina Legal",
-    linkStreaming: "pending",
+    linkStreaming: "https://www.youtube.com/live/oCQr84GVhUQ",
   },
   {
     id: "3",
@@ -36,6 +36,6 @@ export const oradoresList = [
     image: "/images/invitados/Rigotti.png",
     name: "Ing. Juan Pablo Rigotti",
     cv: "Ingeniero en Electrónica UNLaM. Equipo de Sistemas del Hstal Santojanni. Instructor de Programación en Talento Tech GCBA. Jefe de TP Desarrollo Web en UADE. Emprendedor",
-    linkStreaming: "pending",
+    linkStreaming: "https://www.youtube.com/live/GkYQ5gGNQ0Y",
   },
 ];

@@ -7,7 +7,7 @@ export const oradoresList = [
     image: "/images/invitados/Luca.png",
     name: "Dr. Ruben Luca",
     cv: "Médico Especialista en Ginecología y Obstetricia, Docente Adscrito en Obstetricia Facultad de Medicina UBA, Profesor Adjunto en Obstetricia Facultad de Medicina UAI, Jefe de División Obstetricia Hospital Santojanni",
-    stream: "pending",
+    linkStreaming: "https://youtube.com/live/BQX-8Xgu7fs",
   },
   {
     id: "2",
@@ -16,7 +16,7 @@ export const oradoresList = [
     image: "/images/invitados/Vadim.png",
     name: "Dr. Vadim Mischanchuk",
     cv: "Abogado UBA con título de Orientación en Derecho Penal. Especializado en temas de Derecho en Salud y Bioética. Dedicación exclusiva en Defensa Médica. Prevención de Riesgos en Medicina Legal",
-    stream: "pending",
+    linkStreaming: "pending",
   },
   {
     id: "3",
@@ -26,7 +26,7 @@ export const oradoresList = [
     image: "/images/invitados/Sacheri.png",
     name: "Lic. Eduardo Sacheri",
     cv: 'Profesor y Licenciado en Historia. Autor de la novela "La pregunta de sus ojos" adaptada al cine como "El secreto de sus ojos", ganadora del Óscar a la Mejor Película Extranjera en 2010',
-    stream: "pending",
+    linkStreaming: "pending",
   },
   {
     id: "4",
@@ -36,6 +36,6 @@ export const oradoresList = [
     image: "/images/invitados/Rigotti.png",
     name: "Ing. Juan Pablo Rigotti",
     cv: "Ingeniero en Electrónica UNLaM. Equipo de Sistemas del Hstal Santojanni. Instructor de Programación en Talento Tech GCBA. Jefe de TP Desarrollo Web en UADE. Emprendedor",
-    stream: "pending",
+    linkStreaming: "pending",
   },
 ];

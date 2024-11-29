@@ -3,12 +3,14 @@ import { useProfile } from "../hooks/useProfile";
 import EventRegistrationsTable from "./EventRegistrationsTable";
 import { useEventRegistrations } from "../hooks/useEventRegistrations";
 import { useReports } from "../hooks/useReports";
+import { useGenerateDiploma } from "../hooks/useGenerateDiploma";
 
 const AdminProfile = ({ userId }) => {
-  const {generateReport} = useReports();
+  const { generateReport } = useReports();
   const { userData } = useProfile(userId);
   const [searchDni, setSearchDni] = useState("");
   const dniInputRef = useRef(null);
+  const { generatePDF } = useGenerateDiploma()
 
   const handleSubmitSearchUser = (event) => {
     event.preventDefault();
@@ -57,6 +59,9 @@ const AdminProfile = ({ userId }) => {
 
       <div>
         <button onClick={generateReport}>Generar Reporte</button>
+      </div>
+      <div>
+        <button onClick={generatePDF}>Generar Diploma PDF</button>
       </div>
     </div>
   );

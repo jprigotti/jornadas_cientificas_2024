@@ -152,19 +152,19 @@ export const useRegistration = () => {
     }
   };
 
-  const handlePayment = async (userId) => {
-    console.log(
-      "Registration in progress for user: ",
-      userId,
-      "in event ",
-      eventId
-    );
-    const res = await updatePayment(eventId, userId);
-    res.status
-      ? console.log("Payment status: ", res.status)
-      : console.log("Payment failed with: ", res.error);
-    setReload(!reload);
-  };
+  // const handlePayment = async (userId) => {
+  //   console.log(
+  //     "Registration in progress for user: ",
+  //     userId,
+  //     "in event ",
+  //     eventId
+  //   );
+  //   const res = await updatePayment(eventId, userId);
+  //   res.status
+  //     ? console.log("Payment status: ", res.status)
+  //     : console.log("Payment failed with: ", res.error);
+  //   setReload(!reload);
+  // };
 
   return {
     userRegistration,

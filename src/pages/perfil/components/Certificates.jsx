@@ -2,6 +2,7 @@ import { useGenerateDiploma } from "../hooks/useGenerateDiploma";
 import { useRegistration } from "../hooks/useRegistration";
 import { useAuth } from "../../../core/auth/hooks/useAuth";
 import { useProfile } from "../hooks/useProfile";
+import ButtonVioletSM from "../../../components/buttons/ButtonVioletSM"
 
 const Certificates = () => {
   const { user } = useAuth();
@@ -21,12 +22,8 @@ const Certificates = () => {
         <div className="flex">
           <p>Certificado de participación: </p>
 
-          {userRegistration?.payment != "paid" && (
-            <p>No puede descargar Certificado</p>
-          )}
-          {userRegistration?.payment == "paid" && (
-            < button onClick={() => generatePDF(userData)}>Descargar Certificado</button>
-          )}
+          <ButtonVioletSM onClick={() => generatePDF(userData)} label={"Descargar"} disabled={useRegistration?.payment == "paid" ? "disabled" : "enabled"} />
+
         </div>
       </div>
     </div >

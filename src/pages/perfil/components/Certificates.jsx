@@ -1,4 +1,4 @@
-import { useGenerateDiploma } from "../hooks/useGenerateDiploma";
+import { useGenerateCertificados } from "../hooks/useGenerateCertificados";
 import { useRegistration } from "../hooks/useRegistration";
 import { useAuth } from "../../../core/auth/hooks/useAuth";
 import { useProfile } from "../hooks/useProfile";
@@ -9,7 +9,7 @@ const Certificates = () => {
   const { userData } = useProfile(user.uid);
   const { userRegistration, isSubmitting } =
     useRegistration();
-  const { generatePDF } = useGenerateDiploma()
+  const { generatePDF } = useGenerateCertificados()
 
 
   return (

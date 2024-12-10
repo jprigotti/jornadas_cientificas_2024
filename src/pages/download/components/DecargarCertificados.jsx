@@ -21,36 +21,45 @@ const DescargarCertificados = () => {
     }
 
     return (
-        <div>
-            <h1>Descarga tu certificado</h1>
+        <div className='flex flex-col items-center'>
+            <h1 className="main-title text-center py-5">Descarga tu certificado</h1>
 
-            <div className="search-area">
-                <form onSubmit={handleSearch}>
-                    <input 
-                        type="text" 
-                        placeholder="Buscar por palabra clave..." 
+            <div className="w-[330px] p-5 mb-10 bg-Blue rounded-xl">
+                <form
+                    className='flex justify-center'
+                    onSubmit={handleSearch}>
+                    <input
+                        className='w-[200px] me-5 p-2'
+                        type="text"
+                        placeholder="Buscar por palabra clave..."
                         value={searchTerm}
-                        onChange={(e) => setSearchTerm(e.target.value)} 
+                        onChange={(e) => setSearchTerm(e.target.value)}
                     />
-                    <button type="submit">Buscar</button>
+                    <button
+                        className='bg-LightGreen px-2 text-Black font-medium'
+                        type="submit">Buscar</button>
                 </form>
             </div>
 
-            <div>
+            <div className='flex flex-col items-center'>
                 {filteredCertificados?.map((certificado, index) => (
                     <div
                         key={index}
-                        className='pt-5'>
-                        <div>
+                        className='w-3/4 p-5 mb-5 border rounded-xl'>
+
+                        <div className='pb-5'>
                             {Object.entries(certificado).map(([key, value]) => (
-                                (
+                                key != 'tipo' &&(
                                     <p key={key}>
                                         <strong>{key.charAt(0).toUpperCase() + key.slice(1)}:</strong> {value}
                                     </p>
                                 )
                             ))}
                         </div>
-                        <ButtonVioletSM onClick={() => generateCertificado(certificado)} label={"Descargar"} />
+                        <div className="flex justify-center">
+                            <ButtonVioletSM onClick={() => generateCertificado(certificado)} label={"Descargar"} />
+                        </div>
+
                     </div>
                 ))}
             </div>

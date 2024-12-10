@@ -62,9 +62,9 @@ export const useGenerateCertificados = () => {
         
         let fullName = certificado.autores;
         if (certificado.tipo == "presidente_temas_libres")
-            fullName = certificado.cargo
+            fullName = certificado.autoridad
         if (certificado.tipo == "secretario_temas_libres")
-            fullName = certificado.cargo
+            fullName = certificado.autoridad
         if (certificado.tipo == "autores_temas_libres")
             fullName = certificado.autores
 

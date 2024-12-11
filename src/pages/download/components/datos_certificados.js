@@ -61,7 +61,7 @@ export const datos_certificados = [
     },
     {
         tipo: "autores_temas_libres",
-        autores: "Laurens, María Lourdes; Aguirre, Mariana; Mastandrea, Martin Ignacio; Rodríguez, D ́aversa Gonzalo Tomás; Rodriguez, Federico Martín; Suarez, Nicolas Ariel; Herbon, Angel Santiago; Machero, Matias; Poletti, Mariano Gastón; Tassi, Ailen; Ramirez, Alexis; Boer,Mariela; Cardoso, Jorgelina Sol; Challilol, Vanesa Paula",
+        autores: "Laurens, María Lourdes; Aguirre, Mariana; Mastandrea, Martin Ignacio, Rodriguez, Federico Martín; Suarez, Nicolas Ariel; Herbon, Angel Santiago; Machero, Matias; Poletti, Mariano Gastón; Tassi, Ailen; Ramirez, Alexis; Boer, Mariela; Cardoso, Jorgelina Sol Challilol, Vanesa Paula, D aversa Gonzalo Tomás",
         titulo: "Características y resultados de internación de sujetos que requirieron ventilación mecánica invasiva por más de 24 horas en el Servicio de Emergencia de un hospital público de la Ciudad Autónoma de Buenos Aires"
     },
     {

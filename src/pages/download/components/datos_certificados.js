@@ -451,13 +451,608 @@ export const datos_certificados = [
     },
     {
         tipo: "autores_temas_libres",
-        autores: "",
-        titulo: ""
+        autores: "Muñoz C., Capcha A., Vivona M., Muñoz N., Guerra N.",
+        titulo: "Absceso Frío Tuberculoso de Pared Torácica"
     },
     {
         tipo: "autores_temas_libres",
-        autores: "",
-        titulo: ""
+        autores: "Ormazabal, Cecilia; Yernazian, Valeria; Ruiz O´Neill, Moira; Marino, Silvia; Marucco, Andrea",
+        titulo: "Evaluación del desempeño de métodos moleculares para diagnóstico rápido de bacteriemias"
+    },
+    {
+        tipo: "autores_temas_libres",
+        autores: "Glantz Dana Elisabet, García Martín, Scapellato Pablo",
+        titulo: "Neurosífilis: Manifestaciones clínicas en cuatro pacientes"
+    },
+    {
+        tipo: "autores_temas_libres",
+        autores: "Laurens María Lourdes, Thomsen Carolina, Bezzi Marco, Pilipec Antonio, Sabrá Ahmad, Borello Silvina",
+        titulo: "ALTERACIÓN DEL IMPULSO CENTRAL RESPIRATORIO EN ENCEFALITIS EQUINA DEL OESTE: VENTILACIÓN MECÁNICA PROLONGADA. REPORTE DE CASO"
+    },
+    {
+        tipo: "autores_temas_libres",
+        autores: "Antolini,L.; Gualino,E.; Lucilli,S.; Camporini,A.; Devoto,M.; Alonso,M; Ortuño, C.; Csipka,P.; Chinen,J.; Saldarini,F.; D'Alessandro,D.",
+        titulo: "Sub Diagnóstico Clínico de Virus Sincicial Respiratorio (VSR)"
+    },
+    {
+        tipo: "autores_temas_libres",
+        autores: "Scarselletta Florencia,Griffa Mercedes, Vaccaro Rosana, Espiño Maria del Carmen",
+        titulo: "OPTIMIZACIÓN DE USO DE ANTIMICROBIANOS: INTERVENCIONES FARMACÉUTICAS EN LA TERAPIA INTENSIVA DE UN HOSPITAL DE ALTA COMPLEJIDAD"
+    },
+    {
+        tipo: "presidente_temas_libres",
+        autoridad: "Dra. Verónica Varela",
+        titulo: "Presidente de Temas Libres"
+    },
+    {
+        tipo: "secretario_temas_libres",
+        autoridad: "Dra. Lorena Romano",
+        titulo: "Secretario de Temas Libres"
+    },
+    {
+        tipo: "autores_temas_libres",
+        autores: "Facchin Nicolás; Folmer Sofia; Fernandez Nerina; Lederhos Nicolás; Santangelo,Pablo; Correa, Ruben; Figoni Jimena; Masenga, Gustavo",
+        titulo: "IMPLEMENTACIÓN DE UNA TÉCNICA INNOVADORA PARA RESOLUCIÓN DE HEMATOMAS SUBDURALES CRÓNICOS EN NUESTRA INSTITUCIÓN"
+    },
+    {
+        tipo: "autores_temas_libres",
+        autores: "Sabatini Alejandro, Giron Argani Daniela Sephora, Alvarez Vilariño Federico Matias",
+        titulo: "LA UTILIZACIÓN DE LA ECOGRAFÍA AL PIE DE CAMA EN LA PRÁCTICA DIARIA, UNA SERIE DE CASOS"
+    },
+    {
+        tipo: "autores_temas_libres",
+        autores: "Godoy, Nazarena",
+        titulo: "Curación avanzada de heridas y curación tradicional en el tratamiento de úlceras diabéticas."
+    },
+    {
+        tipo: "autores_temas_libres",
+        autores: "Bascope, Luisa; Paz Wasiuchnik, Vanina Gisela; Dayan Federico (1); Recalde, Vanina",
+        titulo: "RELACIÓN DE LA MEDICIÓN DEL ÍNDICE DE RESISTENCIA Y LAS LESIONES TUBULOINTERSTICIAL EN BIOPSIAS RENALES"
+    },
+    {
+        tipo: "presidente_temas_libres",
+        autoridad: "Dr. Luciano Mariani",
+        titulo: "Presidente de Temas Libres"
+    },
+    {
+        tipo: "secretario_temas_libres",
+        autoridad: "Dr. Fernando Cattaneo",
+        titulo: "Secretario de Temas Libres"
+    },
+    {
+        tipo: "autores_temas_libres",
+        autores: "Dr. Daniel Esteban Apraez, Dr. Juan Ambrosis, Dra. Romina Natalizia, Dra. Barbani Betiana, Dr. Cordoba Juan Pablo",
+        titulo: "Resolución miniinvasiva de bilomas hepáticos post instrumentación percutánea de vía biliar"
+    },
+    {
+        tipo: "autores_temas_libres",
+        autores: "Victoria Cusolito, Gonzalo Frutos, Lautaro Seoane, Lucas Agrazo, Johan Rodriguez",
+        titulo: "Tratamiento quirúrgico en fracturas de tercio medio de clavícula, ¿por qué ahora?"
+    },
+    {
+        tipo: "autores_temas_libres",
+        autores: "Tucillo Florencia Victoria [1] , Rodriguez Yanina [2] , Miele, Analia [3] , Delia Franco 4] ,Amestica Maria Guillermina",
+        titulo: "MALFORMACIONES ARTERIOVENOSAS UTERINAS: USO DE LA ARTERIOGRAFÍA Y LA EMBOLIZACIÓN EN EL MANEJO TERAPÉUTICO. ANÁLISIS DE NUESTRA EXPERIENCIA"
+    },
+    {
+        tipo: "autores_temas_libres",
+        autores: "Dra.Maldonado Torrez, Yesenia; Dr. Córdoba Juan Pablo; Dra. Barbani Betiana; Dr.Cerda Cristian; Dr. Apraez Daniel",
+        titulo: "Manejo de abscesos complejos asociados a fístulas: estrategias en el tratamiento."
+    },
+    {
+        tipo: "autores_temas_libres",
+        autores: "Karina Méndez, Agustín Ziliotto, Matias Landi, Lautaro Seoane, Lucas Agrazo",
+        titulo: "Tratamiento ortopédico en fracturas de humero proximal"
+    },
+    {
+        tipo: "autores_temas_libres",
+        autores: "Dra. Natalizia, Romina, Dr. Córdoba Juan Pablo, Dr. Cuello Martín, Dra. Conde María, Dr. Ambrosis Juan Ignacio",
+        titulo: "Extracción transparietohepática de stent biliar endoscópico"
+    },
+    {
+        tipo: "presidente_temas_libres",
+        autoridad: "Dra .Verónica Geronasso",
+        titulo: "Presidente de Temas Libres"
+    },
+    {
+        tipo: "secretario_temas_libres",
+        autoridad: "Dra. Aldana Rondinella",
+        titulo: "Secretario de Temas Libres"
+    },
+    {
+        tipo: "autores_temas_libres",
+        autores: "DAPEÑA Joan Manuel, SANDRA Petruzelli, CELENZA, Alejandra",
+        titulo: "Osteoartropatía hipertrófica: reporte de un caso clínico"
+    },
+    {
+        tipo: "autores_temas_libres",
+        autores: "De la Casa Romina, Echeverz María, Blanco Lila, Retamozo José, Amestica Guillermina",
+        titulo: "Mastitis granulomatosa, análisis epidemiológico"
+    },
+    {
+        tipo: "autores_temas_libres",
+        autores: "Tucillo Florencia Victoria[1], Perlov Mauro[2], Rada Micaela[3], Carou Julieta Ayelén[4], Vendramini Agustina[5], Saldaño Joaquín[6], Del Re Norberto[7], Pesado Analia [8]",
+        titulo: "SEXUALIDAD EN MUJERES CON INCONTINENCIA DE ORINA: ESTUDIO COMPARATIVO"
+    },
+    {
+        tipo: "autores_temas_libres",
+        autores: "Perlov Mauro, Gil Daniela, Cibrario Sofía, Rada Micaela, Mancini Mariela, Picarelli María",
+        titulo: "NUTRICIÓN DURANTE EL EMBARAZO: ¿ES UNA VARIABLE CLAVE EN EL DESARROLLO DE DIABETES GESTACIONAL?"
+    },
+    {
+        tipo: "autores_temas_libres",
+        autores: "Dr. Garcia, Jorge. Dra. Carral, Evelyn. Dr. Elizondo, Agustín. Dra. Pisano, Sofía. Dra. Recalde, Vanina",
+        titulo: "Adenocarcinoma de tipo mesonéfrico de ovario: Revisión de la literatura a propósito de un caso"
+    },
+    {
+        tipo: "autores_temas_libres",
+        autores: "Gauna Tatiana [1] , Vendramini Agustina [2] , Saldaño Joaquín [3] , Del ReNorberto [4] , Retamozo Jose [5]",
+        titulo: "SÍNDROME DE OBSTRUCCIÓN DEFECATORIA EN MUJERES CON PROLAPSO POSTERIOR DE ÓRGANOS PÉLVICOS TRATADAS CON CIRUGÍA PÉLVICA RECONSTRUCTIVA: ESTUDIO DE COHORTE PROSPECTIVA."
+    },
+    {
+        tipo: "autores_temas_libres",
+        autores: "Autores:Antolini,L.; Gualino,E.; Lucilli,S.; Camporini,A.; Devoto,M.; Alonso,M;Ortuño,C.; Csipka,P.; Chinen,J.; Saldarini,F.; D'Alessandro,D.",
+        titulo: "SUBDIAGNÓSTICO CLÍNICO DE VIRUS SINCICIAL RESPIRATORIO (VSR)"
+    },
+    {
+        tipo: "presidente_temas_libres",
+        autoridad: "Lic. Mariana Vincenzino",
+        titulo: "Presidente de Temas Libres"
+    },
+    {
+        tipo: "secretario_temas_libres",
+        autoridad: "Gisela Sessa",
+        titulo: "Secretario de Temas Libres"
+    },
+    {
+        tipo: "autores_temas_libres",
+        autores: "Giménez Matías Ricardo, Rodríguez Salcedo Pilar, Ardissone Claudia, Sproviero Jorge José María",
+        titulo: "La belleza o una mejor imagen corporal como causa de consulta médica de urgencia: a propósito de tres casos"
+    },
+    {
+        tipo: "autores_temas_libres",
+        autores: "Scarselletta Florencia, Kunst Ana, Griffa Mercedes, Vaccaro Rosana, Espiño María del Carmen",
+        titulo: "Optimización de uso de antimicrobianos: consumo de antimicrobianos en la terapia intensiva de un hospital de alta complejidad"
+    },
+    {
+        tipo: "autores_temas_libres",
+        autores: "Lic. Arias Rocio, Lic. Domingorena Elizabeth, Lic. Duran Anahi Soledad, Lic. Ortiz C. Luisina, Lic. Vilchez Débora",
+        titulo: "Resultados obtenidos de la vía de finalización: acceso facilitado e irrestricto durante el trabajo de parto, como estrategia no farmacológica"
+    },
+    {
+        tipo: "autores_temas_libres",
+        autores: "Abregú, Gabriela; Sanchez Saenz de Tejada, Anahí; Layño, Fernanda; Fiumara, Mariano",
+        titulo: "Sala de espera saludable"
+    },
+    {
+        tipo: "autores_temas_libres",
+        autores: "DAPEÑA Joan Manuel [1,2], BENEGAS Mariana [2], PETRUZELLI Sandra [1], SOMMERFLECK Fernando [2], CELENZA Alejandra [1]",
+        titulo: "Impacto de la inteligencia artificial en la elaboración de resúmenes de historia clínica en reumatología"
+    },
+    {
+        tipo: "autores_temas_libres",
+        autores: "(Laurens, María Lourdes; Aguirre, Mariana; Mastandrea, Martin Ignacio; Rodríguez, D ́aversa Gonzalo Tomás; Rodriguez, Federico Martín; Suarez, Nicolas Ariel; Herbon, Angel Santiago; Machero, Matias; Poletti, Mariano Gastón; Tassi, Ailen; Ramirez, Alexis; Boer,Mariela; Cardoso, Jorgelina Sol; Challilol, Vanesa Paula",
+        titulo: "Características y resultados de internación de sujetos que requirieron ventilación mecánica invasiva por más de 24 horas en el Servicio de Emergencia de un hospital público de la Ciudad Autónoma de Buenos Aires"
+    },
+    {
+        tipo: "presidente_temas_libres",
+        autoridad: "Dra. Claudia Alfonso",
+        titulo: "Presidente de Temas Libres"
+    },
+    {
+        tipo: "secretario_temas_libres",
+        autoridad: "Dra. Ornella Caruso",
+        titulo: "Secretario de Temas Libres"
+    },
+    {
+        tipo: "autores_temas_libres",
+        autores: "Dra Coulomme Gabriela , Dra Garralda Valeria, Dra Crocitta Carla",
+        titulo: "ANEURISMA VENOSO POST TRAUMÁTICO EN MIEMBRO SUPERIOR"
+    },
+    {
+        tipo: "autores_temas_libres",
+        autores: "Dra. Camila, Cervetto; Dra. Jessica Alejandra, Alvarado Gonzales; Dr. Leandro Oscar Fernández; Dra. Dafne, Lopez; Dr. Marcelo, Lassorsa",
+        titulo: "Síndrome de Gorlin – Goltz: Caso Clínico"
+    },
+    {
+        tipo: "autores_temas_libres",
+        autores: "Tortone, Julieta Crocitta, Carla Quinteros, Joaquin",
+        titulo: "POLIPOSIS ADENOMATOSA FAMILIAR: A PROPÓSITO DE UN CASO"
+    },
+    {
+        tipo: "autores_temas_libres",
+        autores: "Riffo, Joaquín; Covetta, Claudio; Fernández, Nerina; Facchin, Nicolás; Folmer, Sofía",
+        titulo: "MENINGIOMA EN EL EMBARAZO: PRESENTACIÓN DE CASO Y REVISIÓN BIBLIOGRÁFICA"
+    },
+    {
+        tipo: "presidente_temas_libres",
+        autoridad: "Dr José Aquino",
+        titulo: "Presidente de Temas Libres"
+    },
+    {
+        tipo: "secretario_temas_libres",
+        autoridad: "Dra. Daniela D Alesandro",
+        titulo: "Secretario de Temas Libres"
+    },
+    {
+        tipo: "autores_temas_libres",
+        autores: "Cango Yanela; Paz Wasiuchnik Vanina Gisela",
+        titulo: "NUESTRA EXPERIENCIA EN LA COLOCACIÓN DE CATÉTERES TRANSITORIOS DE HEMODIÁLISIS GUIADOS POR ECOGRAFÍA EN PACIENTES CON ENFERMEDAD RENAL CRONICA EN HEMODIÁLISIS"
+    },
+    {
+        tipo: "autores_temas_libres",
+        autores: "Herbas Canapi Pablo; Paz Wasiuchnik Vanina Gisela",
+        titulo: "COLOCACIÓN DE ACCESOS TUNELIZADOS PARA HEMODIÁLISIS REALIZADO POR NEFRÓLOGOS. EXPERIENCIA EN UN CENTRO"
+    },
+    {
+        tipo: "autores_temas_libres",
+        autores: "Bavio Juan Pablo, Sabattini Leandro, Sproviero Jorge",
+        titulo: "NEUMOTÓRAX TRAUMÁTICO: EXPERIENCIA DEL HOSPITAL DONACIÓN SANTOJANNI."
+    },
+    {
+        tipo: "autores_temas_libres",
+        autores: "Gauna Tatiana [1] , Carou Julieta Ayelén [2] , Vendramini Agustina [3] , Saldaño Joaquín [4] , Del Re Norberto [5] , Amestica María Guillermina [6)",
+        titulo: "HISTERECTOMÍA VAGINAL CON PUERTO ÚNICO VAGINAL: REPORTE DE CASO"
+    },
+    {
+        tipo: "presidente_mesa_redonda",
+        autoridad: "Dr. Pablo Manjarín",
+        titulo: "Presidente de Mesa Redonda: El Hospital Público ante situaciones extraordinarias: Plan de Manejo"
+    },
+    {
+        tipo: "secretario_mesa_redonda",
+        autoridad: "Dr. Ernesto Faraoni",
+        titulo: "Secretario de Mesa Redonda: El Hospital Público ante situaciones extraordinarias: Plan de Manejo"
+    },
+    {
+        tipo: "secretario_mesa_redonda",
+        autoridad: "Dra. Lorena Romano",
+        titulo: "Secretario de Mesa Redonda: El Hospital Público ante situaciones extraordinarias: Plan de Manejo"
+    },
+    {
+        tipo: "disertante_mesa_redonda",
+        disertante: "Dra. Patricia Delnero",
+        titulo: "Disertante de Mesa Redonda: El Hospital Público ante situaciones extraordinarias: Plan de Manejo",
+        tema: "Protocolo ante incidente externo"
+    },
+    {
+        tipo: "disertante_mesa_redonda",
+        disertante: "Dra. Silvana Oviedo",
+        titulo: "Disertante de Mesa Redonda: El Hospital Público ante situaciones extraordinarias: Plan de Manejo",
+        tema: "Protocolo ante incidente externo"
+    },
+    {
+        tipo: "disertante_mesa_redonda",
+        disertante: "Dra. Mariela García",
+        titulo: "Disertante de Mesa Redonda: El Hospital Público ante situaciones extraordinarias: Plan de Manejo",
+        tema: "Coordinación de SAME"
+    },
+    {
+        tipo: "presidente_mesa_redonda",
+        autoridad: "Dra. Guillermina Amestica",
+        titulo: "Presidente de Mesa Redonda: Cáncer de Mama en Mujeres Jóvenes"
+    },
+    {
+        tipo: "secretario_mesa_redonda",
+        autoridad: "Dra. Romina De La Casa",
+        titulo: "Secretario de Mesa Redonda: Cáncer de Mama en Mujeres Jóvenes"
+    },
+    {
+        tipo: "disertante_mesa_redonda",
+        disertante: "Dra. Maria Echeverz",
+        titulo: "Disertante de Mesa Redonda: Cáncer de Mama en Mujeres Jóvenes",
+        tema: ""
+    },
+    {
+        tipo: "disertante_mesa_redonda",
+        disertante: "Dra. Liliana Quiñones",
+        titulo: "Disertante de Mesa Redonda: Cáncer de Mama en Mujeres Jóvenes",
+        tema: ""
+    },
+    {
+        tipo: "disertante_mesa_redonda",
+        disertante: "Dra. Estefania Quevedo",
+        titulo: "Disertante de Mesa Redonda: Cáncer de Mama en Mujeres Jóvenes",
+        tema: ""
+    },
+    {
+        tipo: "disertante_mesa_redonda",
+        disertante: "Dr. Juan Pablo Bavio",
+        titulo: "Disertante de Mesa Redonda: Cáncer de Mama en Mujeres Jóvenes",
+        tema: ""
+    },
+    {
+        tipo: "disertante_mesa_redonda",
+        disertante: "Dra. Flavia Scibetta",
+        titulo: "Disertante de Mesa Redonda: Cáncer de Mama en Mujeres Jóvenes",
+        tema: ""
+    },
+    {
+        tipo: "presidente_mesa_redonda",
+        autoridad: "Dr. Pablo Iturrieta",
+        titulo: "Presidente de Mesa Redonda: Presentación del Protocolo para el manejo de Catéter de Presión Intracraneal en el Hospital D. F. Santojanni"
+    },
+    {
+        tipo: "secretario_mesa_redonda",
+        autoridad: "Dr. Pablo Manjarin",
+        titulo: "Secretario de Mesa Redonda: CPresentación del Protocolo para el manejo de Catéter de Presión Intracraneal en el Hospital D. F. Santojanni"
+    },
+    {
+        tipo: "disertante_mesa_redonda",
+        disertante: "Dr.Pablo Santángelo",
+        titulo: "Disertante de Mesa Redonda: Presentación del Protocolo para el manejo de Catéter de Presión Intracraneal en el Hospital D. F. Santojanni",
+        tema: ""
+    },
+    {
+        tipo: "disertante_mesa_redonda",
+        disertante: "Dra. Victoria Roca",
+        titulo: "Disertante de Mesa Redonda: Presentación del Protocolo para el manejo de Catéter de Presión Intracraneal en el Hospital D. F. Santojanni",
+        tema: ""
+    },
+    {
+        tipo: "presidente_mesa_redonda",
+        autoridad: "Dra. Daniela D’Alessandro",
+        titulo: "Presidente de Mesa Redonda: Consenso institucional de prevención de la infección quirúrgica: abordaje transdisciplinario."
+    },
+    {
+        tipo: "secretario_mesa_redonda",
+        autoridad: "Dr. Matias Landi",
+        titulo: "Secretario de Mesa Redonda: Consenso institucional de prevención de la infección quirúrgica: abordaje transdisciplinario."
+    },
+    {
+        tipo: "disertante_mesa_redonda",
+        disertante: "Lic. Analía Vega",
+        titulo: "Disertante de Mesa Redonda: Consenso institucional de prevención de la infección quirúrgica: abordaje transdisciplinario.",
+        tema: "Prevención"
+    },
+    {
+        tipo: "disertante_mesa_redonda",
+        disertante: "Dr. Johan Rodríguez",
+        titulo: "Disertante de Mesa Redonda: Consenso institucional de prevención de la infección quirúrgica: abordaje transdisciplinario.",
+        tema: "Prevención intra-quirúrgica"
+    },
+    {
+        tipo: "disertante_mesa_redonda",
+        disertante: "Dra. Josefina Dib Hasan",
+        titulo: "Disertante de Mesa Redonda: Consenso institucional de prevención de la infección quirúrgica: abordaje transdisciplinario.",
+        tema: "Prevención post-quirúrgica"
+    },
+    {
+        tipo: "presidente_mesa_redonda",
+        autoridad: "Dr. Carlos Ruano",
+        titulo: "Presidente de Mesa Redonda: El paciente con EPOC e Insuficiencia Cardíaca: cuándo se interna en UCO y cuándo en UTI, ¿cambia el manejo?"
+    },
+    {
+        tipo: "secretario_mesa_redonda",
+        autoridad: "Dra. Paula Csipka",
+        titulo: "Secretario de Mesa Redonda: El paciente con EPOC e Insuficiencia Cardíaca: cuándo se interna en UCO y cuándo en UTI, ¿cambia el manejo?"
+    },
+    {
+        tipo: "disertante_mesa_redonda",
+        disertante: "Dr. Nicolas Caiña",
+        titulo: "Disertante de Mesa Redonda: El paciente con EPOC e Insuficiencia Cardíaca: cuándo se interna en UCO y cuándo en UTI, ¿cambia el manejo?",
+        tema: "Manejo inicial en Shock Room"
+    },
+    {
+        tipo: "disertante_mesa_redonda",
+        disertante: "Dr. Daniel Chiachara",
+        titulo: "Disertante de Mesa Redonda: El paciente con EPOC e Insuficiencia Cardíaca: cuándo se interna en UCO y cuándo en UTI, ¿cambia el manejo?",
+        tema: "Cuando se debe internar en UTI"
+    },
+    {
+        tipo: "disertante_mesa_redonda",
+        disertante: "Dr. Gustavo Lanosa",
+        titulo: "Disertante de Mesa Redonda: El paciente con EPOC e Insuficiencia Cardíaca: cuándo se interna en UCO y cuándo en UTI, ¿cambia el manejo?",
+        tema: "Cuándo se debe priorizar lo cardiológico. Manejo en UCO"
+    },
+    {
+        tipo: "disertante_mesa_redonda",
+        disertante: "Andres Leoz",
+        titulo: "Disertante de Mesa Redonda: El paciente con EPOC e Insuficiencia Cardíaca: cuándo se interna en UCO y cuándo en UTI, ¿cambia el manejo?",
+        tema: "Manejo ventilatorio del paciente"
+    },
+    {
+        tipo: "presidente_mesa_redonda",
+        autoridad: "Dr. Lautaro Seoane",
+        titulo: "Presidente de Mesa Redonda: Problemas que retrasan las cirugías por fractura de cadera"
+    },
+    {
+        tipo: "secretario_mesa_redonda",
+        autoridad: "Dra. Karina Méndez",
+        titulo: "Secretario de Mesa Redonda: Problemas que retrasan las cirugías por fractura de cadera"
+    },
+    {
+        tipo: "disertante_mesa_redonda",
+        disertante: "Dr. Johan Rodríguez",
+        titulo: "Disertante de Mesa Redonda: Problemas que retrasan las cirugías por fractura de cadera",
+        tema: ""
+    },
+    {
+        tipo: "presidente_mesa_redonda",
+        autoridad: "Dr. Gustavo Masenga",
+        titulo: "Presidente de Mesa Redonda: Actualización de programas en formación médica, desarrollos de entornos virtuales y simulación quirúrgica."
+    },
+    {
+        tipo: "secretario_mesa_redonda",
+        autoridad: "Dra. Verónica Geronazzo",
+        titulo: "Secretario de Mesa Redonda: Actualización de programas en formación médica, desarrollos de entornos virtuales y simulación quirúrgica."
+    },
+    {
+        tipo: "disertante_mesa_redonda",
+        disertante: "Dra. Andrea Andreacchio",
+        titulo: "Disertante de Mesa Redonda: Actualización de programas en formación médica, desarrollos de entornos virtuales y simulación quirúrgica.",
+        tema: ""
+    },
+    {
+        tipo: "disertante_mesa_redonda",
+        disertante: "Dra. Ana Besada",
+        titulo: "Disertante de Mesa Redonda: Actualización de programas en formación médica, desarrollos de entornos virtuales y simulación quirúrgica.",
+        tema: ""
+    },
+    {
+        tipo: "disertante_mesa_redonda",
+        disertante: "Dra. Jimena Figoni",
+        titulo: "Disertante de Mesa Redonda: Actualización de programas en formación médica, desarrollos de entornos virtuales y simulación quirúrgica.",
+        tema: "Práctica con simulador"
+    },
+    {
+        tipo: "disertante_mesa_redonda",
+        disertante: "Dr. Federico Alberione",
+        titulo: "Disertante de Mesa Redonda: Actualización de programas en formación médica, desarrollos de entornos virtuales y simulación quirúrgica.",
+        tema: "Práctica con simulador"
+    },
+    {
+        tipo: "disertante_mesa_redonda",
+        disertante: "Dr. Juan Pablo Casasco",
+        titulo: "Disertante de Mesa Redonda: Actualización de programas en formación médica, desarrollos de entornos virtuales y simulación quirúrgica.",
+        tema: "Práctica con simulador"
+    },
+    {
+        tipo: "presidente_mesa_redonda",
+        autoridad: "Dr. Juan Pablo Bavio",
+        titulo: "Presidente de Mesa Redonda: Cáncer Cutáneo: Detección precoz y Tratamiento avanzado"
+    },
+    {
+        tipo: "secretario_mesa_redonda",
+        autoridad: "Dra. Daniela Bresolin Tuduri",
+        titulo: "Secretario de Mesa Redonda: Cáncer Cutáneo: Detección precoz y Tratamiento avanzado"
+    },
+    {
+        tipo: "disertante_mesa_redonda",
+        disertante: "Dra. Eugenia Wamba",
+        titulo: "Disertante de Mesa Redonda: Cáncer Cutáneo: Detección precoz y Tratamiento avanzado",
+        tema: ""
+    },
+    {
+        tipo: "disertante_mesa_redonda",
+        disertante: "Dra. María Florencia Pedrini Cinqualbrez",
+        titulo: "Disertante de Mesa Redonda: Cáncer Cutáneo: Detección precoz y Tratamiento avanzado",
+        tema: ""
+    },
+    {
+        tipo: "presidente_jornada_residente",
+        autoridad: "Yanina Pastori",
+        titulo: "Presidente Jornada Residente: ACV isquemico"
+    },
+    {
+        tipo: "coordinador_jornada_residente",
+        autoridad: "Victoria Lipera",
+        titulo: "Coordinador Jornada Residente: ACV isquemico"
+    },
+    {
+        tipo: "disertante_jornada_residente",
+        disertante: "Emilio Pisapio",
+        titulo: "Disertante Jornada Residente: ACV isquemico"
+    },
+    {
+        tipo: "disertante_jornada_residente",
+        disertante: "Aldana Sarthes",
+        titulo: "Disertante Jornada Residente: ACV isquemico"
+    },
+    {
+        tipo: "disertante_jornada_residente",
+        disertante: "Yesica Guzman",
+        titulo: "Disertante Jornada Residente: ACV isquemico"
+    },
+    {
+        tipo: "disertante_jornada_residente",
+        disertante: "Andrei Flores",
+        titulo: "Disertante Jornada Residente: ACV isquemico"
+    },
+    {
+        tipo: "presidente_jornada_residente",
+        autoridad: "Camila Cervetto",
+        titulo: "Presidente Jornada Residente: Tuberculosis como problematica epidemiologica actual"
+    },
+    {
+        tipo: "coordinador_jornada_residente",
+        autoridad: "Virginia Scarano",
+        titulo: "Coordinador Jornada Residente: Tuberculosis como problematica epidemiologica actual"
+    },
+    {
+        tipo: "disertante_jornada_residente",
+        disertante: "Luthmila Chambi",
+        titulo: "Disertante Jornada Residente: Tuberculosis como problematica epidemiologica actual"
+    },
+    {
+        tipo: "disertante_jornada_residente",
+        disertante: "Giovanni Avila",
+        titulo: "Disertante Jornada Residente: Tuberculosis como problematica epidemiologica actual"
+    },
+    {
+        tipo: "disertante_jornada_residente",
+        disertante: "Liseth Flores",
+        titulo: "Disertante Jornada Residente: Tuberculosis como problematica epidemiologica actual"
+    },
+    {
+        tipo: "disertante_jornada_residente",
+        disertante: "Tortone Julieta",
+        titulo: "Disertante Jornada Residente: Tuberculosis como problematica epidemiologica actual"
+    },
+    {
+        tipo: "disertante_jornada_residente",
+        disertante: "Jessica Alvarado",
+        titulo: "Disertante Jornada Residente: Tuberculosis como problematica epidemiologica actual"
+    },
+    {
+        tipo: "presidente_jornada_residente",
+        autoridad: "Emiliano Ferrera",
+        titulo: "Presidente Jornada Residente: Screening patologías oncológicas"
+    },
+    {
+        tipo: "coordinador_jornada_residente",
+        autoridad: "Lucia Antolini",
+        titulo: "Coordinador Jornada Residente: Screening patologías oncológicas"
+    },
+    {
+        tipo: "presidente_jornada_residente",
+        autoridad: "Anthony Frank Capcha",
+        titulo: "Presidente Jornada Residente: Obesidad y diabetes"
+    },
+    {
+        tipo: "coordinador_jornada_residente",
+        autoridad: "Evelyn Gualino",
+        titulo: "Coordinador Jornada Residente: Obesidad y diabetes"
+    },
+    {
+        tipo: "disertante_jornada_residente",
+        disertante: "Leonel Trivisono",
+        titulo: "Disertante Jornada Residente: Obesidad y diabetes"
+    },
+    {
+        tipo: "disertante_jornada_residente",
+        disertante: "Marlon Bolivar",
+        titulo: "Disertante Jornada Residente: Obesidad y diabetes"
+    },
+    {
+        tipo: "disertante_jornada_residente",
+        disertante: "Gisela Lazzaro",
+        titulo: "Disertante Jornada Residente: Obesidad y diabetes"
+    },
+    {
+        tipo: "disertante_jornada_residente",
+        disertante: "Pablo Herbas",
+        titulo: "Disertante Jornada Residente: Obesidad y diabetes"
+    },
+    {
+        tipo: "orador_conferencia",
+        orador: "Dr. Ruben Luca",
+        titulo: "Orador Conferencia Central: Sistema de salud en la Argentina en crisis. Qué papel debe jugar el hospital público."
+    },
+    {
+        tipo: "orador_conferencia",
+        orador: "Dr. Vadim Mischanchuk",
+        titulo: "Orador Conferencia Central: El acto médico bajo la lupa de la justicia."
+    },
+    {
+        tipo: "orador_conferencia",
+        orador: "Prof. Lic. Eduardo Sacheri",
+        titulo: "Orador Conferencia Central: La construcción del estado argentino y su relación con la salud pública en el Siglo XIX."
+    },
+    {
+        tipo: "orador_conferencia",
+        orador: "Ing. Juan Pablo Rigotti",
+        titulo: "Orador Conferencia Central: La inteligencia artificial aplicada a la salud: aliado o enemigo."
     },
 ]
 

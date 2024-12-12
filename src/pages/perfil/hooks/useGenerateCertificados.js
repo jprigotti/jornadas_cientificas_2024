@@ -60,6 +60,27 @@ export const useGenerateCertificados = () => {
             case "autores_temas_libres":
                 generateCertificadoAutoresTemasLibres(certificado);
                 break;
+            case "presidente_mesa_redonda":
+                generateCertificadoPresidenteMesaRedonda(certificado);
+                break;
+            case "secretario_mesa_redonda":
+                generateCertificadoSecretarioMesaRedonda(certificado);
+                break;
+            case "disertante_mesa_redonda":
+                generateCertificadoDisertanteMesaRedonda(certificado);
+                break;
+            case "presidente_jornada_residente":
+                generateCertificadoPresidenteJornadaResidente(certificado);
+                break;
+            case "secretario_jornada_residente":
+                generateCertificadoSecretarioJornadaResidente(certificado);
+                break;
+            case "disertante_jornada_residente":
+                generateCertificadoDisertanteJornadaResidente(certificado);
+                break;
+            case "orador_conferencia":
+                generateCertificadoOradorConferencia(certificado);
+                break;
         }
     }
 
@@ -247,9 +268,430 @@ export const useGenerateCertificados = () => {
     };
 
 
+    /*
+    CERTIFICADO PRESIDENTE MESA REDONDA
+    */
+    const generateCertificadoPresidenteMesaRedonda = async (certificado) => {
+        // Cargar la plantilla PDF existente
+        const existingPdfBytes = await fetch("/pdf/template_certificado_jornadas_2024.pdf").then((res) => res.arrayBuffer());
+
+        // Crear un nuevo documento a partir de la plantilla
+        const pdfDoc = await PDFDocument.load(existingPdfBytes);
+
+        // Obtener la primera página del PDF
+        const page = pdfDoc.getPages()[0];
+
+        // Insertar texto personalizado
+        const timesRomanFont = await pdfDoc.embedFont(StandardFonts.TimesRoman);
+        const textSize = 14;
+        const color = rgb(0, 0, 0);
+        const maxWidth = 800;
+
+        //Format autores y títulos de trabajos
+        const autoridadLines = splitTextIntoLines(certificado.autoridad, maxWidth, timesRomanFont, textSize);
+        const tituloLines = splitTextIntoLines(certificado.titulo, maxWidth, timesRomanFont, textSize);
+
+        //Completa con nombre y apellido de la autoridad
+        let currentY = 310;
+        autoridadLines.forEach((line) => {
+            page.drawText(line, {
+                x: 200, // Ajusta las coordenadas x
+                y: currentY, // Ajusta la posición vertical para cada línea
+                size: textSize,
+                font: timesRomanFont,
+                color: color,
+            });
+            currentY -= textSize + 4; // Espaciado entre líneas
+        });
+
+        //Completa con el cargo que ocupó
+        currentY -= 15; // Añade un espacio extra entre fullName y título
+        tituloLines.forEach((line) => {
+            page.drawText(line, {
+                x: 250, // Ajusta las coordenadas x
+                y: currentY,
+                size: 14,
+                font: timesRomanFont,
+                color: color,
+            });
+            currentY -= 20 + 4; // Espaciado entre líneas del título
+        });
+
+        // Guardar el documento PDF modificado
+        const pdfBytes = await pdfDoc.save();
+
+        // Descargar el archivo PDF
+        const blob = new Blob([pdfBytes], { type: "application/pdf" });
+        saveAs(blob, "diploma.pdf");
+    };
 
 
 
+    /*
+   CERTIFICADO SECRETARIO MESA REDONDA
+   */
+    const generateCertificadoSecretarioMesaRedonda = async (certificado) => {
+        // Cargar la plantilla PDF existente
+        const existingPdfBytes = await fetch("/pdf/template_certificado_jornadas_2024.pdf").then((res) => res.arrayBuffer());
+
+        // Crear un nuevo documento a partir de la plantilla
+        const pdfDoc = await PDFDocument.load(existingPdfBytes);
+
+        // Obtener la primera página del PDF
+        const page = pdfDoc.getPages()[0];
+
+        // Insertar texto personalizado
+        const timesRomanFont = await pdfDoc.embedFont(StandardFonts.TimesRoman);
+        const textSize = 14;
+        const color = rgb(0, 0, 0);
+        const maxWidth = 800;
+
+        //Format autores y títulos de trabajos
+        const autoridadLines = splitTextIntoLines(certificado.autoridad, maxWidth, timesRomanFont, textSize);
+        const tituloLines = splitTextIntoLines(certificado.titulo, maxWidth, timesRomanFont, textSize);
+
+        //Completa con nombre y apellido de la autoridad
+        let currentY = 310;
+        autoridadLines.forEach((line) => {
+            page.drawText(line, {
+                x: 200, // Ajusta las coordenadas x
+                y: currentY, // Ajusta la posición vertical para cada línea
+                size: textSize,
+                font: timesRomanFont,
+                color: color,
+            });
+            currentY -= textSize + 4; // Espaciado entre líneas
+        });
+
+        //Completa con el cargo que ocupó
+        currentY -= 15; // Añade un espacio extra entre fullName y título
+        tituloLines.forEach((line) => {
+            page.drawText(line, {
+                x: 250, // Ajusta las coordenadas x
+                y: currentY,
+                size: 14,
+                font: timesRomanFont,
+                color: color,
+            });
+            currentY -= 20 + 4; // Espaciado entre líneas del título
+        });
+
+        // Guardar el documento PDF modificado
+        const pdfBytes = await pdfDoc.save();
+
+        // Descargar el archivo PDF
+        const blob = new Blob([pdfBytes], { type: "application/pdf" });
+        saveAs(blob, "diploma.pdf");
+    };
+
+
+    /*
+    CERTIFICADO DISERTANTE MESA REDONDA
+    */
+    const generateCertificadoDisertanteMesaRedonda = async (certificado) => {
+        // Cargar la plantilla PDF existente
+        const existingPdfBytes = await fetch("/pdf/template_certificado_jornadas_2024.pdf").then((res) => res.arrayBuffer());
+
+        // Crear un nuevo documento a partir de la plantilla
+        const pdfDoc = await PDFDocument.load(existingPdfBytes);
+
+        // Obtener la primera página del PDF
+        const page = pdfDoc.getPages()[0];
+
+        // Insertar texto personalizado
+        const timesRomanFont = await pdfDoc.embedFont(StandardFonts.TimesRoman);
+        const textSize = 14;
+        const color = rgb(0, 0, 0);
+        const maxWidth = 500;
+
+        //Format autores y títulos de trabajos
+        const disertanteLines = splitTextIntoLines(certificado.disertante, maxWidth, timesRomanFont, textSize);
+        const tituloLines = splitTextIntoLines(certificado.titulo, maxWidth, timesRomanFont, textSize);
+        const temaLines = splitTextIntoLines(certificado.tema, maxWidth, timesRomanFont, textSize);
+
+        //Completa con los autores
+        let currentY = 310;
+        disertanteLines.forEach((line) => {
+            page.drawText(line, {
+                x: 200, // Ajusta las coordenadas x
+                y: currentY, // Ajusta la posición vertical para cada línea
+                size: textSize,
+                font: timesRomanFont,
+                color: color,
+            });
+            currentY -= textSize + 1; // Espaciado entre líneas
+        });
+
+        //Completa con el título de la mesa
+        currentY -= 35; // Añade un espacio extra entre fullName y título
+        tituloLines.forEach((line) => {
+            console.log(line)
+            page.drawText(line, {
+                x: 250, // Ajusta las coordenadas x
+                y: currentY,
+                size: 14,
+                font: timesRomanFont,
+                color: color,
+            });
+            currentY -= 15 + 4; // Espaciado entre líneas del título
+        });
+
+        //Completa con el tema del trabajo
+        currentY -= 35; // Añade un espacio extra entre fullName y título
+        temaLines.forEach((line) => {
+            console.log(line)
+            page.drawText(line, {
+                x: 250, // Ajusta las coordenadas x
+                y: currentY,
+                size: 14,
+                font: timesRomanFont,
+                color: color,
+            });
+            currentY -= 15 + 4; // Espaciado entre líneas del título
+        });
+
+        // Guardar el documento PDF modificado
+        const pdfBytes = await pdfDoc.save();
+
+        // Descargar el archivo PDF
+        const blob = new Blob([pdfBytes], { type: "application/pdf" });
+        saveAs(blob, "diploma.pdf");
+    };
+
+    /*
+    CERTIFICADO PRESIDENTE JORNADA RESIDENTE
+    */
+    const generateCertificadoPresidenteJornadaResidente = async (certificado) => {
+        // Cargar la plantilla PDF existente
+        const existingPdfBytes = await fetch("/pdf/template_certificado_jornadas_2024.pdf").then((res) => res.arrayBuffer());
+
+        // Crear un nuevo documento a partir de la plantilla
+        const pdfDoc = await PDFDocument.load(existingPdfBytes);
+
+        // Obtener la primera página del PDF
+        const page = pdfDoc.getPages()[0];
+
+        // Insertar texto personalizado
+        const timesRomanFont = await pdfDoc.embedFont(StandardFonts.TimesRoman);
+        const textSize = 14;
+        const color = rgb(0, 0, 0);
+        const maxWidth = 800;
+
+        //Format autores y títulos de trabajos
+        const autoridadLines = splitTextIntoLines(certificado.autoridad, maxWidth, timesRomanFont, textSize);
+        const tituloLines = splitTextIntoLines(certificado.titulo, maxWidth, timesRomanFont, textSize);
+
+        //Completa con nombre y apellido de la autoridad
+        let currentY = 310;
+        autoridadLines.forEach((line) => {
+            page.drawText(line, {
+                x: 200, // Ajusta las coordenadas x
+                y: currentY, // Ajusta la posición vertical para cada línea
+                size: textSize,
+                font: timesRomanFont,
+                color: color,
+            });
+            currentY -= textSize + 4; // Espaciado entre líneas
+        });
+
+        //Completa con el cargo que ocupó
+        currentY -= 15; // Añade un espacio extra entre fullName y título
+        tituloLines.forEach((line) => {
+            page.drawText(line, {
+                x: 250, // Ajusta las coordenadas x
+                y: currentY,
+                size: 14,
+                font: timesRomanFont,
+                color: color,
+            });
+            currentY -= 20 + 4; // Espaciado entre líneas del título
+        });
+
+        // Guardar el documento PDF modificado
+        const pdfBytes = await pdfDoc.save();
+
+        // Descargar el archivo PDF
+        const blob = new Blob([pdfBytes], { type: "application/pdf" });
+        saveAs(blob, "diploma.pdf");
+    };
+
+
+
+    /*
+   CERTIFICADO SECRETARIO JORNADA RESIDENTE
+   */
+    const generateCertificadoSecretarioJornadaResidente = async (certificado) => {
+        // Cargar la plantilla PDF existente
+        const existingPdfBytes = await fetch("/pdf/template_certificado_jornadas_2024.pdf").then((res) => res.arrayBuffer());
+
+        // Crear un nuevo documento a partir de la plantilla
+        const pdfDoc = await PDFDocument.load(existingPdfBytes);
+
+        // Obtener la primera página del PDF
+        const page = pdfDoc.getPages()[0];
+
+        // Insertar texto personalizado
+        const timesRomanFont = await pdfDoc.embedFont(StandardFonts.TimesRoman);
+        const textSize = 14;
+        const color = rgb(0, 0, 0);
+        const maxWidth = 800;
+
+        //Format autores y títulos de trabajos
+        const autoridadLines = splitTextIntoLines(certificado.autoridad, maxWidth, timesRomanFont, textSize);
+        const tituloLines = splitTextIntoLines(certificado.titulo, maxWidth, timesRomanFont, textSize);
+
+        //Completa con nombre y apellido de la autoridad
+        let currentY = 310;
+        autoridadLines.forEach((line) => {
+            page.drawText(line, {
+                x: 200, // Ajusta las coordenadas x
+                y: currentY, // Ajusta la posición vertical para cada línea
+                size: textSize,
+                font: timesRomanFont,
+                color: color,
+            });
+            currentY -= textSize + 4; // Espaciado entre líneas
+        });
+
+        //Completa con el cargo que ocupó
+        currentY -= 15; // Añade un espacio extra entre fullName y título
+        tituloLines.forEach((line) => {
+            page.drawText(line, {
+                x: 250, // Ajusta las coordenadas x
+                y: currentY,
+                size: 14,
+                font: timesRomanFont,
+                color: color,
+            });
+            currentY -= 20 + 4; // Espaciado entre líneas del título
+        });
+
+        // Guardar el documento PDF modificado
+        const pdfBytes = await pdfDoc.save();
+
+        // Descargar el archivo PDF
+        const blob = new Blob([pdfBytes], { type: "application/pdf" });
+        saveAs(blob, "diploma.pdf");
+    };
+
+
+    /*
+    CERTIFICADO DISERTANTE JORNADA RESIDENTE
+    */
+    const generateCertificadoDisertanteJornadaResidente = async (certificado) => {
+        // Cargar la plantilla PDF existente
+        const existingPdfBytes = await fetch("/pdf/template_certificado_jornadas_2024.pdf").then((res) => res.arrayBuffer());
+
+        // Crear un nuevo documento a partir de la plantilla
+        const pdfDoc = await PDFDocument.load(existingPdfBytes);
+
+        // Obtener la primera página del PDF
+        const page = pdfDoc.getPages()[0];
+
+        // Insertar texto personalizado
+        const timesRomanFont = await pdfDoc.embedFont(StandardFonts.TimesRoman);
+        const textSize = 14;
+        const color = rgb(0, 0, 0);
+        const maxWidth = 500;
+
+        //Format autores y títulos de trabajos
+        const disertanteLines = splitTextIntoLines(certificado.disertante, maxWidth, timesRomanFont, textSize);
+        const tituloLines = splitTextIntoLines(certificado.titulo, maxWidth, timesRomanFont, textSize);
+
+        //Completa con los autores
+        let currentY = 310;
+        disertanteLines.forEach((line) => {
+            page.drawText(line, {
+                x: 200, // Ajusta las coordenadas x
+                y: currentY, // Ajusta la posición vertical para cada línea
+                size: textSize,
+                font: timesRomanFont,
+                color: color,
+            });
+            currentY -= textSize + 1; // Espaciado entre líneas
+        });
+
+        //Completa con el título de la mesa
+        currentY -= 35; // Añade un espacio extra entre fullName y título
+        tituloLines.forEach((line) => {
+            console.log(line)
+            page.drawText(line, {
+                x: 250, // Ajusta las coordenadas x
+                y: currentY,
+                size: 14,
+                font: timesRomanFont,
+                color: color,
+            });
+            currentY -= 15 + 4; // Espaciado entre líneas del título
+        });
+
+
+        // Guardar el documento PDF modificado
+        const pdfBytes = await pdfDoc.save();
+
+        // Descargar el archivo PDF
+        const blob = new Blob([pdfBytes], { type: "application/pdf" });
+        saveAs(blob, "diploma.pdf");
+    };
+
+    /*
+    CERTIFICADO ORADOR CONFERENCIA
+    */
+    const generateCertificadoOradorConferencia = async (certificado) => {
+        // Cargar la plantilla PDF existente
+        const existingPdfBytes = await fetch("/pdf/template_certificado_jornadas_2024.pdf").then((res) => res.arrayBuffer());
+
+        // Crear un nuevo documento a partir de la plantilla
+        const pdfDoc = await PDFDocument.load(existingPdfBytes);
+
+        // Obtener la primera página del PDF
+        const page = pdfDoc.getPages()[0];
+
+        // Insertar texto personalizado
+        const timesRomanFont = await pdfDoc.embedFont(StandardFonts.TimesRoman);
+        const textSize = 14;
+        const color = rgb(0, 0, 0);
+        const maxWidth = 500;
+
+        //Format autores y títulos de trabajos
+        const oradorLines = splitTextIntoLines(certificado.orador, maxWidth, timesRomanFont, textSize);
+        const tituloLines = splitTextIntoLines(certificado.titulo, maxWidth, timesRomanFont, textSize);
+
+        //Completa con los autores
+        let currentY = 310;
+        oradorLines.forEach((line) => {
+            page.drawText(line, {
+                x: 200, // Ajusta las coordenadas x
+                y: currentY, // Ajusta la posición vertical para cada línea
+                size: textSize,
+                font: timesRomanFont,
+                color: color,
+            });
+            currentY -= textSize + 1; // Espaciado entre líneas
+        });
+
+        //Completa con el título de la mesa
+        currentY -= 35; // Añade un espacio extra entre fullName y título
+        tituloLines.forEach((line) => {
+            console.log(line)
+            page.drawText(line, {
+                x: 250, // Ajusta las coordenadas x
+                y: currentY,
+                size: 14,
+                font: timesRomanFont,
+                color: color,
+            });
+            currentY -= 15 + 4; // Espaciado entre líneas del título
+        });
+
+
+        // Guardar el documento PDF modificado
+        const pdfBytes = await pdfDoc.save();
+
+        // Descargar el archivo PDF
+        const blob = new Blob([pdfBytes], { type: "application/pdf" });
+        saveAs(blob, "diploma.pdf");
+    };
 
     // Función para dividir texto en varias líneas
     const splitTextIntoLines = (text, maxWidth, font, size) => {

@@ -696,7 +696,7 @@ export const datos_certificados = [
     },
     {
         tipo: "presidente_mesa_redonda",
-        autoridad: "Dr. Pablo Manjarín",
+        autoridad: "Dr. Pablo Manjarin",
         titulo: "Presidente de Mesa Redonda: El Hospital Público ante situaciones extraordinarias: Plan de Manejo"
     },
     {
@@ -775,7 +775,7 @@ export const datos_certificados = [
     {
         tipo: "secretario_mesa_redonda",
         autoridad: "Dr. Pablo Manjarin",
-        titulo: "Secretario de Mesa Redonda: CPresentación del Protocolo para el manejo de Catéter de Presión Intracraneal en el Hospital D. F. Santojanni"
+        titulo: "Secretario de Mesa Redonda: Presentación del Protocolo para el manejo de Catéter de Presión Intracraneal en el Hospital D. F. Santojanni"
     },
     {
         tipo: "disertante_mesa_redonda",

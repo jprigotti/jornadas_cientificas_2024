@@ -19,20 +19,34 @@ export const useGenerateCertificados = () => {
     const timesRomanFont = await pdfDoc.embedFont(StandardFonts.TimesRoman);
     const textSize = 14;
     const color = rgb(0, 0, 0);
+    const maxWidth = 700;
     const fullName = userData.name + " " + userData.lastName;
 
-    page.drawText(fullName, {
-      x: 200, // Ajusta las coordenadas x e y
-      y: 310,
-      size: textSize,
-      font: timesRomanFont,
-      color: color,
-    });
+    const text = `Por cuanto: ${fullName} ha participado como "Asistente" en las XXXIX Jornadas Científicas del Hospital Santojanni.`;
 
-    page.drawText("Asistente", {
-      x: 250,
-      y: 280,
-      size: 20,
+    const textLines = splitTextIntoLines(
+        text,
+        maxWidth,
+        timesRomanFont,
+        textSize
+      );
+
+    //Completa con nombre y apellido de la autoridad
+    let currentY = 330;
+    textLines.forEach((line) => {
+      page.drawText(line, {
+        x: 100, // Ajusta las coordenadas x
+        y: currentY, // Ajusta la posición vertical para cada línea
+        size: textSize,
+        font: timesRomanFont,
+        color: color,
+      });
+      currentY -= textSize + 4; // Espaciado entre líneas
+    });
+    page.drawText("Se extiende el presente certificado el día 15 de noviembre de 2024.", {
+      x: 100, // Ajusta las coordenadas x
+      y: currentY - 20, // Ajusta la posición vertical para cada línea
+      size: textSize,
       font: timesRomanFont,
       color: color,
     });
@@ -77,16 +91,20 @@ export const useGenerateCertificados = () => {
         generateCertificadoPDF(text);
         break;
       case "presidente_jornada_residente":
-        generateCertificadoPresidenteJornadaResidente(certificado);
+        text = `Por cuanto: ${certificado.autoridad} ha participado como "Presidente de Jornada Residentes" ${certificado.titulo}`;
+        generateCertificadoPDF(text);
         break;
-      case "secretario_jornada_residente":
-        generateCertificadoSecretarioJornadaResidente(certificado);
+      case "coordinador_jornada_residente":
+        text = `Por cuanto: ${certificado.autoridad} ha participado como "Coordinador de Jornada Residentes" ${certificado.titulo}`;
+        generateCertificadoPDF(text);
         break;
       case "disertante_jornada_residente":
-        generateCertificadoDisertanteJornadaResidente(certificado);
+        text = `Por cuanto: ${certificado.autoridad} ha participado como "Disertante de Jornada Residentes" ${certificado.titulo}`;
+        generateCertificadoPDF(text);
         break;
       case "orador_conferencia":
-        generateCertificadoOradorConferencia(certificado);
+        text = `Por cuanto: ${certificado.orador} ha participado como ${certificado.titulo}`;
+        generateCertificadoPDF(text);
         break;
     }
   };

@@ -87,7 +87,7 @@ export const useGenerateCertificados = () => {
         generateCertificadoPDF(text);
         break;
       case "disertante_mesa_redonda":
-        text = `Por cuanto: ${certificado.disertante} ha participado como "${certificado.titulo}" ${certificado.tema != "" && certificado.tema}`;
+        text = `Por cuanto: ${certificado.disertante} ha participado como "${certificado.titulo}" ${certificado.tema != "" ? certificado.tema : ""}`;
         generateCertificadoPDF(text);
         break;
       case "presidente_jornada_residente":

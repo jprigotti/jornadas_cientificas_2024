@@ -426,7 +426,7 @@ export const datos_certificados = [
     },
     {
         tipo: "autores_temas_libres",
-        autores: "Batto Demattei Natalia [1] , Carou Julieta Ayelén [2] , Vignera María Carolina [3] Castro Candela [4] , Retamozo José [5] , Cresta Morgado Lila [6] , Lopez Dafne [7] , Gagliardi",
+        autores: "Batto Demattei Natalia [1] , Carou Julieta Ayelén [2] , Vignera María Carolina [3] Castro Candela [4] , Retamozo José [5] , Cresta Morgado Lila [6] , Lopez Dafne [7] , Gagliardi L [8]",
         titulo: "IMPLEMENTACIÓN DE TEST DE VPH COMO SCREENING DEL CÁNCER CERVICOUTERINO"
     },
     {
@@ -1053,6 +1053,441 @@ export const datos_certificados = [
         tipo: "orador_conferencia",
         orador: "Ing. Juan Pablo Rigotti",
         titulo: "Orador Conferencia Central: La inteligencia artificial aplicada a la salud: aliado o enemigo."
+    },
+    {
+        tipo: "coordinador_conferencia",
+        coordinador: "Flavia Scibeta",
+        titulo: 'Coordinadora de la Conferencia Central "Sistema de Salud en la Argentina en crisis. Qué papel debe jugar el hospital público?"'
+    },
+    {
+        tipo: "coordinador_conferencia",
+        coordinador: "Flavia Scibeta",
+        titulo: 'Coordinadora de la Conferencia Central "El acto médico bajo la lupa de la justicia"'
+    },
+    {
+        tipo: "autoridades",
+        coordinador: "Flavia Scibeta",
+        titulo: 'Coordinadora de la Conferencia Central "El acto médico bajo la lupa de la justicia"'
+    },
+    {
+        tipo: "autoridades",
+        autoridad: "Dra. María Vivona",
+        titulo: 'Presidenta de las XXXIX Jornadas Científicas'
+    },
+    {
+        tipo: "autoridades",
+        autoridad: "Dr. Daniel Coso",
+        titulo: 'Vicepresidente de las XXXIX Jornadas Científicas'
+    },
+    {
+        tipo: "autoridades",
+        autoridad: "Dr. Fernando Saldarini",
+        titulo: 'Secretario General de las XXXIX Jornadas Científicas'
+    },
+    {
+        tipo: "autoridades",
+        autoridad: "Dr. José Retamoso",
+        titulo: 'Secretario Adjunto de las XXXIX Jornadas Científicas'
+    },
+    {
+        tipo: "autoridades",
+        autoridad: "Dr. Lucas Landolfi",
+        titulo: 'Tesorero de las XXXIX Jornadas Científicas'
+    },
+    {
+        tipo: "autoridades",
+        autoridad: "Dr. Marcelo Struminger",
+        titulo: 'Presidente AMM de las XXXIX Jornadas Científicas'
+    },
+    {
+        tipo: "comite_cientifico",
+        autoridad: "Dr. Javier Castillo",
+        titulo: 'Presidente del Comité Científico'
+    },
+    {
+        tipo: "comite_cientifico",
+        autoridad: "Dra. Beatriz Lauge",
+        titulo: 'Secretaria del Comité Científico'
+    },
+    {
+        tipo: "comite_cientifico",
+        autoridad: "Dra. Silvina Lucili",
+        titulo: 'Vocal del Comité Científico'
+    },
+    {
+        tipo: "comite_cientifico",
+        autoridad: "Dr. Fernando Cataneo",
+        titulo: 'Vocal del Comité Científico'
+    },
+    {
+        tipo: "comite_cientifico",
+        autoridad: "Dra. Ada Vaccareza",
+        titulo: 'Vocal del Comité Científico'
+    },
+    {
+        tipo: "comite_cientifico",
+        autoridad: "Dr. Guillermo Keller",
+        titulo: 'Vocal del Comité Científico'
+    },
+    {
+        tipo: "comite_cientifico",
+        autoridad: "Ts. Florencia Gregorio",
+        titulo: 'Vocal del Comité Científico'
+    },
+    {
+        tipo: "comite_cientifico",
+        autoridad: "Dr. Carlos Ruano",
+        titulo: 'Vocal del Comité Científico'
+    },
+    {
+        tipo: "comite_cientifico",
+        autoridad: "Dra. Valeria Larralda",
+        titulo: 'Vocal del Comité Científico'
+    },
+    {
+        tipo: "comite_cientifico",
+        autoridad: "Dra. Noelia Citate",
+        titulo: 'Vocal del Comité Científico'
+    },
+    {
+        tipo: "comite_cientifico",
+        autoridad: "Dra. Elizabeth Sanguinetti",
+        titulo: 'Vocal del Comité Científico'
+    },
+    {
+        tipo: "comite_cientifico",
+        autoridad: "Dr. Marcelo Strin",
+        titulo: 'Vocal del Comité Científico'
+    },
+    {
+        tipo: "comite_cientifico",
+        autoridad: "Ts. Gisela Sesa",
+        titulo: 'Vocal del Comité Científico'
+    },
+    {
+        tipo: "comite_cientifico",
+        autoridad: "Dra. Agustína Verdamin",
+        titulo: 'Vocal del Comité Científico'
+    },
+    {
+        tipo: "comite_cientifico",
+        autoridad: "Dra. Vernónica Varela",
+        titulo: 'Vocal del Comité Científico'
+    },
+    {
+        tipo: "comite_cientifico",
+        autoridad: "Dra. Daniela D’ Alessandro",
+        titulo: 'Vocal del Comité Científico'
+    },
+    {
+        tipo: "comite_mesas_redondas",
+        autoridad: "Dr. Marcelo Katz",
+        titulo: 'Presidente del Comité de Mesas Redondas'
+    },
+    {
+        tipo: "comite_mesas_redondas",
+        autoridad: "Dra. Dafne López",
+        titulo: 'Secretaria del Comité de Mesas Redondas'
+    },
+    {
+        tipo: "comite_mesas_redondas",
+        autoridad: "Dra. Patricia Del Nero",
+        titulo: 'Vocal del Comité de Mesas Redondas'
+    },
+    {
+        tipo: "comite_mesas_redondas",
+        autoridad: "Bq. Claudia Alfonso",
+        titulo: 'Vocal del Comité de Mesas Redondas'
+    },
+    {
+        tipo: "comite_mesas_redondas",
+        autoridad: "Dra. Cinthia Guzmán",
+        titulo: 'Vocal del Comité de Mesas Redondas'
+    },
+    {
+        tipo: "comite_mesas_redondas",
+        autoridad: "Ts. Guadalupe Aranda",
+        titulo: 'Vocal del Comité de Mesas Redondas'
+    },
+    {
+        tipo: "comite_conferencias",
+        autoridad: "Dra. Pamela Rossi",
+        titulo: 'Presidenta del Comité de Conferencias'
+    },
+    {
+        tipo: "comite_conferencias",
+        autoridad: "Dra. Flavia Scibetta",
+        titulo: 'Secretaria del Comité de Conferencias'
+    },
+    {
+        tipo: "comite_conferencias",
+        autoridad: "Dra. Mara De Bernardi",
+        titulo: 'Vocal del Comité de Conferencias'
+    },
+    {
+        tipo: "comite_conferencias",
+        autoridad: "Dr. Federico Gauna",
+        titulo: 'Vocal del Comité de Conferencias'
+    },
+    {
+        tipo: "comite_conferencias",
+        autoridad: "Dra. Wamba Eugenia",
+        titulo: 'Vocal del Comité de Conferencias'
+    },
+    {
+        tipo: "comite_temas_libres",
+        autoridad: "Dr. Alvaro Otreras",
+        titulo: 'Presidente del Comité de Temas Libres'
+    },
+    {
+        tipo: "comite_temas_libres",
+        autoridad: "Dra. Aldana Rondinella",
+        titulo: 'Secretaria del Comité de Temas Libres'
+    },
+    {
+        tipo: "comite_temas_libres",
+        autoridad: "Dra. Verónica Geronazo",
+        titulo: 'Vocal del Comité de Temas Libres'
+    },
+    {
+        tipo: "comite_temas_libres",
+        autoridad: "Ts. Mariana Vincenzino",
+        titulo: 'Vocal del Comité de Temas Libres'
+    },
+    {
+        tipo: "comite_temas_libres",
+        autoridad: "Dra. Noemí Guerra",
+        titulo: 'Vocal del Comité de Temas Libres'
+    },
+    {
+        tipo: "comite_temas_libres",
+        autoridad: "Dra. Analía Innacio",
+        titulo: 'Vocal del Comité de Temas Libres'
+    },
+    {
+        tipo: "comite_temas_libres",
+        autoridad: "Dra. Ornela Caruso",
+        titulo: 'Vocal del Comité de Temas Libres'
+    },
+    {
+        tipo: "comite_relaciones_publicas",
+        autoridad: "Dra. Sandra Gonzalez",
+        titulo: 'Presidenta del Comité de Relaciones Públicas'
+    },
+    {
+        tipo: "comite_relaciones_publicas",
+        autoridad: "Dra. Soledad Elías",
+        titulo: 'Secretaria del Comité de Relaciones Públicas'
+    },
+    {
+        tipo: "comite_informatica",
+        autoridad: "Juan Pablo Rigotti",
+        titulo: 'Presidente del Comité de Informática y Redes Sociales'
+    },
+    {
+        tipo: "comite_informatica",
+        autoridad: "Julián Nardi",
+        titulo: 'Secretario del Comité de Informática y Redes Sociales'
+    },
+    {
+        tipo: "comite_informatica",
+        autoridad: "Dra. Romina Plafnik",
+        titulo: 'Vocal del Comité de Informática y Redes Sociales'
+    },
+    {
+        tipo: "comite_informatica",
+        autoridad: "Ts. Daiana Cichello",
+        titulo: 'Vocal del Comité de Informática y Redes Sociales'
+    },
+    {
+        tipo: "comite_informatica",
+        autoridad: "Paola Lo Schiavo",
+        titulo: 'Vocal del Comité de Informática y Redes Sociales'
+    },
+    {
+        tipo: "comite_informatica",
+        autoridad: "Marcelo Corigliano",
+        titulo: 'Vocal del Comité de Informática y Redes Sociales'
+    },
+    {
+        tipo: "comite_informatica",
+        autoridad: "Santiago Fiorino",
+        titulo: 'Vocal del Comité de Informática y Redes Sociales'
+    },
+    {
+        tipo: "comite_recepcion",
+        autoridad: "Bq. Silvia Birnembaum",
+        titulo: 'Presidenta del Comité de Recepción y Actos Públicos'
+    },
+    {
+        tipo: "comite_recepcion",
+        autoridad: "Dra. Nancy Di Biasi",
+        titulo: 'Secretaria del Comité de Recepción y Actos Públicos'
+    },
+    {
+        tipo: "comite_recepcion",
+        autoridad: "Dra. Juliana Caccavo",
+        titulo: 'Vocal del Comité de Recepción y Actos Públicos'
+    },
+    {
+        tipo: "comite_recepcion",
+        autoridad: "Ts. María Inés Marquez",
+        titulo: 'Vocal del Comité de Recepción y Actos Públicos'
+    },
+    {
+        tipo: "comite_recepcion",
+        autoridad: "Dra. Sandra Arcieri",
+        titulo: 'Vocal del Comité de Recepción y Actos Públicos'
+    },
+    {
+        tipo: "comite_recepcion",
+        autoridad: "Dr. Amhed Sabrá",
+        titulo: 'Vocal del Comité de Recepción y Actos Públicos'
+    },
+    {
+        tipo: "comite_recepcion",
+        autoridad: "Dra. Estela Gonzalez",
+        titulo: 'Vocal del Comité de Recepción y Actos Públicos'
+    },
+    {
+        tipo: "comite_cultura",
+        autoridad: "Bq. Gachy Suarez",
+        titulo: 'Presidenta del Comité de Cultura'
+    },
+    {
+        tipo: "comite_cultura",
+        autoridad: "Bq. Cecilia Ormazabal",
+        titulo: 'Secretaria del Comité de Cultura'
+    },
+    {
+        tipo: "comite_cultura",
+        autoridad: "Dra. Victoria Bronzatti",
+        titulo: 'Vocal del Comité de Cultura'
+    },
+    {
+        tipo: "comite_cultura",
+        autoridad: "Camilo Prado",
+        titulo: 'Vocal del Comité de Cultura'
+    },
+    {
+        tipo: "comite_cultura",
+        autoridad: "Consuelo Suarez",
+        titulo: 'Vocal del Comité de Cultura'
+    },
+    {
+        tipo: "comite_asesor",
+        autoridad: "Dr. Ruben Luca",
+        titulo: 'Miembro del Comité Asesor'
+    },
+    {
+        tipo: "comite_asesor",
+        autoridad: "Dra. Teresa Rodriguez Brieschke",
+        titulo: 'Miembro del Comité Asesor'
+    },
+    {
+        tipo: "comite_asesor",
+        autoridad: "Dra. Guillermina Améstica",
+        titulo: 'Miembro del Comité Asesor'
+    },
+    {
+        tipo: "comite_area_programatica",
+        autoridad: "Dra. Claudia Falotico",
+        titulo: 'Presidente del Comité de Area Programática'
+    },
+    {
+        tipo: "comite_area_programatica",
+        autoridad: "Dra. Sandra Eidner",
+        titulo: 'Secretaria del Comité de Area Programática'
+    },
+    {
+        tipo: "comite_area_programatica",
+        autoridad: "Lic. Paula Evangelina Donadio",
+        titulo: 'Vocal del Comité de Area Programática'
+    },
+    {
+        tipo: "comite_area_programatica",
+        autoridad: "Ts. María Natalia González",
+        titulo: 'Vocal del Comité de Area Programática'
+    },
+    {
+        tipo: "comite_area_programatica",
+        autoridad: "Lic. Daniela Tiburi",
+        titulo: 'Vocal del Comité de Area Programática'
+    },
+    {
+        tipo: "comite_area_programatica",
+        autoridad: "Dr. Felipe Aguero",
+        titulo: 'Vocal del Comité de Area Programática'
+    },
+    {
+        tipo: "comite_residentes_concurrentes",
+        autoridad: "Dr. Gonzalo Barbieri",
+        titulo: 'Del Comité de Residentes y Concurrentes'
+    },
+    {
+        tipo: "comite_residentes_concurrentes",
+        autoridad: "Dra. Sofía Pisano",
+        titulo: 'Presidenta del Comité de Residentes y Concurrentes'
+    },
+    {
+        tipo: "comite_residentes_concurrentes",
+        autoridad: "Ts. Jimena González Alije",
+        titulo: 'Secretario del Comité de Residentes y Concurrentes'
+    },
+    {
+        tipo: "comite_residentes_concurrentes",
+        autoridad: "Dr. Jorge García",
+        titulo: 'Vocal del Comité de Residentes y Concurrentes'
+    },
+    {
+        tipo: "comite_residentes_concurrentes",
+        autoridad: "Dra. Yanina Pastori",
+        titulo: 'Vocal del Comité de Residentes y Concurrentes'
+    },
+    {
+        tipo: "comite_residentes_concurrentes",
+        autoridad: "Dra. Virginia Scarano",
+        titulo: 'Vocal del Comité de Residentes y Concurrentes'
+    },
+    {
+        tipo: "comite_residentes_concurrentes",
+        autoridad: "Dr. Anthony Capcha",
+        titulo: 'Vocal del Comité de Residentes y Concurrentes'
+    },
+    {
+        tipo: "comite_residentes_concurrentes",
+        autoridad: "Dra. Rada Micaela",
+        titulo: 'Vocal del Comité de Residentes y Concurrentes'
+    },
+    {
+        tipo: "comite_residentes_concurrentes",
+        autoridad: "Dra. Victoria Lipera",
+        titulo: 'Vocal del Comité de Residentes y Concurrentes'
+    },
+    {
+        tipo: "comite_residentes_concurrentes",
+        autoridad: "Dr. Martín García",
+        titulo: 'Vocal del Comité de Residentes y Concurrentes'
+    },
+    {
+        tipo: "comite_residentes_concurrentes",
+        autoridad: "Dr. Giovanni Ávila",
+        titulo: 'Vocal del Comité de Residentes y Concurrentes'
+    },
+    {
+        tipo: "comite_residentes_concurrentes",
+        autoridad: "Dra. Erika Nogales",
+        titulo: 'Vocal del Comité de Residentes y Concurrentes'
+    },
+    {
+        tipo: "comite_residentes_concurrentes",
+        autoridad: "Dr. Lucas Agrazzo",
+        titulo: 'Vocal del Comité de Residentes y Concurrentes'
+    },
+    {
+        tipo: "comite_residentes_concurrentes",
+        autoridad: "Dra. Antonella Guerrica Goitia",
+        titulo: 'Vocal del Comité de Residentes y Concurrentes'
     },
 ]
 

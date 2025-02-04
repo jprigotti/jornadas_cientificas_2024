@@ -106,6 +106,58 @@ export const useGenerateCertificados = () => {
         text = `Por cuanto: ${certificado.orador} ha participado como ${certificado.titulo}`;
         generateCertificadoPDF(text);
         break;
+      case "coordinador_conferencia":
+        text = `Por cuanto: ${certificado.coordinador} ha participado como ${certificado.titulo}`;
+        generateCertificadoPDF(text);
+        break;
+      case "autoridades":
+        text = `Por cuanto: ${certificado.autoridad} ha participado como ${certificado.titulo}`;
+        generateCertificadoPDF(text);
+        break;
+      case "comite_cientifico":
+        text = `Por cuanto: ${certificado.autoridad} ha participado como ${certificado.titulo}`;
+        generateCertificadoPDF(text);
+        break;
+      case "comite_mesas_redondas":
+        text = `Por cuanto: ${certificado.autoridad} ha participado como ${certificado.titulo}`;
+        generateCertificadoPDF(text);
+        break;
+      case "comite_conferencias":
+        text = `Por cuanto: ${certificado.autoridad} ha participado como ${certificado.titulo}`;
+        generateCertificadoPDF(text);
+        break;
+      case "comite_temas_libres":
+        text = `Por cuanto: ${certificado.autoridad} ha participado como ${certificado.titulo}`;
+        generateCertificadoPDF(text);
+        break;
+      case "comite_relaciones_publicas":
+        text = `Por cuanto: ${certificado.autoridad} ha participado como ${certificado.titulo}`;
+        generateCertificadoPDF(text);
+        break;
+      case "comite_informatica":
+        text = `Por cuanto: ${certificado.autoridad} ha participado como ${certificado.titulo}`;
+        generateCertificadoPDF(text);
+        break;
+      case "comite_recepcion":
+        text = `Por cuanto: ${certificado.autoridad} ha participado como ${certificado.titulo}`;
+        generateCertificadoPDF(text);
+        break;
+      case "comite_cultura":
+        text = `Por cuanto: ${certificado.autoridad} ha participado como ${certificado.titulo}`;
+        generateCertificadoPDF(text);
+        break;
+      case "comite_asesor":
+        text = `Por cuanto: ${certificado.autoridad} ha participado como ${certificado.titulo}`;
+        generateCertificadoPDF(text);
+        break;
+      case "comite_area_programatica":
+        text = `Por cuanto: ${certificado.autoridad} ha participado como ${certificado.titulo}`;
+        generateCertificadoPDF(text);
+        break;
+      case "comite_residentes_concurrentes":
+        text = `Por cuanto: ${certificado.autoridad} ha participado como ${certificado.titulo}`;
+        generateCertificadoPDF(text);
+        break;
     }
   };
 

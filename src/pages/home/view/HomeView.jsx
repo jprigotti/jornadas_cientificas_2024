@@ -7,6 +7,7 @@ import Conferencias from "../components/conferencias/Conferencias";
 import Colaboran from "../components/Colaboran";
 import JornadasNumeros from "../components/jorndasNumeros/JornadasNumeros";
 import PopupStreaming from "../components/PopupStreaming";
+import PopupCertificados from "../components/PopupCertificados";
 
 const HomeView = () => {
 
@@ -17,7 +18,7 @@ const HomeView = () => {
 
   return (
     <div>
-      <PopupStreaming />
+      <PopupCertificados />
       {/* Contenido de la página */}
       <Banner />
       <Intro />

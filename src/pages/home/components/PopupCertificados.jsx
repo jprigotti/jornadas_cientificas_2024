@@ -2,17 +2,8 @@ import React, { useEffect, useState } from "react";
 import PlayIcon from "./conferencias/PlayIcon";
 import CloseIcon from "./svgIcons/CloseIcon";
 
-const PopupStreaming = () => {
+const PopupCertificados = () => {
   const [showPopup, setShowPopup] = useState(true);
-
-  useEffect(() => {
-    // Obtiene la hora local actual
-    const now = new Date();
-    const currentHour = now.getHours();
-    console.log(currentHour);
-    // Verifica si la hora está entre las 09:00 y las 11:00 am
-    setShowPopup(currentHour >= 9 && currentHour < 11 ? true : false);
-  }, []); // Se ejecuta solo una vez al montar el componente
 
   const handleClosePopup = () => {
     setShowPopup(false);
@@ -39,22 +30,12 @@ const PopupStreaming = () => {
             </div>
 
             <h2 className="text-2xl font-bold mb-4 text-Violet">
-              Ahora: Streaming en Vivo
+              Ya podes descargar tus certificados!
             </h2>
-            <a
-              href="https://youtube.com/live/GkYQ5gGNQ0Y"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex flex-col items-center"
-            >
-              <div className="border-2 rounded-full border-Violet">
-                <PlayIcon width={"70px"} height={"70px"} fill={"#584ba0"} />
-              </div>
 
-              <p className="my-5 font-bold text-2xl p-3 text-White bg-Violet">
-                ¡Sumate!
-              </p>
-            </a>
+            <p className="my-5 font-bold text-xl p-3 text-Violet">
+              El de asistencia lo encontrás en tu perfil y los certificados de trabajos y comisiones en la zona de descargas.
+            </p>
           </div>
         </div>
       )}
@@ -62,4 +43,4 @@ const PopupStreaming = () => {
   );
 };
 
-export default PopupStreaming;
+export default PopupCertificados;

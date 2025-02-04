@@ -3,7 +3,16 @@ import PlayIcon from "./conferencias/PlayIcon";
 import CloseIcon from "./svgIcons/CloseIcon";
 
 const PopupCertificados = () => {
-  const [showPopup, setShowPopup] = useState(true);
+  const [showPopup, setShowPopup] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowPopup(true);
+    }, 2000);
+
+    // Clean up the timer if the component unmounts before 2 seconds
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleClosePopup = () => {
     setShowPopup(false);
@@ -34,7 +43,8 @@ const PopupCertificados = () => {
             </h2>
 
             <p className="my-5 font-bold text-xl p-3 text-Violet">
-              El de asistencia lo encontrás en tu perfil y los certificados de trabajos y comisiones en la zona de descargas.
+              El de asistencia lo encontrás en tu perfil y los certificados de
+              trabajos y comisiones en la zona de descargas.
             </p>
           </div>
         </div>

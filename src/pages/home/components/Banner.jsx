@@ -47,7 +47,7 @@ const Banner = () => {
           HOSPITAL SANTOJANNI
         </h1>
         <h2 className="text-White text-3xl md:text-3xl font-bold pb-10">
-          8 al 15 de noviembre
+          8 al 15 de noviembre de 2024
         </h2>
         <h2 className="text-White text-center text-2xl  font-bold laptop1:text-5xl">
           Estrategias para abordar los retos actuales en salud:
@@ -77,8 +77,8 @@ const Banner = () => {
 
         <div className="gap-y-5 flex flex-col items-center laptop1:flex-row laptop1:justify-center laptop1:space-x-10">
 
-          <ButtonBlueMD onClick = {handleClickAranceles} label={"Aranceles"}/>
-          <ButtonVioletMD onClick = {handleInscripcion} label={"Incribirme"}/>
+          {/* <ButtonBlueMD onClick = {handleClickAranceles} label={"Aranceles"}/>
+          <ButtonVioletMD onClick = {handleInscripcion} label={"Incribirme"}/> */}
         </div>
       </div>
     </div>

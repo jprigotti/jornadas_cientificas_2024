@@ -1005,6 +1005,11 @@ export const datos_certificados = [
         titulo: "Coordinador Jornada Residente: Screening patologías oncológicas"
     },
     {
+        tipo: "disertante_jornada_residente",
+        autoridad: "Vazquez Sofia Cielo, Saldungaray Johanna, De La Casa Romina, Rada Micaela, Etcheverria Marcelo, Guendijian Ivana, Humano Marilyn",
+        titulo: "Disertantes Jornada Residente: Screening patologías oncológicas"
+    },
+    {
         tipo: "presidente_jornada_residente",
         autoridad: "Anthony Frank Capcha",
         titulo: "Presidente Jornada Residente: Obesidad y diabetes"

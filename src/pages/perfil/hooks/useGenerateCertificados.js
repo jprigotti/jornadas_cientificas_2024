@@ -91,15 +91,15 @@ export const useGenerateCertificados = () => {
         generateCertificadoPDF(text);
         break;
       case "presidente_jornada_residente":
-        text = `Por cuanto: ${certificado.autoridad} ha participado como "Presidente de Jornada Residentes" ${certificado.titulo}`;
+        text = `Por cuanto: ${certificado.autoridad} ha participado como ${certificado.titulo}`;
         generateCertificadoPDF(text);
         break;
       case "coordinador_jornada_residente":
-        text = `Por cuanto: ${certificado.autoridad} ha participado como "Coordinador de Jornada Residentes" ${certificado.titulo}`;
+        text = `Por cuanto: ${certificado.autoridad} ha participado como ${certificado.titulo}`;
         generateCertificadoPDF(text);
         break;
       case "disertante_jornada_residente":
-        text = `Por cuanto: ${certificado.autoridad} ha participado como "Disertante de Jornada Residentes" ${certificado.titulo}`;
+        text = `Por cuanto: ${certificado.autoridad} han participado como ${certificado.titulo}`;
         generateCertificadoPDF(text);
         break;
       case "orador_conferencia":

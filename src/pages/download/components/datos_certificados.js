@@ -656,7 +656,7 @@ export const datos_certificados = [
     },
     {
         tipo: "autores_temas_libres",
-        autores: "Tortone, Julieta Crocitta, Carla Quinteros, Joaquin",
+        autores: "Dra. Ivana Guendjian, Dr. Joaquin Quinteros, Dra. Candelaria Felici",
         titulo: "POLIPOSIS ADENOMATOSA FAMILIAR: A PROPÓSITO DE UN CASO"
     },
     {
@@ -1006,7 +1006,7 @@ export const datos_certificados = [
     },
     {
         tipo: "disertante_jornada_residente",
-        autoridad: "Vazquez Sofia Cielo, Saldungaray Johanna, De La Casa Romina, Rada Micaela, Etcheverria Marcelo, Guendijian Ivana, Humano Marilyn",
+        autoridad: "Vazquez Sofia Cielo, Saldungaray Johanna, De La Casa Romina, Rada Micaela, Etcheverria Marcelo, Guendjian Ivana, Humano Marilyn",
         titulo: "Disertantes Jornada Residente: Screening patologías oncológicas"
     },
     {
